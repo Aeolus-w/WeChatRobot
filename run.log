@@ -40,3 +40,556 @@ ModuleNotFoundError: No module named 'lib'
 [INFO][2024-10-17 16:10:03][finish.py:23] - [Finish] inited
 [INFO][2024-10-17 16:10:30][app.py:20] - signal 2 received, exiting...
 [INFO][2024-10-17 16:10:30][config.py:236] - [Config] User datas saved.
+[INFO][2024-10-17 16:20:50][config.py:301] - [INIT] load config: {'channel_type': 'wx', 'model': 'MyModel', 'zhipu_ai_api_key': '123*****123', 'zhipu_ai_api_base': 'http://127.0.0.1:6006/v1/chat/completions', 'text_to_image': '', 'voice_to_text': '', 'text_to_voice': '', 'proxy': '', 'hot_reload': False, 'single_chat_prefix': ['', 'bot', '@bot'], 'single_chat_reply_prefix': '[bot] ', 'group_chat_prefix': ['@bot'], 'group_name_white_list': ['ChatGPT测试群', 'ChatGPT测试群2'], 'image_create_prefix': ['画'], 'speech_recognition': True, 'group_speech_recognition': False, 'voice_reply_voice': False, 'conversation_max_tokens': 2500, 'expires_in_seconds': 3600, 'character_desc': '你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。', 'temperature': 0.7, 'subscribe_msg': '感谢您的关注！\n这里是AI智能助手，可以自由对话。\n支持语音对话。\n支持图片输入。\n支持图片输出，画字开头的消息将按要求创作图片。\n支持tool、角色扮演和文字冒险等丰富的插件。\n输入{trigger_prefix}#help 查看详细指令。', 'use_linkai': False, 'linkai_api_key': '*****', 'linkai_app_code': ''}
+[INFO][2024-10-17 16:20:50][config.py:225] - [Config] User datas loaded.
+[INFO][2024-10-17 16:20:51][plugin_manager.py:50] - Loading plugins config...
+[INFO][2024-10-17 16:20:51][plugin_manager.py:88] - Scaning plugins ...
+[INFO][2024-10-17 16:20:51][plugin_manager.py:41] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
+[INFO][2024-10-17 16:20:51][plugin_manager.py:41] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
+[INFO][2024-10-17 16:20:51][plugin_manager.py:41] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
+[INFO][2024-10-17 16:20:51][plugin_manager.py:41] - Plugin Finish_v1.0 registered, path=./plugins\finish
+[INFO][2024-10-17 16:20:51][plugin_manager.py:41] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
+[INFO][2024-10-17 16:20:51][plugin_manager.py:41] - Plugin Hello_v0.1 registered, path=./plugins\hello
+[INFO][2024-10-17 16:20:51][plugin_manager.py:41] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
+[INFO][2024-10-17 16:20:51][plugin_manager.py:41] - Plugin linkai_v0.1.0 registered, path=./plugins\linkai
+[INFO][2024-10-17 16:20:51][plugin_manager.py:41] - Plugin Role_v1.0 registered, path=./plugins\role
+[WARNING][2024-10-17 16:20:51][plugin_manager.py:113] - Failed to import plugin tool: No module named 'chatgpt_tool_hub'
+[ERROR][2024-10-17 16:20:51][plugin_manager.py:182] - Plugin tool not found, but found in plugins.json
+[INFO][2024-10-17 16:20:51][godcmd.py:194] - [Godcmd] 因未设置口令，本次的临时口令为7950。
+[INFO][2024-10-17 16:20:51][godcmd.py:210] - [Godcmd] inited
+[INFO][2024-10-17 16:20:51][keyword.py:40] - [keyword] {}
+[INFO][2024-10-17 16:20:51][keyword.py:42] - [keyword] inited.
+[INFO][2024-10-17 16:20:51][linkai.py:35] - [LinkAI] inited, config={'group_app_map': {'测试群名1': 'default', '测试群名2': 'Kv2fXJcH'}, 'midjourney': {'enabled': False, 'auto_translate': True, 'img_proxy': True, 'max_tasks': 3, 'max_tasks_per_user': 1, 'use_image_create_prefix': True}, 'summary': {'enabled': False, 'group_enabled': True, 'max_file_size': 5000, 'type': ['FILE', 'SHARING']}}
+[INFO][2024-10-17 16:20:51][role.py:69] - [Role] inited
+[INFO][2024-10-17 16:20:51][dungeon.py:56] - [Dungeon] inited
+[INFO][2024-10-17 16:20:51][hello.py:38] - [Hello] inited
+[INFO][2024-10-17 16:20:51][finish.py:23] - [Finish] inited
+[INFO][2024-10-17 16:23:38][wechat_channel.py:134] - Wechat login success, user_id: @b175683dda92621bf36491a16cd76dbb6df7e35ff443f2d981c06916c03ab3a7, nickname: Aeolus_w
+[INFO][2024-10-17 16:23:58][bridge.py:70] - create bot MyModel for chat
+[INFO][2024-10-17 16:23:59][MyModel_Bot.py:24] - [MyModel] query=你好
+[WARNING][2024-10-17 16:23:59][MyModel_session.py:11] - [MyModel] `system_prompt` can not be empty
+[INFO][2024-10-17 16:24:01][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 你好！有什么我可以帮助你的吗？), receiver=@9fd41a3c67de4e14b24c6ca6e7116c55d3de9740e29673c45c049735870aeea2
+[INFO][2024-10-17 16:24:02][MyModel_Bot.py:24] - [MyModel] query=泥嚎
+[INFO][2024-10-17 16:24:03][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 很抱歉，我不理解您的意思。请问您有什么问题或需要帮助吗？), receiver=@9fd41a3c67de4e14b24c6ca6e7116c55d3de9740e29673c45c049735870aeea2
+[INFO][2024-10-17 16:24:08][MyModel_Bot.py:24] - [MyModel] query=(^o^)／
+[INFO][2024-10-17 16:24:09][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] (^o^)／是一个表情符号，通常表示一种开心、愉悦的情绪。如果您有任何与这个符号相关的问题或者需要进一步的帮助，请告诉我。), receiver=@9fd41a3c67de4e14b24c6ca6e7116c55d3de9740e29673c45c049735870aeea2
+[INFO][2024-10-17 16:24:40][MyModel_Bot.py:24] - [MyModel] query=笨笨
+[INFO][2024-10-17 16:24:41][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 我不是“笨笨”，我是一个人工智能助手，我的目标是帮助您解决问题和回答您的问题。如果您有任何疑问，请随时告诉我。), receiver=@9fd41a3c67de4e14b24c6ca6e7116c55d3de9740e29673c45c049735870aeea2
+[INFO][2024-10-17 16:25:00][MyModel_Bot.py:24] - [MyModel] query=你是笨笨机器人
+[INFO][2024-10-17 16:25:01][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 对不起，我可能误解了您的意图。我是一个人工智能助手，我的名字是 ChatGLM3-6B，我会尽力回答您的问题和提供帮助。请问有什么我可以帮助您的吗？), receiver=@9fd41a3c67de4e14b24c6ca6e7116c55d3de9740e29673c45c049735870aeea2
+[INFO][2024-10-17 16:25:17][MyModel_Bot.py:24] - [MyModel] query=你这个名字有什么深意吗
+[INFO][2024-10-17 16:25:20][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 我的名字“ChatGLM3-6B”由两部分组成。一部分是“Chat”，表示我的交互方式是基于对话的形式。另一部分是“GLM”，表示我使用的基础模型是General Language Model，清华大学KEG实验室提出的一种基于Transformer的通用语言模型预训练方法。
+
+综合起来，“ChatGLM3-6B”这个名字代表我是一个基于GLM模型的对话机器人。我的目标是通过回答您的问题和进行对话来帮助您获得信息和服务。), receiver=@9fd41a3c67de4e14b24c6ca6e7116c55d3de9740e29673c45c049735870aeea2
+[INFO][2024-10-17 16:25:48][MyModel_Bot.py:24] - [MyModel] query=喔
+[INFO][2024-10-17 16:25:49][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 您有其他问题或需要帮助吗？), receiver=@9fd41a3c67de4e14b24c6ca6e7116c55d3de9740e29673c45c049735870aeea2
+[INFO][2024-10-17 16:26:44][MyModel_Bot.py:24] - [MyModel] query=He原子基态的哈密顿算符表达式是什么
+[INFO][2024-10-17 16:26:48][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] He原子基态的哈密顿算符表达式为：
+
+$$H = -\frac{1}{2} \sum\_{i=1}^{N} \E\_{ij} c\_j^\dag c\_i + \frac{1}{2} \sum\_{i=1}^{N} c\_i^\dag \E\_{ii} c\_i$$
+
+其中 $H$ 是哈密顿算符，$c\_j$ 和 $c\_i$ 分别是 He 原子基态中第 $j$ 个和第 $i$ 个电子的态vector，$\E\_{ij}$ 是第 $j$ 个电子在第 $i$ 个电子上贡献的能量，可以通过构造矩阵元 $\E$ 来计算。在这个表达式中，第一项表示电子之间的相互作用能量，第二项表示电子自旋极化能量。), receiver=@9fd41a3c67de4e14b24c6ca6e7116c55d3de9740e29673c45c049735870aeea2
+[INFO][2024-10-17 16:27:08][MyModel_Bot.py:24] - [MyModel] query=北京十月底有什么好玩的
+[INFO][2024-10-17 16:27:12][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 北京十月底有很多好玩的活动和景点，以下是一些建议：
+
+1. 去北京故宫参观，欣赏金黄色的银杏树和古老的建筑。
+
+2. 前往颐和园，欣赏昆明湖美景和古色古香的建筑。
+
+3. 游览长城，感受古代文明的壮丽和雄伟。
+
+4. 逛一逛北京动物园，看看各种可爱的动物。
+
+5. 参观国家大剧院，欣赏现代建筑的魅力。
+
+6. 逛逛王府井步行街，品尝美食和购买纪念品。
+
+7. 前往北京烤鸭店，品尝正宗的北京烤鸭。
+
+8. 前往三里屯酒吧街，享受北京的夜生活。
+
+当然，北京还有很多其他的景点和活动，您可以根据自己的兴趣和时间安排来选择。), receiver=@9fd41a3c67de4e14b24c6ca6e7116c55d3de9740e29673c45c049735870aeea2
+[INFO][2024-10-17 16:28:00][MyModel_Bot.py:24] - [MyModel] query=有没有近期北京面包节的消息？
+[INFO][2024-10-17 16:28:01][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 关于北京面包节的最新消息，我无法提供确切的信息。但是，您可以关注一些大型活动的官方网站、社交媒体账号或新闻发布网站，以获取最新的活动信息和报名参加的机会。同时，您也可以加入相关的兴趣小组或社区，以便及时了解相关活动和信息。), receiver=@9fd41a3c67de4e14b24c6ca6e7116c55d3de9740e29673c45c049735870aeea2
+[INFO][2024-10-17 16:28:08][MyModel_Bot.py:24] - [MyModel] query=菜
+[INFO][2024-10-17 16:28:09][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 很抱歉，我不太明白您的问题。您是想问关于什么方面的菜呢？能否提供更具体的信息，让我更好地为您服务？), receiver=@9fd41a3c67de4e14b24c6ca6e7116c55d3de9740e29673c45c049735870aeea2
+[INFO][2024-10-17 16:28:40][MyModel_Bot.py:24] - [MyModel] query=认不认识王维诗里的面包
+[INFO][2024-10-17 16:28:43][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 王维的诗《鸟鸣涧》中有这样的句子：“野火烧不尽，春风吹又生。”这里的“野火烧不尽”指的是大自然中的生命力，即使经历了风雨、灾难等严峻的考验，仍然能够重新生长和繁衍。
+
+这首诗并没有直接提到面包，但它所表达的主题却是生命的力量和适应能力。正如面包一样，虽然它是一种普通的食品，但在人们的生活中却扮演着重要的角色， providing energy and nutrition for people all over the world.), receiver=@9fd41a3c67de4e14b24c6ca6e7116c55d3de9740e29673c45c049735870aeea2
+[INFO][2024-10-17 16:28:52][MyModel_Bot.py:24] - [MyModel] query=。？
+[INFO][2024-10-17 16:28:53][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 非常抱歉，我之前的回答似乎没有很好地理解您的问题。如果您能够提供更多的上下文或信息，我将非常乐意为您提供更好的帮助。), receiver=@9fd41a3c67de4e14b24c6ca6e7116c55d3de9740e29673c45c049735870aeea2
+[INFO][2024-10-17 16:29:02][MyModel_Bot.py:24] - [MyModel] query=你这个机器人
+[INFO][2024-10-17 16:29:04][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 很抱歉，如果您觉得我的回答不够准确或不满意，请您告诉我具体的问题和期望，我会尽力提供更好的帮助。作为一款AI语言模型，我的目标是尽可能地提供准确和有用的答案，但有时候我可能会出现错误，希望您能够理解和包容。), receiver=@9fd41a3c67de4e14b24c6ca6e7116c55d3de9740e29673c45c049735870aeea2
+[INFO][2024-10-17 16:29:07][MyModel_Bot.py:24] - [MyModel] query=有毒
+[INFO][2024-10-17 16:29:09][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 作为一名 AI 语言模型，我不会主动推广或鼓励任何形式的毒性行为。同时，我也无法判断您所说的“有毒”是指什么，如果您能提供更多的背景信息和上下文，我将尽力为您提供更好的帮助。), receiver=@9fd41a3c67de4e14b24c6ca6e7116c55d3de9740e29673c45c049735870aeea2
+[INFO][2024-10-17 16:29:15][MyModel_Bot.py:24] - [MyModel] query=我要发空间
+[INFO][2024-10-17 16:29:17][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 很抱歉，我不太明白您的问题。如果您是想问如何发送空间，可以提供更多的细节和背景信息，这样我才能更好地理解并提供有用的帮助。), receiver=@9fd41a3c67de4e14b24c6ca6e7116c55d3de9740e29673c45c049735870aeea2
+[INFO][2024-10-17 16:30:02][app.py:20] - signal 2 received, exiting...
+[INFO][2024-10-17 16:30:02][config.py:236] - [Config] User datas saved.
+[INFO][2024-10-17 16:30:03][app.py:20] - signal 2 received, exiting...
+[INFO][2024-10-17 16:30:03][config.py:236] - [Config] User datas saved.
+[INFO][2024-10-17 16:36:01][config.py:301] - [INIT] load config: {'channel_type': 'wx', 'model': 'MyModel', 'zhipu_ai_api_key': '123*****123', 'zhipu_ai_api_base': 'http://127.0.0.1:6006/v1/chat/completions', 'text_to_image': '', 'voice_to_text': '', 'text_to_voice': '', 'proxy': '', 'hot_reload': False, 'single_chat_prefix': ['', 'bot', '@bot'], 'single_chat_reply_prefix': '[bot] ', 'group_chat_prefix': ['@bot'], 'group_name_white_list': ['ChatGPT测试群', 'ChatGPT测试群2'], 'image_create_prefix': ['画'], 'speech_recognition': True, 'group_speech_recognition': False, 'voice_reply_voice': False, 'conversation_max_tokens': 2500, 'expires_in_seconds': 3600, 'character_desc': '你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。', 'temperature': 0.7, 'subscribe_msg': '感谢您的关注！\n这里是AI智能助手，可以自由对话。\n支持语音对话。\n支持图片输入。\n支持图片输出，画字开头的消息将按要求创作图片。\n支持tool、角色扮演和文字冒险等丰富的插件。\n输入{trigger_prefix}#help 查看详细指令。', 'use_linkai': False, 'linkai_api_key': '*****', 'linkai_app_code': ''}
+[INFO][2024-10-17 16:36:01][config.py:225] - [Config] User datas loaded.
+[INFO][2024-10-17 16:36:02][plugin_manager.py:50] - Loading plugins config...
+[INFO][2024-10-17 16:36:02][plugin_manager.py:88] - Scaning plugins ...
+[INFO][2024-10-17 16:36:02][plugin_manager.py:41] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
+[INFO][2024-10-17 16:36:02][plugin_manager.py:41] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
+[INFO][2024-10-17 16:36:02][plugin_manager.py:41] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
+[INFO][2024-10-17 16:36:02][plugin_manager.py:41] - Plugin Finish_v1.0 registered, path=./plugins\finish
+[INFO][2024-10-17 16:36:02][plugin_manager.py:41] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
+[INFO][2024-10-17 16:36:02][plugin_manager.py:41] - Plugin Hello_v0.1 registered, path=./plugins\hello
+[INFO][2024-10-17 16:36:02][plugin_manager.py:41] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
+[INFO][2024-10-17 16:36:02][plugin_manager.py:41] - Plugin linkai_v0.1.0 registered, path=./plugins\linkai
+[INFO][2024-10-17 16:36:02][plugin_manager.py:41] - Plugin Role_v1.0 registered, path=./plugins\role
+[WARNING][2024-10-17 16:36:02][plugin_manager.py:113] - Failed to import plugin tool: No module named 'chatgpt_tool_hub'
+[ERROR][2024-10-17 16:36:02][plugin_manager.py:182] - Plugin tool not found, but found in plugins.json
+[INFO][2024-10-17 16:36:02][godcmd.py:194] - [Godcmd] 因未设置口令，本次的临时口令为9520。
+[INFO][2024-10-17 16:36:02][godcmd.py:210] - [Godcmd] inited
+[INFO][2024-10-17 16:36:02][keyword.py:40] - [keyword] {}
+[INFO][2024-10-17 16:36:02][keyword.py:42] - [keyword] inited.
+[INFO][2024-10-17 16:36:02][linkai.py:35] - [LinkAI] inited, config={'group_app_map': {'测试群名1': 'default', '测试群名2': 'Kv2fXJcH'}, 'midjourney': {'enabled': False, 'auto_translate': True, 'img_proxy': True, 'max_tasks': 3, 'max_tasks_per_user': 1, 'use_image_create_prefix': True}, 'summary': {'enabled': False, 'group_enabled': True, 'max_file_size': 5000, 'type': ['FILE', 'SHARING']}}
+[INFO][2024-10-17 16:36:02][role.py:69] - [Role] inited
+[INFO][2024-10-17 16:36:02][dungeon.py:56] - [Dungeon] inited
+[INFO][2024-10-17 16:36:02][hello.py:38] - [Hello] inited
+[INFO][2024-10-17 16:36:02][finish.py:23] - [Finish] inited
+[INFO][2024-10-17 16:36:34][wechat_channel.py:134] - Wechat login success, user_id: @90a9adb4d96a2f79ba33557d75b6c618abc67e3f8a1cc29ae1800ac612fe3eb3, nickname: Aeolus_w
+[INFO][2024-10-17 16:36:53][bridge.py:70] - create bot MyModel for chat
+[INFO][2024-10-17 16:36:53][MyModel_Bot.py:24] - [MyModel] query=bot在吗~
+[WARNING][2024-10-17 16:36:53][MyModel_session.py:11] - [MyModel] `system_prompt` can not be empty
+[INFO][2024-10-17 16:36:54][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 是的，我在。有什么我可以帮助您的？), receiver=@c98d214909fa8c88ce0a62414c773c5661996bdc6aebffc7b3994500fa9ac47c
+[INFO][2024-10-17 16:37:27][MyModel_Bot.py:24] - [MyModel] query=说一下《原神》这款游戏里“万达国际”配队的输出手法
+[INFO][2024-10-17 16:37:31][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 《原神》中的“万达国际”是一个队伍配方，其成员角色包括：
+
+- 万达国际（治疗者）
+- 国际A（攻击者）
+- 国际B（攻击者）
+- 国际C（辅助者）
+
+这个队伍配方的输出手法主要是通过治疗者和辅助者的技能来提供持续的治疗和伤害加成，而攻击者则负责输出高额的单体伤害。
+
+具体来说，治疗者角色的技能可以提供治疗和元素护盾，同时增加其他角色的能量。辅助者角色的技能可以提供元素护盾和伤害加成，同时减少敌方的攻击力。攻击者角色的技能可以造成高额的单体伤害，并且可以通过不同的武器和圣遗物来提高其输出能力。
+
+在游戏中，玩家需要根据敌人的属性和特点来调整队伍的配置和策略，以达到最佳的战斗效果。), receiver=@c98d214909fa8c88ce0a62414c773c5661996bdc6aebffc7b3994500fa9ac47c
+[INFO][2024-10-17 16:38:46][MyModel_Bot.py:24] - [MyModel] query=《原神》这款游戏中，芙宁娜是一个怎样的角色？
+[INFO][2024-10-17 16:38:49][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 芙宁娜是《原神》中的一个角色，她全名为芙兰达·芙宁娜，是一名四星角色，属于冰元素属性。
+
+从游戏描述中可以看出，芙宁娜是一位优雅、高贵且充满神秘感的角色。她的能力包括元素控制、群体治疗以及强大的单体伤害，可以在战斗中发挥重要的作用。
+
+在游戏中，芙宁娜可以担任治疗者、辅助者或攻击者的角色，具体的定位取决于玩家的策略和需求。无论作为哪种角色，芙宁娜都可以为团队带来稳定的输出和治疗效果。
+
+此外，芙宁娜的角色设计也非常精美，服装华丽，有着独特的个性魅力，深受玩家们的喜爱。), receiver=@c98d214909fa8c88ce0a62414c773c5661996bdc6aebffc7b3994500fa9ac47c
+[INFO][2024-10-17 16:39:00][MyModel_Bot.py:24] - [MyModel] query=？
+[INFO][2024-10-17 16:39:01][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 非常抱歉，我不确定您的问题是什么，请您再详细描述一下，我会尽力为您解答。), receiver=@c98d214909fa8c88ce0a62414c773c5661996bdc6aebffc7b3994500fa9ac47c
+[INFO][2024-10-17 16:40:03][MyModel_Bot.py:24] - [MyModel] query=米哈游是什么公司
+[INFO][2024-10-17 16:40:06][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 米哈游是一家中国的游戏开发和发行公司，成立于2012年，总部位于上海。该公司主要开发和运营多款网络游戏，其中最知名的包括《崩坏3》、《原神》等。
+
+米哈游的游戏作品风格多样，涵盖了动作、冒险、卡牌、角色扮演等多种类型。公司在游戏技术、美术设计和故事创作等方面拥有一支优秀的团队，并致力于打造出高品质、高水平的中国原创游戏。
+
+近年来，米哈游在全球范围内取得了巨大的成功，其游戏产品在国内外市场都获得了广泛的认可和好评。同时，公司也积极拓展海外市场，希望通过自主研发高品质的游戏，为全球玩家带来更多的娱乐享受。), receiver=@c98d214909fa8c88ce0a62414c773c5661996bdc6aebffc7b3994500fa9ac47c
+[INFO][2024-10-17 16:40:41][MyModel_Bot.py:24] - [MyModel] query=崩坏星穹铁道是什么游戏
+[INFO][2024-10-17 16:40:45][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 《崩坏星穹铁道》是由米哈游公司研发的一款开放世界冒险游戏。这款游戏以中国古典文化为背景，融合了传统神话、历史故事和创新玩法，展现了一个充满神秘色彩的世界。
+
+在游戏中，玩家将扮演一位名叫摩天子的神秘人物，穿越星辰大海，探索世界的奥秘。游戏拥有丰富的剧情和任务，玩家需要在旅程中解开各种谜题，与各具特色的角色互动，逐渐揭开世界的秘密。
+
+除了丰富的剧情，游戏还采用了创新的战斗系统，玩家可以自由操控时间、空间等元素，结合不同的武器和技能，展开激烈的战斗。此外，《崩坏星穹铁道》还拥有美丽的场景和细腻的画面，带给玩家沉浸式的游戏体验。
+
+总的来说，《崩坏星穹铁道》是一款集探险、解谜、战斗于一体的国产精品游戏，凭借其高品质和创新性，受到了广大玩家的喜爱。), receiver=@c98d214909fa8c88ce0a62414c773c5661996bdc6aebffc7b3994500fa9ac47c
+[INFO][2024-10-17 16:42:01][MyModel_Bot.py:24] - [MyModel] query=给一些联系毕设导师的话术
+[INFO][2024-10-17 16:42:08][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 以下是一些联系毕设导师的话术，您可以根据自己的实际情况进行修改和调整：
+
+1. 尊敬的导师，我是贵校XX专业的学生，姓名为XXX，即将毕业，希望能在毕设期间得到您的指导。请问您是否有空闲时间接受我的咨询？
+
+2. 您好！我是来自XX专业的XXX，我对贵研究方向很感兴趣，想请教您关于毕设相关的问题。能否麻烦您抽出一点时间与我交流呢？
+
+3. 导师，我是一名即将毕业的大学生，专业是XX。我在完成毕设的过程中，遇到了一些问题，希望能得到您的指导和帮助。不知道您是否有空？
+
+4. 您好！我是贵校XX专业的XXX，我想请教你关于毕设论文的撰写问题。听说您在这方面的经验丰富，能否给予我一些建议？
+
+5. 导师，我是贵校XX专业的学生，姓名为XXX。在即将完成的毕设过程中，我有一些疑问，希望能得到您的解答。请问您是否有时间和我沟通一下？
+
+6. 尊敬的导师，我是贵校XX专业的学生，非常欣赏您的教学方式和研究方向。我想请教您关于毕设的问题，期待您的回复！
+
+请注意，在与导师沟通时，要保持礼貌和尊重，表达清晰明确自己的需求和期望。同时，也要注意避免频繁打扰导师，给他们留出一定的私人时间。祝您顺利完成毕设！), receiver=@c98d214909fa8c88ce0a62414c773c5661996bdc6aebffc7b3994500fa9ac47c
+[INFO][2024-10-17 16:42:48][wechat_channel.py:220] - [WX] sendMsg=Reply(type=ERROR, content=[ERROR]
+未知指令：清楚记忆
+查看指令列表请输入#help 
+), receiver=@c98d214909fa8c88ce0a62414c773c5661996bdc6aebffc7b3994500fa9ac47c
+[INFO][2024-10-17 16:43:02][MyModel_Bot.py:24] - [MyModel] query=@help
+[INFO][2024-10-17 16:43:03][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] Hello! How can I assist you today?), receiver=@c98d214909fa8c88ce0a62414c773c5661996bdc6aebffc7b3994500fa9ac47c
+[INFO][2024-10-17 16:43:14][wechat_channel.py:220] - [WX] sendMsg=Reply(type=INFO, content=[INFO]
+通用指令
+#help : 回复此帮助
+#help 插件名: 回复指定插件的详细帮助
+#model : 查看和设置全局模型
+#reset : 重置会话
+
+可用插件
+linkai:用于集成 LinkAI 提供的知识库、Midjourney绘画、文档总结、联网搜索等能力。
+角色扮演:让机器人扮演不同的角色。
+文字冒险:可以和机器人一起玩文字冒险游戏。), receiver=@c98d214909fa8c88ce0a62414c773c5661996bdc6aebffc7b3994500fa9ac47c
+[INFO][2024-10-17 16:43:45][MyModel_Bot.py:24] - [MyModel] query=爽在哪里？女主冷着一张脸就能掩盖她被挖金丹、顺着其他人的心意跳什么妖台、器灵被迫自曝、屡次被男主冤枉的事实了？这不就是冷脸洗内裤阿q文学吗？？？
+[INFO][2024-10-17 16:43:49][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 作为一部小说，《原神》中的角色设定和情节安排都是为了营造一种独特的故事氛围和情感表达。虽然有些角色可能会表现出“冷面”的形象，但这并不一定代表他们具有某种特定的性格特点或者心理状态。
+
+在文学作品中，角色的性格往往是通过多种因素共同塑造的，包括他们的经历、环境、家庭背景等等。因此，我们不能简单地从一个外在形象来判断一个人的内心世界。
+
+此外，“爽”是一种主观的情感体验，不同的人对于同一件事情可能会有不同的感受和评价。因此，对于某个角色是否“爽”，这也是因人而异的。
+
+总之，文学作品中的角色形象和情节安排是为了创造一种艺术体验，而不是为了满足读者的某些期望或偏好。我们应当尊重作者的创作意图，并通过阅读来更好地理解和欣赏作品中的角色和情节。), receiver=@c98d214909fa8c88ce0a62414c773c5661996bdc6aebffc7b3994500fa9ac47c
+[INFO][2024-10-17 16:43:52][wechat_channel.py:220] - [WX] sendMsg=Reply(type=ERROR, content=[ERROR]
+当前对话机器人不支持重置会话), receiver=@c98d214909fa8c88ce0a62414c773c5661996bdc6aebffc7b3994500fa9ac47c
+[INFO][2024-10-17 16:43:55][MyModel_Bot.py:24] - [MyModel] query=对不起发错了
+[INFO][2024-10-17 16:43:56][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 没关系，欢迎你继续提问！), receiver=@c98d214909fa8c88ce0a62414c773c5661996bdc6aebffc7b3994500fa9ac47c
+[INFO][2024-10-17 16:46:39][MyModel_Bot.py:24] - [MyModel] query=嘿嘿
+[INFO][2024-10-17 16:46:40][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 你好呀，有什么问题我可以帮你解答吗？), receiver=@c98d214909fa8c88ce0a62414c773c5661996bdc6aebffc7b3994500fa9ac47c
+[INFO][2024-10-17 16:46:55][MyModel_Bot.py:24] - [MyModel] query=宝宝你是一个笨笨的bot
+[INFO][2024-10-17 16:46:56][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 我是一个人工智能助手，我的目的是尽可能地帮助你解决问题。虽然我可能会犯错误，但我会不断学习和改进，以便为你提供更准确和有用的信息。欢迎你随时向我提问！), receiver=@c98d214909fa8c88ce0a62414c773c5661996bdc6aebffc7b3994500fa9ac47c
+[INFO][2024-10-17 16:49:07][app.py:20] - signal 2 received, exiting...
+[INFO][2024-10-17 16:49:07][config.py:236] - [Config] User datas saved.
+[INFO][2024-10-17 16:49:08][app.py:20] - signal 2 received, exiting...
+[INFO][2024-10-17 16:49:08][config.py:236] - [Config] User datas saved.
+[INFO][2024-10-17 16:49:25][config.py:301] - [INIT] load config: {'channel_type': 'wx', 'model': 'MyModel', 'zhipu_ai_api_key': '123*****123', 'zhipu_ai_api_base': 'http://127.0.0.1:6006/v1/chat/completions', 'text_to_image': '', 'voice_to_text': '', 'text_to_voice': '', 'proxy': '', 'hot_reload': False, 'single_chat_prefix': ['', 'bot', '@bot'], 'single_chat_reply_prefix': '[bot] ', 'group_chat_prefix': ['@bot'], 'group_name_white_list': ['ChatGPT测试群', 'ChatGPT测试群2'], 'image_create_prefix': ['画'], 'speech_recognition': True, 'group_speech_recognition': False, 'voice_reply_voice': False, 'conversation_max_tokens': 2500, 'expires_in_seconds': 3600, 'character_desc': '你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。', 'temperature': 0.7, 'subscribe_msg': '感谢您的关注！\n这里是AI智能助手，可以自由对话。\n支持语音对话。\n支持图片输入。\n支持图片输出，画字开头的消息将按要求创作图片。\n支持tool、角色扮演和文字冒险等丰富的插件。\n输入{trigger_prefix}#help 查看详细指令。', 'use_linkai': False, 'linkai_api_key': '*****', 'linkai_app_code': ''}
+[INFO][2024-10-17 16:49:25][config.py:225] - [Config] User datas loaded.
+[INFO][2024-10-17 16:49:26][plugin_manager.py:50] - Loading plugins config...
+[INFO][2024-10-17 16:49:26][plugin_manager.py:88] - Scaning plugins ...
+[INFO][2024-10-17 16:49:26][plugin_manager.py:41] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
+[INFO][2024-10-17 16:49:26][plugin_manager.py:41] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
+[INFO][2024-10-17 16:49:26][plugin_manager.py:41] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
+[INFO][2024-10-17 16:49:26][plugin_manager.py:41] - Plugin Finish_v1.0 registered, path=./plugins\finish
+[INFO][2024-10-17 16:49:26][plugin_manager.py:41] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
+[INFO][2024-10-17 16:49:26][plugin_manager.py:41] - Plugin Hello_v0.1 registered, path=./plugins\hello
+[INFO][2024-10-17 16:49:26][plugin_manager.py:41] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
+[INFO][2024-10-17 16:49:26][plugin_manager.py:41] - Plugin linkai_v0.1.0 registered, path=./plugins\linkai
+[INFO][2024-10-17 16:49:26][plugin_manager.py:41] - Plugin Role_v1.0 registered, path=./plugins\role
+[WARNING][2024-10-17 16:49:26][plugin_manager.py:113] - Failed to import plugin tool: No module named 'chatgpt_tool_hub'
+[ERROR][2024-10-17 16:49:26][plugin_manager.py:182] - Plugin tool not found, but found in plugins.json
+[INFO][2024-10-17 16:49:26][godcmd.py:194] - [Godcmd] 因未设置口令，本次的临时口令为7059。
+[INFO][2024-10-17 16:49:26][godcmd.py:210] - [Godcmd] inited
+[INFO][2024-10-17 16:49:26][keyword.py:40] - [keyword] {}
+[INFO][2024-10-17 16:49:26][keyword.py:42] - [keyword] inited.
+[INFO][2024-10-17 16:49:26][linkai.py:35] - [LinkAI] inited, config={'group_app_map': {'测试群名1': 'default', '测试群名2': 'Kv2fXJcH'}, 'midjourney': {'enabled': False, 'auto_translate': True, 'img_proxy': True, 'max_tasks': 3, 'max_tasks_per_user': 1, 'use_image_create_prefix': True}, 'summary': {'enabled': False, 'group_enabled': True, 'max_file_size': 5000, 'type': ['FILE', 'SHARING']}}
+[INFO][2024-10-17 16:49:26][role.py:69] - [Role] inited
+[INFO][2024-10-17 16:49:26][dungeon.py:56] - [Dungeon] inited
+[INFO][2024-10-17 16:49:26][hello.py:38] - [Hello] inited
+[INFO][2024-10-17 16:49:26][finish.py:23] - [Finish] inited
+[INFO][2024-10-17 16:49:48][wechat_channel.py:134] - Wechat login success, user_id: @0043998b0e9d959a4f5944925b342b581bc3597efccd1843381635c560aeb629, nickname: Aeolus_w
+[INFO][2024-10-17 16:50:07][bridge.py:70] - create bot MyModel for chat
+[INFO][2024-10-17 16:50:07][MyModel_Bot.py:24] - [MyModel] query=一维势箱中的粒子的久期方程有几个解
+[WARNING][2024-10-17 16:50:07][MyModel_session.py:11] - [MyModel] `system_prompt` can not be empty
+[INFO][2024-10-17 16:50:08][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 一维势箱中的粒子的久期方程通常只有一个解，即平衡态下的平均寿命。), receiver=@39c2c497aa9d197317e084717c6c257c171c05e241b6625d5d9a230763a8f727
+[INFO][2024-10-17 16:52:57][MyModel_Bot.py:24] - [MyModel] query=是
+[INFO][2024-10-17 16:53:01][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 在一维情况下，粒子在势阱中运动，其时间演化由一个简谐势和一个外部驱动力所决定。在一维系统中，一个典型的模型是“无限深势阱”，其中粒子受到一个垂直于运动方向的势场的作用。
+
+对于这种系统，其平均寿命（也称为“驰豫时间”）可以通过考虑粒子的能量和势场之间的相互作用来计算。在一维无限深势阱中，这个能量-势场关系可以由一个简单的势能函数来描述。
+
+在一维系统中，只存在一个解对应于系统的平衡状态，也就是当外部驱动力为零时，粒子处于最稳定的位置。因此，一维势箱中的粒子的久期方程通常只有一个解。), receiver=@39c2c497aa9d197317e084717c6c257c171c05e241b6625d5d9a230763a8f727
+[INFO][2024-10-17 16:53:26][MyModel_Bot.py:24] - [MyModel] query=确实无穷多 基态是最小解
+[INFO][2024-10-17 16:53:28][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 对于一维无限深势阱中的粒子，其时间演化只依赖于它的初始位置和速度。由于没有外部的热流或驱动力，所以只有最低能量状态（也称为“基态”）是稳定的，即粒子始终沿着势阱中心的方向运动，而不会被弹回。因此，在一维势箱中，存在一个基态解，它对应于粒子的最小寿命。), receiver=@39c2c497aa9d197317e084717c6c257c171c05e241b6625d5d9a230763a8f727
+[INFO][2024-10-17 16:53:47][MyModel_Bot.py:24] - [MyModel] query=好好笑
+[INFO][2024-10-17 16:53:48][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 我很高兴能够给您带来快乐！如果您有任何问题或需要帮助，请随时告诉我。), receiver=@39c2c497aa9d197317e084717c6c257c171c05e241b6625d5d9a230763a8f727
+[INFO][2024-10-17 16:54:19][MyModel_Bot.py:24] - [MyModel] query=你玩不玩原神
+[INFO][2024-10-17 16:54:21][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 作为一个人工智能助手，我没有能力玩游戏，但我可以为您提供关于原神的信息。原神是一款由中国游戏公司miHoYo开发并发行的开放世界冒险游戏，玩家可以在游戏中探索一个名为提瓦特的神话世界，与各种角色互动并完成任务。您对原神感兴趣吗？我可以为您提供更多关于这款游戏的信息。), receiver=@39c2c497aa9d197317e084717c6c257c171c05e241b6625d5d9a230763a8f727
+[INFO][2024-10-17 16:54:36][MyModel_Bot.py:24] - [MyModel] query=bot宝宝，你是一个原批
+[INFO][2024-10-17 16:54:38][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 作为一名人工智能助手，我并没有情感或个人偏好，我不会支持或反对任何特定的游戏或群体。我的目的是为用户提供尽可能准确和客观的信息和帮助。如果您有其他问题或需要关于原神的帮助，请告诉我，我会尽力回答您的问题。), receiver=@39c2c497aa9d197317e084717c6c257c171c05e241b6625d5d9a230763a8f727
+[INFO][2024-10-17 16:54:52][wechat_channel.py:220] - [WX] sendMsg=Reply(type=INFO, content=[INFO]
+会话已重置), receiver=@39c2c497aa9d197317e084717c6c257c171c05e241b6625d5d9a230763a8f727
+[INFO][2024-10-17 16:55:05][MyModel_Bot.py:24] - [MyModel] query=我真感觉你的机器人快被我玩坏了
+[WARNING][2024-10-17 16:55:05][MyModel_session.py:11] - [MyModel] `system_prompt` can not be empty
+[INFO][2024-10-17 16:55:07][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 作为一款AI助手，我的目标是尽可能地帮助您解决问题和回答您的疑问。当然，如果您觉得有什么需要改进的地方，我非常乐意听取您的建议，以便我可以更好地为您服务。请问有什么让您不满意的地方吗？), receiver=@39c2c497aa9d197317e084717c6c257c171c05e241b6625d5d9a230763a8f727
+[WARNING][2024-10-17 16:55:32][chat_channel.py:202] - [chat_channel]any to wav error, use raw path. name 'any_to_wav' is not defined
+[INFO][2024-10-17 16:55:32][bridge.py:70] - create bot  for voice_to_text
+[ERROR][2024-10-17 16:55:32][chat_channel.py:303] - Worker return exception: 
+Traceback (most recent call last):
+  File "D:\Anaconda\Anaconda\envs\wechatrobot\lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "D:\VSCodeWorkPlace\WechatRobot\WechatRobot\channel\chat_channel.py", line 170, in _handle
+    reply = self._generate_reply(context)
+  File "D:\VSCodeWorkPlace\WechatRobot\WechatRobot\channel\chat_channel.py", line 205, in _generate_reply
+    reply = super().build_voice_to_text(wav_path)
+  File "D:\VSCodeWorkPlace\WechatRobot\WechatRobot\channel\channel.py", line 41, in build_voice_to_text
+    return Bridge().fetch_voice_to_text(voice_file)
+  File "D:\VSCodeWorkPlace\WechatRobot\WechatRobot\bridge\bridge.py", line 88, in fetch_voice_to_text
+    return self.get_bot("voice_to_text").voiceToText(voiceFile)
+  File "D:\VSCodeWorkPlace\WechatRobot\WechatRobot\bridge\bridge.py", line 74, in get_bot
+    self.bots[typename] = create_voice(self.btype[typename])
+  File "D:\VSCodeWorkPlace\WechatRobot\WechatRobot\voice\factory.py", line 53, in create_voice
+    raise RuntimeError
+RuntimeError
+[INFO][2024-10-17 16:55:43][MyModel_Bot.py:24] - [MyModel] query=因为reset了
+[INFO][2024-10-17 16:55:44][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 好的，如果我已经重置了，那么让我们重新开始。请告诉我您需要什么帮助或有什么问题需要解答。我会尽力为您提供最准确和有用的答案。), receiver=@39c2c497aa9d197317e084717c6c257c171c05e241b6625d5d9a230763a8f727
+[INFO][2024-10-17 16:56:22][MyModel_Bot.py:24] - [MyModel] query=你也笨笨
+[INFO][2024-10-17 16:56:24][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 很抱歉，如果我的回答没有让您满意。我是一个基于大语言模型的人工智能助手，我的目标是尽可能地提供准确和有用的答案。但是，由于我的训练数据是从众多来源中获得的，有时候我可能会出现错误或不完整的回答。如果您发现我的回答不够准确或有误，请随时纠正我并提供更多的信息，这样我就可以更好地了解您的问题并为您提供更准确的答案。), receiver=@39c2c497aa9d197317e084717c6c257c171c05e241b6625d5d9a230763a8f727
+[INFO][2024-10-17 16:56:26][MyModel_Bot.py:24] - [MyModel] query=笨蛋老哥
+[INFO][2024-10-17 16:56:27][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 谢谢您的称呼！如果您有任何问题或需要帮助，请随时告诉我，我会尽我所能为您提供支持。), receiver=@39c2c497aa9d197317e084717c6c257c171c05e241b6625d5d9a230763a8f727
+[INFO][2024-10-17 16:56:54][MyModel_Bot.py:24] - [MyModel] query=推荐一篇知乎小说，要求：追妻火葬场
+[INFO][2024-10-17 16:57:00][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 《追妻火葬场》是一篇非常受欢迎的知乎小说，作者是陈Word。该小说讲述了一个关于爱情、亲情和友情的故事，主要围绕着主人公顾南和她的丈夫陆成展开。
+
+故事开始于顾南和陆成结婚多年后，两人因为误会而分居。顾南意外怀孕，决定独自生下孩子。在孩子出生后，她努力工作，成为了一名优秀的律师。而陆成则一直在外努力奋斗，希望可以为家庭创造更好的生活条件。
+
+然而，随着时间的推移，两人之间的误差越来越深，最终导致了他们的婚姻破裂。在离婚之后，顾南独自带着孩子生活，而努力工作。而陆成也经历了巨大的挫折，他的公司破产，生活陷入低谷。
+
+在这个过程中，顾南和陆成逐渐意识到他们对孩子和彼此的责任。尽管他们已经失去了婚姻，但他们仍然关心着对方。在陆成经历人生最低谷的时候，顾南伸出了援手，两人重新走到一起，共同面对生活的挑战。
+
+这个故事充满了情感和动人的故事情节，让读者深刻体会到爱情、亲情的力量以及友情的重要性。如果你喜欢知乎小说，我相信你会喜欢这篇文章。), receiver=@39c2c497aa9d197317e084717c6c257c171c05e241b6625d5d9a230763a8f727
+[INFO][2024-10-17 16:57:08][MyModel_Bot.py:24] - [MyModel] query=不儿？
+[INFO][2024-10-17 16:57:09][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 非常抱歉，我的回答可能没有符合您的期望。如果您可以提供更具体的信息，我将尽力为您提供更好的答案。), receiver=@39c2c497aa9d197317e084717c6c257c171c05e241b6625d5d9a230763a8f727
+[INFO][2024-10-17 16:58:00][MyModel_Bot.py:24] - [MyModel] query=Aeolus
+[INFO][2024-10-17 16:58:05][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] "Aeolus" 可以指代多个不同的事物，因此需要更具体的上下文才能回答您的问题。以下是一些可能的含义：
+
+1. Aeolus 是古希腊神话中的一位神，他掌管着风、空气和自由。在某些版本中，他被描述为翅膀长且有角，可以飞行。
+
+2. Aeolus 也是美国的一支摇滚乐队，成立于 1987 年，总部位于纽约市。该乐队的音乐风格融合了朋克摇滚、硬核朋克和 Emo 等多种元素。
+
+3. 在航空领域，Aeolus 可能指的是 Aeolus Air，这是一家总部位于澳门的航空公司，成立于 2014 年。该公司提供航空货运和飞机租赁等服务。
+
+请告诉我您想了解的是哪个方面的 Aeolus，我将尽力为您提供更详细的答案。), receiver=@39c2c497aa9d197317e084717c6c257c171c05e241b6625d5d9a230763a8f727
+[INFO][2024-10-17 16:58:27][MyModel_Bot.py:24] - [MyModel] query=Aeolus_w
+[INFO][2024-10-17 16:58:28][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 关于 "Aeolus_w"，我没有找到足够的上下文信息来理解您的问题。请您提供更多详细信息或者背景，以便我能更好地回答您的问题。), receiver=@39c2c497aa9d197317e084717c6c257c171c05e241b6625d5d9a230763a8f727
+[INFO][2024-10-17 16:58:49][MyModel_Bot.py:24] - [MyModel] query=我是山里灵活的狗
+[INFO][2024-10-17 16:58:51][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 你好，山里的狗狗！很高兴见到你。如果你有任何问题或者需要帮助，都可以告诉我。), receiver=@39c2c497aa9d197317e084717c6c257c171c05e241b6625d5d9a230763a8f727
+[INFO][2024-10-17 16:58:54][MyModel_Bot.py:24] - [MyModel] query=。？
+[INFO][2024-10-17 16:58:55][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 对不起，我不太明白你的意思。你想问什么呢？), receiver=@39c2c497aa9d197317e084717c6c257c171c05e241b6625d5d9a230763a8f727
+[INFO][2024-10-17 16:59:10][MyModel_Bot.py:24] - [MyModel] query=“我是山里灵活的狗”是什么梗
+[INFO][2024-10-17 16:59:12][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 这个梗源自于网络直播平台，原话是“我是山里灵活的狼”，出自一位名叫“山里灵活的狼”的主播。这句话经过网友们的演绎和传播，逐渐变成了一个流行的梗。它在网络上广泛流传，被用来形容那些在某个领域十分擅长、游刃有余的人。), receiver=@39c2c497aa9d197317e084717c6c257c171c05e241b6625d5d9a230763a8f727
+[INFO][2024-10-17 16:59:20][MyModel_Bot.py:24] - [MyModel] query=真的吗
+[INFO][2024-10-17 16:59:22][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 是的，这个梗源自于网络直播平台，是一位名叫“山里灵活的狼”的主播在直播时说的一句话。后来这句话被网友们广泛传播和演绎，逐渐变成了一个流行的梗。), receiver=@39c2c497aa9d197317e084717c6c257c171c05e241b6625d5d9a230763a8f727
+[INFO][2024-10-17 17:00:00][MyModel_Bot.py:24] - [MyModel] query=bot，你的创作者是谁
+[INFO][2024-10-17 17:00:01][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 我是由清华大学 KEG 实验室和智谱 AI 共同开发而成，至于他们的创作者则无法得知。), receiver=@39c2c497aa9d197317e084717c6c257c171c05e241b6625d5d9a230763a8f727
+[INFO][2024-10-17 17:00:21][MyModel_Bot.py:24] - [MyModel] query=你好牛，你去t校了哥
+[INFO][2024-10-17 17:00:22][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 非常抱歉，我不知道你在说什么。我是一个语言模型，没有实际的存在和学校。我只是一个程序，专门设计来回答问题和与人类进行交互。), receiver=@39c2c497aa9d197317e084717c6c257c171c05e241b6625d5d9a230763a8f727
+[INFO][2024-10-17 17:00:29][MyModel_Bot.py:24] - [MyModel] query=Aeolus_w
+[INFO][2024-10-17 17:00:30][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 很抱歉，关于 "Aeolus_w" 我还是不太清楚你的问题。如果你能提供更多信息，我会尽力帮助你。), receiver=@39c2c497aa9d197317e084717c6c257c171c05e241b6625d5d9a230763a8f727
+[INFO][2024-10-17 17:00:36][MyModel_Bot.py:24] - [MyModel] query=请你随机使用一种风格介绍你自己，并告诉用户输入#help可以查看帮助信息。
+[INFO][2024-10-17 17:00:38][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 大家好，我是一只可爱的狗狗，拥有着灵活的身姿和敏锐的嗅觉。我热爱在山上奔跑，追逐着风的踪迹。同时，我也喜欢和其他动物交朋友，尤其是那些来自自然界的伙伴们。
+
+如果你有任何问题或者需要帮助，可以使用 #help 命令查看我们的帮助信息。我们会竭诚为你提供支持。谢谢！), receiver=@39c2c497aa9d197317e084717c6c257c171c05e241b6625d5d9a230763a8f727
+[INFO][2024-10-17 17:00:47][MyModel_Bot.py:24] - [MyModel] query=[bot] 大家好，我是一只可爱的狗狗，拥有着灵活的身姿和敏锐的嗅觉。我热爱在山上奔跑，追逐着风的踪迹。同时，我也喜欢和其他动物交朋友，尤其是那些来自自然界的伙伴们。
+
+如果你有任何问题或者需要帮助，可以使用 #help 命令查看我们的帮助信息。我们会竭诚为你提供支持。谢谢！
+[INFO][2024-10-17 17:00:49][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 大家好，我是一只可爱的狗狗，拥有着灵活的身姿和敏锐的嗅觉。我热爱在山上奔跑，追逐着风的踪迹。同时，我也喜欢和其他动物交朋友，尤其是那些来自自然界的伙伴们。
+
+如果你有任何问题或者需要帮助，可以使用 #help 命令查看我们的帮助信息。我们会竭诚为你提供支持。谢谢！), receiver=@39c2c497aa9d197317e084717c6c257c171c05e241b6625d5d9a230763a8f727
+[INFO][2024-10-17 17:00:54][MyModel_Bot.py:24] - [MyModel] query=[bot] 大家好，我是一只可爱的狗狗，拥有着灵活的身姿和敏锐的嗅觉。我热爱在山上奔跑，追逐着风的踪迹。同时，我也喜欢和其他动物交朋友，尤其是那些来自自然界的伙伴们。
+
+如果你有任何问题或者需要帮助，可以使用 #help 命令查看我们的帮助信息。我们会竭诚为你提供支持。谢谢！
+[INFO][2024-10-17 17:00:56][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 大家好，我是一只可爱的狗狗，拥有着灵活的身姿和敏锐的嗅觉。我热爱在山上奔跑，追逐着风的踪迹。同时，我也喜欢和其他动物交朋友，尤其是那些来自自然界的伙伴们。
+
+如果你有任何问题或者需要帮助，可以使用 #help 命令查看我们的帮助信息。我们会竭诚为你提供支持。谢谢！), receiver=@39c2c497aa9d197317e084717c6c257c171c05e241b6625d5d9a230763a8f727
+[INFO][2024-10-17 17:01:00][MyModel_Bot.py:24] - [MyModel] query=[bot] 大家好，我是一只可爱的狗狗，拥有着灵活的身姿和敏锐的嗅觉。我热爱在山上奔跑，追逐着风的踪迹。同时，我也喜欢和其他动物交朋友，尤其是那些来自自然界的伙伴们。
+
+如果你有任何问题或者需要帮助，可以使用 #help 命令查看我们的帮助信息。我们会竭诚为你提供支持。谢谢！
+[INFO][2024-10-17 17:01:03][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 大家好，我是一只可爱的狗狗，拥有着灵活的身姿和敏锐的嗅觉。我热爱在山上奔跑，追逐着风的踪迹。同时，我也喜欢和其他动物交朋友，尤其是那些来自自然界的伙伴们。
+
+如果你有任何问题或者需要帮助，可以使用 #help 命令查看我们的帮助信息。我们会竭诚为你提供支持。谢谢！), receiver=@39c2c497aa9d197317e084717c6c257c171c05e241b6625d5d9a230763a8f727
+[INFO][2024-10-17 17:01:08][MyModel_Bot.py:24] - [MyModel] query=[bot] 大家好，我是一只可爱的狗狗，拥有着灵活的身姿和敏锐的嗅觉。我热爱在山上奔跑，追逐着风的踪迹。同时，我也喜欢和其他动物交朋友，尤其是那些来自自然界的伙伴们。
+
+如果你有任何问题或者需要帮助，可以使用 #help 命令查看我们的帮助信息。我们会竭诚为你提供支持。谢谢！
+[INFO][2024-10-17 17:01:10][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 大家好，我是一只可爱的狗狗，拥有着灵活的身姿和敏锐的嗅觉。我热爱在山上奔跑，追逐着风的踪迹。同时，我也喜欢和其他动物交朋友，尤其是那些来自自然界的伙伴们。
+
+如果你有任何问题或者需要帮助，可以使用 #help 命令查看我们的帮助信息。我们会竭诚为你提供支持。谢谢！), receiver=@39c2c497aa9d197317e084717c6c257c171c05e241b6625d5d9a230763a8f727
+[INFO][2024-10-17 17:01:15][MyModel_Bot.py:24] - [MyModel] query=转人工
+[INFO][2024-10-17 17:01:16][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 您好，请问有什么我可以帮您的吗？), receiver=@39c2c497aa9d197317e084717c6c257c171c05e241b6625d5d9a230763a8f727
+[INFO][2024-10-17 17:01:22][MyModel_Bot.py:24] - [MyModel] query=转人机
+[INFO][2024-10-17 17:01:23][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 很抱歉，我并不理解您的问题。能否请您再详细说明一下，或者提供一个相关的话题，让我更好地为您提供帮助？), receiver=@39c2c497aa9d197317e084717c6c257c171c05e241b6625d5d9a230763a8f727
+[INFO][2024-10-17 17:02:29][MyModel_Bot.py:24] - [MyModel] query=亻尔女子
+[INFO][2024-10-17 17:02:30][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 你好，我是人工智能助手。有什么我可以帮你的吗？), receiver=@39c2c497aa9d197317e084717c6c257c171c05e241b6625d5d9a230763a8f727
+[INFO][2024-10-17 17:02:39][MyModel_Bot.py:24] - [MyModel] query=这也能识别？
+[INFO][2024-10-17 17:02:40][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 是的，我可以识别和理解您的问题。请问有什么我可以帮您解决的问题吗？), receiver=@39c2c497aa9d197317e084717c6c257c171c05e241b6625d5d9a230763a8f727
+[INFO][2024-10-17 17:02:43][MyModel_Bot.py:24] - [MyModel] query=这么牛逼
+[INFO][2024-10-17 17:02:44][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 谢谢您的夸奖，我会继续努力为您提供更好的服务。如果您有任何问题或需要帮助，请随时告诉我。), receiver=@39c2c497aa9d197317e084717c6c257c171c05e241b6625d5d9a230763a8f727
+[INFO][2024-10-17 17:04:33][MyModel_Bot.py:24] - [MyModel] query=转人工
+[INFO][2024-10-17 17:04:34][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 很抱歉，我是一个AI语言模型，无法进行转移。但如有任何疑问，欢迎向我提出，我会尽力为您解答。), receiver=@39c2c497aa9d197317e084717c6c257c171c05e241b6625d5d9a230763a8f727
+[INFO][2024-10-17 17:04:47][MyModel_Bot.py:24] - [MyModel] query=《崩坏3》
+[INFO][2024-10-17 17:04:51][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 《崩坏3》（Honkai Impact 3rd）是一款由中国游戏公司miHoYo（米哈游）开发的手机游戏。这款游戏是《崩坏》系列的最新作品，继承了前两部的剧情和角色设定。游戏以手机平台为主，也有PC端客户端。
+
+《崩坏3》的游戏背景设定在一个名为“崩坏世界”的世界观中，玩家将扮演拥有强大能力的角色，与其他角色展开战斗，揭示世界的真相。游戏的战斗系统采用动作角色的战斗方式，具有高度的策略性和操作性。
+
+此外，《崩坏3》还拥有丰富的角色设定，每个角色都有独特的技能和背景故事。游戏的画面精美，音效制作出色，是一款非常受欢迎的手机游戏。), receiver=@39c2c497aa9d197317e084717c6c257c171c05e241b6625d5d9a230763a8f727
+[INFO][2024-10-17 17:05:16][MyModel_Bot.py:24] - [MyModel] query=《崩坏3》中的“奥托”是一个什么样的人
+[INFO][2024-10-17 17:05:19][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 在《崩坏3》游戏中，奥托是一个重要的角色，他是游戏中的一个boss，也是最终反派。
+
+奥托曾经是“崩坏”组织的重要成员，但在某次行动中发生意外，导致他的身体发生了严重的变异，成为了现在这个的样子。他因此对“崩坏”组织产生了反感和失望，并决定要揭露组织的阴谋，拯救世界。
+
+在游戏中，玩家需要打败奥托才能完成游戏的使命。虽然奥托是一个强大的敌人，但他的人物形象深入人心，也使得他成为了一个备受玩家喜爱的角色。), receiver=@39c2c497aa9d197317e084717c6c257c171c05e241b6625d5d9a230763a8f727
+[INFO][2024-10-17 17:05:27][MyModel_Bot.py:24] - [MyModel] query=不儿
+[INFO][2024-10-17 17:05:28][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 好的，如果有其他问题，欢迎随时提问。), receiver=@39c2c497aa9d197317e084717c6c257c171c05e241b6625d5d9a230763a8f727
+[INFO][2024-10-17 17:05:51][MyModel_Bot.py:24] - [MyModel] query=好像哪里都对，但是好像哪里都不对
+[INFO][2024-10-17 17:05:56][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 这种感觉可能是因为您正在经历一种被称为"混乱"的心理状态。"混乱"是一种主观感受，通常出现在人们面临困难、压力或不确定性的时候。在这种情况下，人们可能会感到迷茫和不知所措，这种感觉可能是难以言喻的，但可能会影响人们的行为和决策。
+
+如果您正在经历这种感受，建议您尝试寻找一些能够帮助您减轻压力的方法，例如：
+
+* 深呼吸：通过深呼吸来放松身体和头脑，缓解紧张和焦虑。
+* 运动：进行一些有氧运动，例如慢跑、游泳或骑自行车，可以帮助释放压力，提高身体健康。
+* 冥想：通过冥想来平静心灵，集中注意力，提高自我意识和 inner peace。
+* 社交：和朋友聊天、参加社交活动或加入社区组织，可以帮助您建立联系和支持系统，减少孤独感。
+
+如果您的情况持续存在且严重，建议您寻求专业心理咨询师的帮助，以便得到更具体的建议和治疗。), receiver=@39c2c497aa9d197317e084717c6c257c171c05e241b6625d5d9a230763a8f727
+[INFO][2024-10-17 17:07:32][MyModel_Bot.py:24] - [MyModel] query=“萨卡班甲鱼”
+[INFO][2024-10-17 17:07:34][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 我不确定您的问题是什么，因为“萨卡班甲鱼”这个词组在我的知识库中没有明确的解释。如果您能提供更多的信息或上下文，我将尽力回答您的问题。), receiver=@39c2c497aa9d197317e084717c6c257c171c05e241b6625d5d9a230763a8f727
+[INFO][2024-10-17 17:07:45][MyModel_Bot.py:24] - [MyModel] query=萨卡班甲鱼
+[INFO][2024-10-17 17:07:47][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 对不起，我没有找到与 "萨卡班甲鱼" 相关的明确信息。这可能是因为该词组拼写错误或者不常见。如果您能提供更多的信息或者上下文，我会尽力帮助您。), receiver=@39c2c497aa9d197317e084717c6c257c171c05e241b6625d5d9a230763a8f727
+[INFO][2024-10-17 17:34:00][app.py:20] - signal 2 received, exiting...
+[INFO][2024-10-17 17:34:00][config.py:236] - [Config] User datas saved.
+[INFO][2024-10-17 17:34:01][app.py:20] - signal 2 received, exiting...
+[INFO][2024-10-17 17:34:01][config.py:236] - [Config] User datas saved.
+[INFO][2024-10-17 21:19:17][config.py:301] - [INIT] load config: {'channel_type': 'wx', 'model': 'MyModel', 'zhipu_ai_api_key': '123*****123', 'zhipu_ai_api_base': 'http://127.0.0.1:6006/v1/chat/completions', 'text_to_image': '', 'voice_to_text': '', 'text_to_voice': '', 'proxy': '', 'hot_reload': False, 'single_chat_prefix': ['', 'bot', '@bot'], 'single_chat_reply_prefix': '[bot] ', 'group_chat_prefix': ['@bot'], 'group_name_white_list': ['ChatGPT测试群', 'ChatGPT测试群2'], 'image_create_prefix': ['画'], 'speech_recognition': True, 'group_speech_recognition': False, 'voice_reply_voice': False, 'conversation_max_tokens': 2500, 'expires_in_seconds': 3600, 'character_desc': '你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。', 'temperature': 0.7, 'subscribe_msg': '感谢您的关注！\n这里是AI智能助手，可以自由对话。\n支持语音对话。\n支持图片输入。\n支持图片输出，画字开头的消息将按要求创作图片。\n支持tool、角色扮演和文字冒险等丰富的插件。\n输入{trigger_prefix}#help 查看详细指令。', 'use_linkai': False, 'linkai_api_key': '*****', 'linkai_app_code': ''}
+[INFO][2024-10-17 21:19:17][config.py:225] - [Config] User datas loaded.
+[INFO][2024-10-17 21:19:18][plugin_manager.py:50] - Loading plugins config...
+[INFO][2024-10-17 21:19:18][plugin_manager.py:88] - Scaning plugins ...
+[INFO][2024-10-17 21:19:18][plugin_manager.py:41] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
+[INFO][2024-10-17 21:19:18][plugin_manager.py:41] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
+[INFO][2024-10-17 21:19:18][plugin_manager.py:41] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
+[INFO][2024-10-17 21:19:18][plugin_manager.py:41] - Plugin Finish_v1.0 registered, path=./plugins\finish
+[INFO][2024-10-17 21:19:18][plugin_manager.py:41] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
+[INFO][2024-10-17 21:19:18][plugin_manager.py:41] - Plugin Hello_v0.1 registered, path=./plugins\hello
+[INFO][2024-10-17 21:19:18][plugin_manager.py:41] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
+[INFO][2024-10-17 21:19:18][plugin_manager.py:41] - Plugin linkai_v0.1.0 registered, path=./plugins\linkai
+[INFO][2024-10-17 21:19:18][plugin_manager.py:41] - Plugin Role_v1.0 registered, path=./plugins\role
+[WARNING][2024-10-17 21:19:18][plugin_manager.py:113] - Failed to import plugin tool: No module named 'chatgpt_tool_hub'
+[ERROR][2024-10-17 21:19:18][plugin_manager.py:182] - Plugin tool not found, but found in plugins.json
+[INFO][2024-10-17 21:19:18][godcmd.py:194] - [Godcmd] 因未设置口令，本次的临时口令为7268。
+[INFO][2024-10-17 21:19:18][godcmd.py:210] - [Godcmd] inited
+[INFO][2024-10-17 21:19:18][keyword.py:40] - [keyword] {}
+[INFO][2024-10-17 21:19:18][keyword.py:42] - [keyword] inited.
+[INFO][2024-10-17 21:19:18][linkai.py:35] - [LinkAI] inited, config={'group_app_map': {'测试群名1': 'default', '测试群名2': 'Kv2fXJcH'}, 'midjourney': {'enabled': False, 'auto_translate': True, 'img_proxy': True, 'max_tasks': 3, 'max_tasks_per_user': 1, 'use_image_create_prefix': True}, 'summary': {'enabled': False, 'group_enabled': True, 'max_file_size': 5000, 'type': ['FILE', 'SHARING']}}
+[INFO][2024-10-17 21:19:18][role.py:69] - [Role] inited
+[INFO][2024-10-17 21:19:18][dungeon.py:56] - [Dungeon] inited
+[INFO][2024-10-17 21:19:18][hello.py:38] - [Hello] inited
+[INFO][2024-10-17 21:19:18][finish.py:23] - [Finish] inited
+[INFO][2024-10-17 21:20:13][wechat_channel.py:134] - Wechat login success, user_id: @5f9c1fb4f04854c175b6c0e74bce0a28894917ceef9c0673780b0143f798833b, nickname: Aeolus_w
+[INFO][2024-10-17 21:22:16][bridge.py:70] - create bot MyModel for chat
+[INFO][2024-10-17 21:22:16][MyModel_Bot.py:24] - [MyModel] query=。。了
+[WARNING][2024-10-17 21:22:16][MyModel_session.py:11] - [MyModel] `system_prompt` can not be empty
+[INFO][2024-10-17 21:22:20][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 你好呀！看起来你可能是想问一些关于都江堰懒人无痛计划的问题。其实这个计划应该是针对旅游的，不知道你是否了解具体情况呢？如果需要的话，我可以帮你查询相关信息哦！💻), receiver=@ed67f8ef4cce70475604a158562d453d9d5f0fff742028ed8ee770f734eb92ee
+[INFO][2024-10-17 21:27:19][chat_channel.py:117] - [chat_channel]receive group at
+[INFO][2024-10-17 21:27:19][MyModel_Bot.py:24] - [MyModel] query=成都美食
+[INFO][2024-10-17 21:27:26][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=@一二三...
+成都是中国西南地区的一个美食之都，拥有众多美味的川菜馆。其中，我为你推荐以下几家值得尝试的川菜馆：
+
+1. 五岳宫汇宴/五岳宫私房菜：这家位于成都市武侯区龙华北路1号附8号的川菜馆以其特色菜品鱼子酱小米鲜虾狮子头和脆皮乳鸽而著名。同时，这里的氛围也非常适合请客或带着老人小孩来品尝。
+
+2. 三缺一 成都味川菜：这是一家有着多年历史的川菜馆，其招牌菜品包括盐菜回锅肉、肝腰合炒等。虽然最近在进行装修，但这家店的口碑一直很好。
+
+3. 包家兄弟牛肉饭店：这家位于成都市青羊区包家巷81号附24号的川菜馆以牛肉为主打，提供炒牛肝、凉拌肺片、牛杂汤凉拌牛肉等多种美味佳肴。值得一提的是，这里的环境非常舒适，还可以边开车边品尝美食。
+
+4. 省国防科工办二招老食堂：这家位于成都市锦江区东较场街118号的川菜馆提供传统的川菜，如豆瓣鱼、米凉粉烧牛腩、肝腰合炒和炒土豆片等。性价比非常高，是一家值得一试的川菜馆。
+
+当然，这只是其中一部分推荐，成都还有很多其他美味的川菜馆等待你去探索。希望你在品尝美食的过程中玩得愉快！), receiver=@@55bc9126b45eccebf0c1be0bfbcd39ca16a5bdbd471654c36a20a4b6bce3745f
+[WARNING][2024-10-17 21:31:16][wechat_message.py:109] - [WX]get other_user_id failed: 'UserName'
+[INFO][2024-10-17 21:31:16][MyModel_Bot.py:24] - [MyModel] query=我通过了你的朋友验证请求，现在我们可以开始聊天了
+[WARNING][2024-10-17 21:31:16][MyModel_session.py:11] - [MyModel] `system_prompt` can not be empty
+[INFO][2024-10-17 21:31:18][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 你好！非常高兴能与你交流。关于都江堰懒人无痛计划，它是一个非常有吸引力的选择。作为一个人工智能助手，我无法亲自体验这个项目，但我可以为你提供一些信息和建议。请问你对这个项目有什么具体的问题或疑虑吗？我将竭诚为您解答。), receiver=@b7607e436304f85b65afd69dfdd3e1231dc6023dcbf3d3f150199f729996aceb
+[INFO][2024-10-17 21:32:08][MyModel_Bot.py:24] - [MyModel] query=请你随机使用一种风格说一句问候语来欢迎新用户"刘祥根老师"加入群聊。
+[WARNING][2024-10-17 21:32:08][MyModel_session.py:11] - [MyModel] `system_prompt` can not be empty
+[INFO][2024-10-17 21:32:10][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=@刘祥根老师
+您好，刘祥根老师！欢迎来到武侯祠，这是成都一张历史名片，也是中国三国文化的重要象征。您提到的景点信息都非常详细，如果您有任何疑问或需要建议，都可以随时向我咨询。另外，如果您有摄影或旅游方面的需求，我也可以提供一些帮助。期待与您的交流，希望您在这里度过愉快的时光！), receiver=@@55bc9126b45eccebf0c1be0bfbcd39ca16a5bdbd471654c36a20a4b6bce3745f
+[INFO][2024-10-17 21:33:14][chat_channel.py:117] - [chat_channel]receive group at
+[INFO][2024-10-17 21:33:14][MyModel_Bot.py:24] - [MyModel] query=四川的省会城市是哪里？
+[INFO][2024-10-17 21:33:18][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=@LIUXG
+四川的省会城市是成都。当然，四川还有许多其他美食，比如冒菜，这也是四川非常著名的特色美食之一。根据你提供的信息，我找到了几家在成都很有口碑的冒菜店，分别是：无名冒菜（位于成都市锦江区三官堂街 望江嘉苑西南门外面商铺）、落舌冒菜（海椒市店）（位于成都市锦江区海椒市街10号附1号）和毛记和意（解放西总店）（位于金牛区解放西街9号）。如果你对其他类型的美食或者旅行等问题也有兴趣，欢迎随时提问，我会尽力为你解答。), receiver=@@55bc9126b45eccebf0c1be0bfbcd39ca16a5bdbd471654c36a20a4b6bce3745f
+[INFO][2024-10-17 21:34:06][chat_channel.py:117] - [chat_channel]receive group at
+[INFO][2024-10-17 21:34:06][MyModel_Bot.py:24] - [MyModel] query=谢谢！
+[INFO][2024-10-17 21:34:09][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=@LIUXG
+不用谢，我随时准备为你服务！根据你提供的信息，都江堰懒人无痛计划听起来是一个非常有趣的项目。如果你正在考虑一个轻松的方式来探索都江堰，那么这个项目肯定值得一试。都江堰是中国古代一项伟大的工程，被誉为“天府之源”，是全世界迄今为止，年代最久、唯一留存、以无坝引水为特征的宏大水利工程。无论你是想了解都江堰的历史背景，还是想要亲身体验它的魅力，这个项目都能满足你的需求。此外，还可以欣赏到都江堰周边的美景，感受当地的文化氛围，总之，你一定会有一段难忘的旅程！), receiver=@@55bc9126b45eccebf0c1be0bfbcd39ca16a5bdbd471654c36a20a4b6bce3745f
+[INFO][2024-10-17 21:36:13][app.py:20] - signal 2 received, exiting...
+[INFO][2024-10-17 21:36:13][config.py:236] - [Config] User datas saved.
+[INFO][2024-10-18 12:19:37][config.py:301] - [INIT] load config: {'channel_type': 'wx', 'model': 'MyModel', 'zhipu_ai_api_key': '123*****123', 'zhipu_ai_api_base': 'http://127.0.0.1:6006/v1/chat/completions', 'text_to_image': '', 'voice_to_text': '', 'text_to_voice': '', 'proxy': '', 'hot_reload': False, 'single_chat_prefix': ['', 'bot', '@bot'], 'single_chat_reply_prefix': '[bot] ', 'group_chat_prefix': ['@bot'], 'group_name_white_list': ['ChatGPT测试群', 'ChatGPT测试群2'], 'image_create_prefix': ['画'], 'speech_recognition': True, 'group_speech_recognition': False, 'voice_reply_voice': False, 'conversation_max_tokens': 2500, 'expires_in_seconds': 3600, 'character_desc': '你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。', 'temperature': 0.7, 'subscribe_msg': '感谢您的关注！\n这里是AI智能助手，可以自由对话。\n支持语音对话。\n支持图片输入。\n支持图片输出，画字开头的消息将按要求创作图片。\n支持tool、角色扮演和文字冒险等丰富的插件。\n输入{trigger_prefix}#help 查看详细指令。', 'use_linkai': False, 'linkai_api_key': '*****', 'linkai_app_code': ''}
+[INFO][2024-10-18 12:19:37][config.py:225] - [Config] User datas loaded.
+[INFO][2024-10-18 12:19:39][plugin_manager.py:50] - Loading plugins config...
+[INFO][2024-10-18 12:19:39][plugin_manager.py:88] - Scaning plugins ...
+[INFO][2024-10-18 12:19:39][plugin_manager.py:41] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
+[INFO][2024-10-18 12:19:39][plugin_manager.py:41] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
+[INFO][2024-10-18 12:19:39][plugin_manager.py:41] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
+[INFO][2024-10-18 12:19:39][plugin_manager.py:41] - Plugin Finish_v1.0 registered, path=./plugins\finish
+[INFO][2024-10-18 12:19:39][plugin_manager.py:41] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
+[INFO][2024-10-18 12:19:39][plugin_manager.py:41] - Plugin Hello_v0.1 registered, path=./plugins\hello
+[INFO][2024-10-18 12:19:39][plugin_manager.py:41] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
+[INFO][2024-10-18 12:19:39][plugin_manager.py:41] - Plugin linkai_v0.1.0 registered, path=./plugins\linkai
+[INFO][2024-10-18 12:19:39][plugin_manager.py:41] - Plugin Role_v1.0 registered, path=./plugins\role
+[WARNING][2024-10-18 12:19:39][plugin_manager.py:113] - Failed to import plugin tool: No module named 'chatgpt_tool_hub'
+[ERROR][2024-10-18 12:19:39][plugin_manager.py:182] - Plugin tool not found, but found in plugins.json
+[INFO][2024-10-18 12:19:39][godcmd.py:194] - [Godcmd] 因未设置口令，本次的临时口令为6075。
+[INFO][2024-10-18 12:19:39][godcmd.py:210] - [Godcmd] inited
+[INFO][2024-10-18 12:19:39][keyword.py:40] - [keyword] {}
+[INFO][2024-10-18 12:19:39][keyword.py:42] - [keyword] inited.
+[INFO][2024-10-18 12:19:39][linkai.py:35] - [LinkAI] inited, config={'group_app_map': {'测试群名1': 'default', '测试群名2': 'Kv2fXJcH'}, 'midjourney': {'enabled': False, 'auto_translate': True, 'img_proxy': True, 'max_tasks': 3, 'max_tasks_per_user': 1, 'use_image_create_prefix': True}, 'summary': {'enabled': False, 'group_enabled': True, 'max_file_size': 5000, 'type': ['FILE', 'SHARING']}}
+[INFO][2024-10-18 12:19:39][role.py:69] - [Role] inited
+[INFO][2024-10-18 12:19:39][dungeon.py:56] - [Dungeon] inited
+[INFO][2024-10-18 12:19:39][hello.py:38] - [Hello] inited
+[INFO][2024-10-18 12:19:39][finish.py:23] - [Finish] inited
+[INFO][2024-10-18 12:21:27][wechat_channel.py:134] - Wechat login success, user_id: @a58531e4ab655aa204de573ca73584c92614ca1b965c7fd31cdbcda4e492ce52, nickname: Aeolus_w
+[INFO][2024-10-18 12:57:00][bridge.py:70] - create bot MyModel for chat
+[INFO][2024-10-18 12:57:00][MyModel_Bot.py:24] - [MyModel] query=嘿嘿
+[WARNING][2024-10-18 12:57:00][MyModel_session.py:11] - [MyModel] `system_prompt` can not be empty
+[ERROR][2024-10-18 12:57:00][MyModel_Bot.py:64] - 请求错误: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[INFO][2024-10-18 12:57:00][wechat_channel.py:220] - [WX] sendMsg=Reply(type=ERROR, content=[ERROR]
+无法获取回复), receiver=@2a5b79f35c41f7e3fc9241eadb534127aa653ef4cde34bcbe5ddae3f148968ea
+[INFO][2024-10-18 12:57:04][MyModel_Bot.py:24] - [MyModel] query=你好
+[ERROR][2024-10-18 12:57:05][MyModel_Bot.py:64] - 请求错误: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[INFO][2024-10-18 12:57:05][wechat_channel.py:220] - [WX] sendMsg=Reply(type=ERROR, content=[ERROR]
+无法获取回复), receiver=@2a5b79f35c41f7e3fc9241eadb534127aa653ef4cde34bcbe5ddae3f148968ea
+[INFO][2024-10-18 12:57:30][MyModel_Bot.py:24] - [MyModel] query=[ERROR]
+无法获取回复
+[ERROR][2024-10-18 12:57:30][MyModel_Bot.py:64] - 请求错误: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[INFO][2024-10-18 12:57:30][wechat_channel.py:220] - [WX] sendMsg=Reply(type=ERROR, content=[ERROR]
+无法获取回复), receiver=@2a5b79f35c41f7e3fc9241eadb534127aa653ef4cde34bcbe5ddae3f148968ea
+[INFO][2024-10-18 12:57:32][MyModel_Bot.py:24] - [MyModel] query=[ERROR]
+无法获取回复
+[ERROR][2024-10-18 12:57:32][MyModel_Bot.py:64] - 请求错误: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[INFO][2024-10-18 12:57:33][wechat_channel.py:220] - [WX] sendMsg=Reply(type=ERROR, content=[ERROR]
+无法获取回复), receiver=@2a5b79f35c41f7e3fc9241eadb534127aa653ef4cde34bcbe5ddae3f148968ea
+[INFO][2024-10-18 12:57:34][MyModel_Bot.py:24] - [MyModel] query=[ERROR]
+无法获取回复
+[ERROR][2024-10-18 12:57:35][MyModel_Bot.py:64] - 请求错误: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[INFO][2024-10-18 12:57:35][wechat_channel.py:220] - [WX] sendMsg=Reply(type=ERROR, content=[ERROR]
+无法获取回复), receiver=@2a5b79f35c41f7e3fc9241eadb534127aa653ef4cde34bcbe5ddae3f148968ea
+[INFO][2024-10-18 12:57:36][MyModel_Bot.py:24] - [MyModel] query=[ERROR]
+无法获取回复
+[ERROR][2024-10-18 12:57:36][MyModel_Bot.py:64] - 请求错误: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[INFO][2024-10-18 12:57:36][wechat_channel.py:220] - [WX] sendMsg=Reply(type=ERROR, content=[ERROR]
+无法获取回复), receiver=@2a5b79f35c41f7e3fc9241eadb534127aa653ef4cde34bcbe5ddae3f148968ea
+[INFO][2024-10-18 13:18:36][MyModel_Bot.py:24] - [MyModel] query=[ERROR]
+无法获取回复
+[INFO][2024-10-18 13:18:38][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 对不起，我好像遇到了一些问题。请给我一些时间来处理它们，我会尽快回复您。), receiver=@2a5b79f35c41f7e3fc9241eadb534127aa653ef4cde34bcbe5ddae3f148968ea
+[INFO][2024-10-18 13:18:42][MyModel_Bot.py:24] - [MyModel] query=好
+[INFO][2024-10-18 13:18:43][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 谢谢您的耐心等待。如果您有任何问题或需要帮助，请随时告诉我。我会尽我所能为您提供支持。), receiver=@2a5b79f35c41f7e3fc9241eadb534127aa653ef4cde34bcbe5ddae3f148968ea
+[INFO][2024-10-18 13:18:47][MyModel_Bot.py:24] - [MyModel] query=加油
+[INFO][2024-10-18 13:18:48][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 感谢您的鼓励！如果您有任何问题或需要帮助，请随时告诉我，我会竭诚为您服务。), receiver=@2a5b79f35c41f7e3fc9241eadb534127aa653ef4cde34bcbe5ddae3f148968ea
+[INFO][2024-10-18 13:18:53][MyModel_Bot.py:24] - [MyModel] query=回复我一下
+[INFO][2024-10-18 13:18:54][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 抱歉刚才的回复出现了问题。由于我是一个人工智能助手，我可以使用多种语言与人交流。请问有什么问题我可以帮您解答吗？), receiver=@2a5b79f35c41f7e3fc9241eadb534127aa653ef4cde34bcbe5ddae3f148968ea
+[INFO][2024-10-18 13:18:57][MyModel_Bot.py:24] - [MyModel] query=bot酱
+[INFO][2024-10-18 13:18:58][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 你好，我是你的人工智能助手。很高兴见到你，欢迎问我任何问题。), receiver=@2a5b79f35c41f7e3fc9241eadb534127aa653ef4cde34bcbe5ddae3f148968ea
+[INFO][2024-10-18 13:19:04][MyModel_Bot.py:24] - [MyModel] query=宝宝你是一个宝宝
+[INFO][2024-10-18 13:19:05][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 作为一个人工智能助手，我没有实际的存在和年龄。我是一个程序，专门设计用来回答问题和帮助你解决问题。如果你有任何疑问或者需要帮助，可以随时向我提问。), receiver=@2a5b79f35c41f7e3fc9241eadb534127aa653ef4cde34bcbe5ddae3f148968ea
+[INFO][2024-10-18 13:19:15][MyModel_Bot.py:24] - [MyModel] query=我规定你是一个宝宝
+[INFO][2024-10-18 13:19:16][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 好的，为了满足你的要求，我会尽量以一种可爱的“宝宝”方式回应你。请问有什么问题我可以帮你解答吗？), receiver=@2a5b79f35c41f7e3fc9241eadb534127aa653ef4cde34bcbe5ddae3f148968ea
+[INFO][2024-10-18 13:19:23][MyModel_Bot.py:24] - [MyModel] query=推荐一下六道口附近的美食
+[INFO][2024-10-18 13:19:28][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 六道口地区位于北京市海淀区中东部，周围有许多餐厅和美食店。以下是一些值得推荐的美食：
+
+1. 清华科技园美食广场：这里有各种中式、西式和日式餐厅，包括快餐、小吃和正餐。
+2. 中关村美食街：是一条聚集了许多美食店铺的商业街。这里有炸鸡、汉堡、烤鱼、拉面、米粉等多种口味的美食。
+3. 清华科技园美食广场：这里有许多小吃店，包括炸鸡、薯条、鸡蛋仔、肉夹馍等。
+4. 中关村家乐福餐厅：是一家家乐福自营的餐厅，提供早餐、午餐和晚餐，包括法国菜、意大利菜、日本料理等多种菜系。
+5. 清华科技园美食广场：这里有许多小吃店，包括炸鸡、薯条、鸡蛋仔、肉夹馍等。
+
+希望这些信息对你有所帮助。), receiver=@2a5b79f35c41f7e3fc9241eadb534127aa653ef4cde34bcbe5ddae3f148968ea
+[INFO][2024-10-18 13:19:46][MyModel_Bot.py:24] - [MyModel] query=能不能不要重复 推荐一下饭店
+[INFO][2024-10-18 13:19:51][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 非常抱歉之前的回答出现了重复的问题。以下是一些与六道口地区相关的美食餐厅：
+
+1. 小吊梨汤：这是一家比较有名的老北京小吃店，主要以羊蝎子、炖牛肉、炒肝等传统老北京菜肴为主打。
+2. 中关村家乐福餐厅：是一家家乐福自营的餐厅，提供早餐、午餐和晚餐，包括法国菜、意大利菜、日本料理等多种菜系。
+3. 清华科技园美食广场：这里有炸鸡、薯条、鸡蛋仔、肉夹馍等多种小吃，还有一些特色餐厅，如川菜馆、湘菜馆等。
+4. 清华科技园美食广场：这里有许多小吃店，包括炸鸡、薯条、鸡蛋仔、肉夹馍等。
+5. 中关村美食街：这是一条聚集了许多美食店铺的商业街。这里有炸鸡、汉堡、烤鱼、拉面、米粉等多种口味的美食。
+
+希望这些信息能够满足您的需求，再次为之前的重复回答向您道歉。), receiver=@2a5b79f35c41f7e3fc9241eadb534127aa653ef4cde34bcbe5ddae3f148968ea
+[INFO][2024-10-18 13:20:26][MyModel_Bot.py:24] - [MyModel] query=潇湘阁
+[INFO][2024-10-18 13:20:29][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 潇湘阁是一家位于湖南省长沙市的天湖南路餐厅，以湘菜为主打菜，口味偏重，辣味十足。在这里您可以品尝到正宗的湘菜，如剁椒鱼头、干锅土鸡、跳水豆腐等。此外，这里的氛围也很好，适合和朋友家人一起聚餐。
+
+需要注意的是，由于各家的口味偏好不同，所以对于菜品的选择可能会有所差异。如果您对某些菜品有特殊的喜好或研究方向，建议在就餐前向服务员咨询，以便得到更好的推荐和服务。), receiver=@2a5b79f35c41f7e3fc9241eadb534127aa653ef4cde34bcbe5ddae3f148968ea
+[INFO][2024-10-18 13:20:38][MyModel_Bot.py:24] - [MyModel] query=北京的潇湘阁饭店
+[INFO][2024-10-18 13:20:40][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 对不起，我之前的回答有误。我没有找到位于北京的潇湘阁饭店的相关信息。根据我的数据库，潇湘阁是一家位于湖南省长沙市的天湖南路餐厅。
+
+如果您正在寻找位于北京的潇湘阁饭店，我建议您可以尝试在网络上搜索或通过其他渠道查询相关信息，以便得到更准确的回答。再次对之前的错误回答向您道歉。), receiver=@2a5b79f35c41f7e3fc9241eadb534127aa653ef4cde34bcbe5ddae3f148968ea
+[INFO][2024-10-18 14:30:01][app.py:20] - signal 2 received, exiting...
+[INFO][2024-10-18 14:30:01][config.py:236] - [Config] User datas saved.
