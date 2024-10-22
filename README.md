@@ -10,3 +10,7 @@ WechatRobot， ChatGLM3-6B， RAG
 4. 作为一个“微信机器人”，哪些功能是微信独有的、需要并且可以实现的，例如表情包的生成（需要涉及图片）
 5. langchain本身的检索逻辑，目前是使用固定的数值13。可以选择优化检索的逻辑，参考https://www.aneasystone.com/archives/2024/06/advanced-rag-notes.html。
    阅读论文关注RAG目前存在的问题
+
+下一步工作：channel中的chat_channel文件中可以修改添加对于文件的处理逻辑，注意其父类和子类的关系，同时前往MyModel中进行修改代码，添加对于文件信息的处理
+      对于url信息，尝试直接在文本消息中进行提取
+      
