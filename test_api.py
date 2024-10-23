@@ -12,7 +12,7 @@ def create_ssh_tunnel(ssh_host, ssh_port, ssh_username, ssh_password, remote_bin
         local_bind_address=('127.0.0.1', local_bind_port)
     )
     tunnel.start()  # 启动隧道
-    print(f"SSH隧道已建立，正在将本地 {local_bind_port} 映射到远程 {remote_bind_address}:{remote_bind_port}")
+    print(f"SSH隧道已建立,正在将本地 {local_bind_port} 映射到远程 {remote_bind_address}:{remote_bind_port}")
     return tunnel  # 返回隧道对象
 
 # 定义测试函数，发送消息并验证回复
@@ -26,7 +26,7 @@ def test_api_reply(api_url, model_name="chatglm3-6b"):
         "messages": [
             {
                 "role": "user",
-                "content": "小王子爱玫瑰花吗"
+                "content": "开发RAG系统面临哪些问题呢?"
             }
         ],
         "temperature": 0.8,

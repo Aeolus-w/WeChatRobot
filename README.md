@@ -12,5 +12,3 @@ WechatRobot， ChatGLM3-6B， RAG
    阅读论文关注RAG目前存在的问题
 
 下一步工作：channel中的chat_channel文件中可以修改添加对于文件的处理逻辑，注意其父类和子类的关系，同时前往MyModel中进行修改代码，添加对于文件信息的处理
-      对于url信息，尝试直接在文本消息中进行提取
-      
