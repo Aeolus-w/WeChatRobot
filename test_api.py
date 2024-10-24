@@ -26,12 +26,12 @@ def test_api_reply(api_url, model_name="chatglm3-6b"):
         "messages": [
             {
                 "role": "user",
-                "content": "开发RAG系统面临哪些问题呢?"
+                "content": "RAG的改进方向有哪些？"
             }
         ],
-        "temperature": 0.8,
-        "top_p": 0.8,
-        "max_tokens": 1500,
+        "temperature": 0.95,
+        "top_p": 0.7,
+        "max_tokens": 500,
         "model": model_name
     }
 
@@ -55,7 +55,8 @@ def test_api_reply(api_url, model_name="chatglm3-6b"):
 if __name__ == "__main__":
     # 定义API的URL
     api_url = "http://127.0.0.1:6006/v1/chat/completions"
-    create_ssh_tunnel("connect.cqa1.seetacloud.com",28696,"root","Hemcuc1kuD7/","127.0.0.1",6006,6006)
+    #create_ssh_tunnel("connect.cqa1.seetacloud.com",28696,"root","Hemcuc1kuD7/","127.0.0.1",6006,6006)
+    create_ssh_tunnel("connect.cqa1.seetacloud.com",16575,"root","Hemcuc1kuD7/","127.0.0.1",6006,6006)
 
     # 调用测试函数，测试API的回复功能
     test_reply = test_api_reply(api_url)

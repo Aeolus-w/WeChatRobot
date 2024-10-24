@@ -11,13 +11,12 @@ class MyModelSession(Session):
             logger.warn("[MyModel] `system_prompt` can not be empty")
 
     def discard_exceeding(self, max_tokens, cur_tokens=None):
-        # 类似ZhipuAISession中的逻辑
         try:
             cur_tokens = self.calc_tokens()
         except Exception as e:
             logger.debug(f"Exception when counting tokens: {e}")
         while cur_tokens > max_tokens and len(self.messages) > 2:
-            self.messages.pop(1)  # 删除最早的消息
+            self.messages.pop(1)  
             cur_tokens = self.calc_tokens()
         return cur_tokens
 
