@@ -18,7 +18,6 @@ WechatRobot， ChatGLM3-6B， langchain，RAG
 
 目标：基于RWKV的在线学习问答算法
 
-
 需要写的东西
 
 - 项目内容概述
