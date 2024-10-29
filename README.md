@@ -24,9 +24,9 @@ WechatRobot， ChatGLM3-6B， langchain，RAG
 
 后续：查找关于RWKV的相关资料，RWKV是否可以生成无限长度的文本？
 
-    不是的，无限长文本是一种概念，infinite content length，指的是模型在处理序列时能够有效利用更长的上下文而不受传统Transformer模型中自注意力机制的限制。RWKV的设计目标是使其在长序列生成和理解任务中具有更好的性能。
+不是的，无限长文本是一种概念，infinite content length，指的是模型在处理序列时能够有效利用更长的上下文而不受传统Transformer模型中自注意力机制的限制。RWKV的设计目标是使其在长序列生成和理解任务中具有更好的性能。
 
-    在这之前至少要知道RNN和Transformer的相关优劣势，论文
+在这之前至少要知道RNN和Transformer的相关优劣势，论文
 
 目标：基于RWKV的在线学习问答算法（存疑）
 
