@@ -33,6 +33,7 @@ class Channel(object):
         :return:
         """
         raise NotImplementedError
+    
 
     def build_reply_content(self, query, context: Context = None) -> Reply:
         return Bridge().fetch_reply_content(query, context)
@@ -42,3 +43,6 @@ class Channel(object):
 
     def build_text_to_voice(self, text) -> Reply:
         return Bridge().fetch_text_to_voice(text)
+    
+    def handle_file(self, file_path: str, context: Context) -> Reply:
+        return Bridge().fetch_file_content(file_path, context)

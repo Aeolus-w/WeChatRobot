@@ -11,12 +11,10 @@ class MyModelBot(Bot):
     def __init__(self):
         super().__init__()
         self.sessions = SessionManager(MyModelSession, model=conf().get("model") or "MyModel")
-        # 将 API URL 和端点统一管理
         self.api_endpoints = {
             "chat": "http://127.0.0.1:6006/v1/chat/completions",
             "upload": "http://127.0.0.1:6006/v1/upload",
         }
-        # 模型默认参数
         self.default_args = {
             "model": conf().get("model") or "chatglm3-6b",
             "temperature": conf().get("temperature", 0.8),
@@ -25,9 +23,6 @@ class MyModelBot(Bot):
         }
 
     def reply(self, query, context=None):
-        """
-        根据消息类型处理文本或文件的回复请求
-        """
         if context.type == ContextType.TEXT:
             return self.handle_text_query(query, context)
 
@@ -38,18 +33,13 @@ class MyModelBot(Bot):
             return Reply(ReplyType.ERROR, "暂不支持{}类型的消息".format(context.type))
 
     def handle_text_query(self, query, context):
-        """
-        处理文本消息查询的逻辑，包括管理会话和发送 API 请求
-        """
         logger.info("[MyModel] query={}".format(query))
         session_id = context["session_id"]
 
-        # 处理特殊指令
         if query == "#清除记忆":
             self.sessions.clear_session(session_id)
             return Reply(ReplyType.INFO, "记忆已清除")
 
-        # 创建或更新会话并发送消息
         session = self.sessions.session_query(query, session_id)
         reply_content = self.send_message_to_api(session)
         if reply_content:
@@ -59,20 +49,48 @@ class MyModelBot(Bot):
             return Reply(ReplyType.ERROR, "无法获取回复")
 
     def handle_file_upload(self, context):
-        """
-        处理文件上传，将文件发送到知识库并通知用户上传状态
-        """
+        if "file" not in context or "path" not in context["file"]:
+            logger.error("缺少文件路径信息")
+            return Reply(ReplyType.ERROR, "文件信息缺失，无法上传")
+
         file_path = context["file"]["path"]
-        upload_response = self.upload_file(file_path)
-        if upload_response:
-            return Reply(ReplyType.INFO, "文件已经上传至知识库，您可以向我提问。")
-        else:
-            return Reply(ReplyType.ERROR, "文件上传失败。")
+        logger.info(f"准备上传文件，路径: {file_path}")
+
+        try:
+            # 检查文件是否存在
+            with open(file_path, 'rb') as file:
+                logger.info("找到文件，开始上传...")
+                upload_response = self.upload_file(file)
+                if upload_response:
+                    logger.info("文件上传成功。")
+                    return Reply(ReplyType.INFO, "文件已经上传至知识库，您可以向我提问。")
+                else:
+                    logger.error("文件上传失败，未返回有效响应。")
+                    return Reply(ReplyType.ERROR, "文件上传失败。")
+        except FileNotFoundError:
+            logger.error(f"文件未找到: {file_path}")
+            return Reply(ReplyType.ERROR, "文件未找到，上传失败。")
+        except Exception as e:
+            logger.error(f"上传过程中发生错误: {e}")
+            return Reply(ReplyType.ERROR, "上传过程中发生错误。")
+
+    def upload_file(self, file):
+        """
+        上传文件到知识库 API
+        """
+        files = {'file': file}
+        try:
+            response = self._post_request(self.api_endpoints["upload"], files=files)
+            if response:
+                return response  # 如果上传成功，返回响应
+            else:
+                logger.error("上传请求未返回有效响应。")
+                return None
+        except Exception as e:
+            logger.error(f"上传文件时发生错误: {e}")
+            return None
 
     def send_message_to_api(self, session: MyModelSession):
-        """
-        向聊天 API 发送消息
-        """
         payload = {
             "messages": session.messages,
             "temperature": self.default_args["temperature"],
@@ -82,31 +100,18 @@ class MyModelBot(Bot):
         }
         return self._post_request(self.api_endpoints["chat"], json=payload)
 
-    def upload_file(self, file_path):
-        """
-        上传文件到知识库 API
-        """
-        files = {'file': open(file_path, 'rb')}
-        try:
-            return self._post_request(self.api_endpoints["upload"], files=files)
-        finally:
-            files['file'].close()
-
     def _post_request(self, url, **kwargs):
-        """
-        发送 POST 请求并处理通用的错误逻辑
-        """
         try:
+            logger.info(f"向 {url} 发送请求，数据: {kwargs}")
             response = requests.post(url, **kwargs)
             response.raise_for_status()
             data = response.json()
             if "usage" in data and "choices" in data:
-                # 专门用于处理聊天 API 的返回
                 return {
                     "total_tokens": data.get("usage", {}).get("total_tokens", 0),
                     "content": data["choices"][0]["message"]["content"]
                 }
-            return True  # 用于文件上传的成功标志
+            return True
         except requests.exceptions.RequestException as e:
             logger.error(f"请求错误: {e}")
             return None

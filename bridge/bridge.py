@@ -1,6 +1,6 @@
 from bot.bot_factory import create_bot
 from bridge.context import Context
-from bridge.reply import Reply
+from bridge.reply import *
 from common import const
 from common.log import logger
 from common.singleton import singleton
@@ -97,6 +97,18 @@ class Bridge(object):
         if self.chat_bots.get(bot_type) is None:
             self.chat_bots[bot_type] = create_bot(bot_type)
         return self.chat_bots.get(bot_type)
+    
+    def fetch_file_content(self, file_path: str, context: Context) -> Reply:
+        # 选择一个处理文件的 bot 实例，假设这里用的是 "MyModel"
+        bot = self.get_bot("chat")  # 获取用于文件处理的 bot 实例
+        
+        # 通过 `MyModelBot` 的 `handle_file_upload` 处理文件上传
+        if hasattr(bot, "handle_file_upload"):
+            reply = bot.handle_file_upload(context)
+            return reply
+        else:
+            logger.error("Bot does not support file handling.")
+            return Reply(content="当前模型不支持文件处理", type=ReplyType.ERROR)
 
     def reset_bot(self):
         """

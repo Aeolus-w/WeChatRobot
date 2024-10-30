@@ -1,6 +1,7 @@
 import os
 import re
 import threading
+import requests
 import time
 from asyncio import CancelledError
 from concurrent.futures import Future, ThreadPoolExecutor
@@ -228,7 +229,11 @@ class ChatChannel(Channel):
             elif context.type == ContextType.FUNCTION:  # 文件消息及函数调用等，当前无默认逻辑
                 pass
             elif context.type == ContextType.FILE:
-                pass
+                logger.debug("[chat_channel] Handling file message.")
+                # 确保 context 中包含 file 信息
+                context["file"] = {"path": context.content} 
+                # 调用父类的文件处理方法
+                reply = super().handle_file(context.content, context)
             else:
                 logger.warning("[chat_channel] unknown context type: {}".format(context.type))
                 return
