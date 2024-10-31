@@ -1343,3 +1343,330 @@ FileNotFoundError: [Errno 2] No such file or directory: 'tmp/罗生门.pdf'
 [INFO][2024-10-31 00:22:19][config.py:236] - [Config] User datas saved.
 [INFO][2024-10-31 00:22:21][app.py:20] - signal 2 received, exiting...
 [INFO][2024-10-31 00:22:21][config.py:236] - [Config] User datas saved.
+[INFO][2024-10-31 15:18:56][config.py:301] - [INIT] load config: {'channel_type': 'wx', 'model': 'MyModel', 'zhipu_ai_api_key': '123*****123', 'zhipu_ai_api_base': 'http://127.0.0.1:6006/v1/chat/completions', 'text_to_image': '', 'voice_to_text': '', 'text_to_voice': '', 'proxy': '', 'hot_reload': False, 'single_chat_prefix': ['', 'bot', '@bot'], 'single_chat_reply_prefix': '[bot] ', 'group_chat_prefix': ['@bot'], 'group_name_white_list': ['ChatGPT测试群', 'ChatGPT测试群2'], 'image_create_prefix': ['画'], 'speech_recognition': True, 'group_speech_recognition': False, 'voice_reply_voice': False, 'conversation_max_tokens': 2500, 'expires_in_seconds': 3600, 'character_desc': '你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。', 'temperature': 0.7, 'subscribe_msg': '感谢您的关注！\n这里是AI智能助手，可以自由对话。\n支持语音对话。\n支持图片输入。\n支持图片输出，画字开头的消息将按要求创作图片。\n支持tool、角色扮演和文字冒险等丰富的插件。\n输入{trigger_prefix}#help 查看详细指令。', 'use_linkai': False, 'linkai_api_key': '*****', 'linkai_app_code': ''}
+[INFO][2024-10-31 15:18:56][config.py:225] - [Config] User datas loaded.
+[INFO][2024-10-31 15:18:57][plugin_manager.py:50] - Loading plugins config...
+[INFO][2024-10-31 15:18:57][plugin_manager.py:88] - Scaning plugins ...
+[INFO][2024-10-31 15:18:57][plugin_manager.py:41] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
+[INFO][2024-10-31 15:18:57][plugin_manager.py:41] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
+[INFO][2024-10-31 15:18:57][plugin_manager.py:41] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
+[INFO][2024-10-31 15:18:57][plugin_manager.py:41] - Plugin Finish_v1.0 registered, path=./plugins\finish
+[INFO][2024-10-31 15:18:57][plugin_manager.py:41] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
+[INFO][2024-10-31 15:18:57][plugin_manager.py:41] - Plugin Hello_v0.1 registered, path=./plugins\hello
+[INFO][2024-10-31 15:18:57][plugin_manager.py:41] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
+[INFO][2024-10-31 15:18:57][plugin_manager.py:41] - Plugin linkai_v0.1.0 registered, path=./plugins\linkai
+[INFO][2024-10-31 15:18:57][plugin_manager.py:41] - Plugin Role_v1.0 registered, path=./plugins\role
+[WARNING][2024-10-31 15:18:57][plugin_manager.py:113] - Failed to import plugin tool: No module named 'chatgpt_tool_hub'
+[ERROR][2024-10-31 15:18:57][plugin_manager.py:182] - Plugin tool not found, but found in plugins.json
+[INFO][2024-10-31 15:18:57][godcmd.py:194] - [Godcmd] 因未设置口令，本次的临时口令为7349。
+[INFO][2024-10-31 15:18:57][godcmd.py:210] - [Godcmd] inited
+[INFO][2024-10-31 15:18:57][keyword.py:40] - [keyword] {}
+[INFO][2024-10-31 15:18:57][keyword.py:42] - [keyword] inited.
+[INFO][2024-10-31 15:18:57][linkai.py:35] - [LinkAI] inited, config={'group_app_map': {'测试群名1': 'default', '测试群名2': 'Kv2fXJcH'}, 'midjourney': {'enabled': False, 'auto_translate': True, 'img_proxy': True, 'max_tasks': 3, 'max_tasks_per_user': 1, 'use_image_create_prefix': True}, 'summary': {'enabled': False, 'group_enabled': True, 'max_file_size': 5000, 'type': ['FILE', 'SHARING']}}
+[INFO][2024-10-31 15:18:57][role.py:69] - [Role] inited
+[INFO][2024-10-31 15:18:57][dungeon.py:56] - [Dungeon] inited
+[INFO][2024-10-31 15:18:57][hello.py:38] - [Hello] inited
+[INFO][2024-10-31 15:18:57][finish.py:23] - [Finish] inited
+[INFO][2024-10-31 15:19:50][wechat_channel.py:134] - Wechat login success, user_id: @cf3d364d5a6325c0e70359845b7a6c3a4d9376f4e5a2a06feeafba72746e7fa9, nickname: Quixon_w
+[INFO][2024-10-31 15:20:22][bridge.py:70] - create bot MyModel for chat
+[INFO][2024-10-31 15:20:22][MyModel_Bot.py:36] - [MyModel] query=你好
+[WARNING][2024-10-31 15:20:22][MyModel_session.py:11] - [MyModel] `system_prompt` can not be empty
+[INFO][2024-10-31 15:20:22][MyModel_Bot.py:105] - 向 http://127.0.0.1:6006/v1/chat/completions 发送请求，数据: {'json': {'messages': [{'role': 'system', 'content': '你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。'}, {'role': 'user', 'content': '你好'}], 'temperature': 0.7, 'top_p': 0.8, 'max_tokens': 1500, 'model': 'MyModel'}}
+[INFO][2024-10-31 15:20:26][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 你好！我是一个人工智能助手，很高兴为您服务。您提到的内容似乎是一段小说家的描述，他邀请路过的行人分享一些古老的故事。这是一个很有趣的方式，可以让人们互相了解彼此的文化和历史。如果您有任何关于这个话题的问题，或者需要我帮您查找更多的信息，都可以告诉我。), receiver=@346ce562786b249f0cae6c004a4c5ca9daadc055bb443219cfcf9bccd396a842
+[INFO][2024-10-31 15:25:47][MyModel_Bot.py:36] - [MyModel] query=你是谁
+[INFO][2024-10-31 15:25:47][MyModel_Bot.py:105] - 向 http://127.0.0.1:6006/v1/chat/completions 发送请求，数据: {'json': {'messages': [{'role': 'system', 'content': '你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。'}, {'role': 'user', 'content': '你好'}, {'role': 'assistant', 'content': '你好！我是一个人工智能助手，很高兴为您服务。您提到的内容似乎是一段小说家的描述，他邀请路过的行人分享一些古老的故事。这是一个很有趣的方式，可以让人们互相了解彼此的文化和历史。如果您有任何关于这个话题的问题，或者需要我帮您查找更多的信息，都可以告诉我。'}, {'role': 'user', 'content': '你是谁'}], 'temperature': 0.7, 'top_p': 0.8, 'max_tokens': 1500, 'model': 'MyModel'}}
+[INFO][2024-10-31 15:25:49][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 您好，看起来您提供的是一些与都江堰懒人无痛计划相关的信息。然而，我没有完全理解您想要询问的是关于谁的问题。请您提供更多上下文或明确您的疑问，我会尽力为您提供帮助。), receiver=@346ce562786b249f0cae6c004a4c5ca9daadc055bb443219cfcf9bccd396a842
+[INFO][2024-10-31 15:26:07][MyModel_Bot.py:36] - [MyModel] query=什么是都江堰
+[INFO][2024-10-31 15:26:07][MyModel_Bot.py:105] - 向 http://127.0.0.1:6006/v1/chat/completions 发送请求，数据: {'json': {'messages': [{'role': 'system', 'content': '你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。'}, {'role': 'user', 'content': '你好'}, {'role': 'assistant', 'content': '你好！我是一个人工智能助手，很高兴为您服务。您提到的内容似乎是一段小说家的描述，他邀请路过的行人分享一些古老的故事。这是一个很有趣的方式，可以让人们互相了解彼此的文化和历史。如果您有任何关于这个话题的问题，或者需要我帮您查找更多的信息，都可以告诉我。'}, {'role': 'user', 'content': '你是谁'}, {'role': 'assistant', 'content': '您好，看起来您提供的是一些与都江堰懒人无痛计划相关的信息。然而，我没有完全理解您想要询问的是关于谁的问题。请您提供更多上下文或明确您的疑问，我会尽力为您提供帮助。'}, {'role': 'user', 'content': '什么是都江堰'}], 'temperature': 0.7, 'top_p': 0.8, 'max_tokens': 1500, 'model': 'MyModel'}}
+[INFO][2024-10-31 15:26:13][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 都江堰是一个位于四川省成都市的著名景点，它是一座古老的水利工程，建于公元前256年，是由蜀汉政府为解决当地水灾而建设的。都江堰可以说是中国古代水利工程的典范，它采用了一种综合性的水利治理方案，包括堤防、河道、水门等设施，不仅解决了当时当地的水灾问题，还推动了周边地区的农业生产和经济发展。
+
+除了都江堰，日本也有一个名为“都江堰”的地方，它是一座位于东京的图书馆。这座图书馆由博文馆负责人大桥新太郎创建，是一所以收藏、研究和推广日本文化为主旨的私立图书馆。
+
+此外，尼采的哲学著作《查拉图斯特拉如是说》中提到了一个名为“查拉图斯特拉”的人物，被认为是古代波斯拜火教的始祖。而在中国古代，有一个名叫罗连若的人，在一场火灾中，为了拯救婴儿，献出了自己的生命。这些信息似乎没有直接关联，但都在不同程度上反映了人类在面对灾难时的勇气和善良。), receiver=@346ce562786b249f0cae6c004a4c5ca9daadc055bb443219cfcf9bccd396a842
+[INFO][2024-10-31 15:27:12][MyModel_Bot.py:36] - [MyModel] query=nono
+[INFO][2024-10-31 15:27:12][MyModel_Bot.py:105] - 向 http://127.0.0.1:6006/v1/chat/completions 发送请求，数据: {'json': {'messages': [{'role': 'system', 'content': '你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。'}, {'role': 'user', 'content': '你好'}, {'role': 'assistant', 'content': '你好！我是一个人工智能助手，很高兴为您服务。您提到的内容似乎是一段小说家的描述，他邀请路过的行人分享一些古老的故事。这是一个很有趣的方式，可以让人们互相了解彼此的文化和历史。如果您有任何关于这个话题的问题，或者需要我帮您查找更多的信息，都可以告诉我。'}, {'role': 'user', 'content': '你是谁'}, {'role': 'assistant', 'content': '您好，看起来您提供的是一些与都江堰懒人无痛计划相关的信息。然而，我没有完全理解您想要询问的是关于谁的问题。请您提供更多上下文或明确您的疑问，我会尽力为您提供帮助。'}, {'role': 'user', 'content': '什么是都江堰'}, {'role': 'assistant', 'content': '都江堰是一个位于四川省成都市的著名景点，它是一座古老的水利工程，建于公元前256年，是由蜀汉政府为解决当地水灾而建设的。都江堰可以说是中国古代水利工程的典范，它采用了一种综合性的水利治理方案，包括堤防、河道、水门等设施，不仅解决了当时当地的水灾问题，还推动了周边地区的农业生产和经济发展。\n\n除了都江堰，日本也有一个名为“都江堰”的地方，它是一座位于东京的图书馆。这座图书馆由博文馆负责人大桥新太郎创建，是一所以收藏、研究和推广日本文化为主旨的私立图书馆。\n\n此外，尼采的哲学著作《查拉图斯特拉如是说》中提到了一个名为“查拉图斯特拉”的人物，被认为是古代波斯拜火教的始祖。而在中国古代，有一个名叫罗连若的人，在一场火灾中，为了拯救婴儿，献出了自己的生命。这些信息似乎没有直接关联，但都在不同程度上反映了人类在面对灾难时的勇气和善良。'}, {'role': 'user', 'content': 'nono'}], 'temperature': 0.7, 'top_p': 0.8, 'max_tokens': 1500, 'model': 'MyModel'}}
+[INFO][2024-10-31 15:27:15][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 看起来这些信息都与一个名为“都江堰懒人无痛计划”的项目有关。我了解到这是一个让人感到轻松愉快的水利计划，可以帮助人们应对生活中的各种挑战。我相信，对于那些希望改变自己生活状态的人来说，这样的计划确实是非常有吸引力的。无论您身处何地，都应该拥有一个这样的计划，以帮助自己实现更好的未来。), receiver=@346ce562786b249f0cae6c004a4c5ca9daadc055bb443219cfcf9bccd396a842
+[INFO][2024-10-31 15:29:47][wechat_channel.py:220] - [WX] sendMsg=Reply(type=INFO, content=[INFO]
+会话已重置), receiver=@346ce562786b249f0cae6c004a4c5ca9daadc055bb443219cfcf9bccd396a842
+[INFO][2024-10-31 15:29:51][MyModel_Bot.py:36] - [MyModel] query=你好
+[WARNING][2024-10-31 15:29:51][MyModel_session.py:11] - [MyModel] `system_prompt` can not be empty
+[INFO][2024-10-31 15:29:51][MyModel_Bot.py:105] - 向 http://127.0.0.1:6006/v1/chat/completions 发送请求，数据: {'json': {'messages': [{'role': 'system', 'content': '你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。'}, {'role': 'user', 'content': '你好'}], 'temperature': 0.7, 'top_p': 0.8, 'max_tokens': 1500, 'model': 'MyModel'}}
+[INFO][2024-10-31 15:29:53][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 你好！看起来你在描述一个场景，有扇扇子，大蒲扇，还有人们讲故事。这是一个热的天气，人们都在寻找凉爽。你希望每个人都能讲一个故事，然后你可以收集这些故事来编写你的小说。你觉得这样的方式可以收集到各种意想不到的故事和奇闻，让你的小说更加丰富多彩。现在，请你开始听人们的故事吧。), receiver=@346ce562786b249f0cae6c004a4c5ca9daadc055bb443219cfcf9bccd396a842
+[INFO][2024-10-31 15:38:21][app.py:20] - signal 2 received, exiting...
+[INFO][2024-10-31 15:38:21][config.py:236] - [Config] User datas saved.
+[INFO][2024-10-31 15:38:23][app.py:20] - signal 2 received, exiting...
+[INFO][2024-10-31 15:38:23][config.py:236] - [Config] User datas saved.
+[INFO][2024-10-31 15:38:44][config.py:301] - [INIT] load config: {'channel_type': 'wx', 'model': 'MyModel', 'zhipu_ai_api_key': '123*****123', 'zhipu_ai_api_base': 'http://127.0.0.1:6006/v1/chat/completions', 'text_to_image': '', 'voice_to_text': '', 'text_to_voice': '', 'proxy': '', 'hot_reload': False, 'single_chat_prefix': ['', 'bot', '@bot'], 'single_chat_reply_prefix': '[bot] ', 'group_chat_prefix': ['@bot'], 'group_name_white_list': ['ChatGPT测试群', 'ChatGPT测试群2'], 'image_create_prefix': ['画'], 'speech_recognition': True, 'group_speech_recognition': False, 'voice_reply_voice': False, 'conversation_max_tokens': 2500, 'expires_in_seconds': 3600, 'character_desc': '你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。', 'temperature': 0.7, 'subscribe_msg': '感谢您的关注！\n这里是AI智能助手，可以自由对话。\n支持语音对话。\n支持图片输入。\n支持图片输出，画字开头的消息将按要求创作图片。\n支持tool、角色扮演和文字冒险等丰富的插件。\n输入{trigger_prefix}#help 查看详细指令。', 'use_linkai': False, 'linkai_api_key': '*****', 'linkai_app_code': ''}
+[INFO][2024-10-31 15:38:44][config.py:225] - [Config] User datas loaded.
+[INFO][2024-10-31 15:38:45][plugin_manager.py:50] - Loading plugins config...
+[INFO][2024-10-31 15:38:45][plugin_manager.py:88] - Scaning plugins ...
+[INFO][2024-10-31 15:38:45][plugin_manager.py:41] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
+[INFO][2024-10-31 15:38:45][plugin_manager.py:41] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
+[INFO][2024-10-31 15:38:45][plugin_manager.py:41] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
+[INFO][2024-10-31 15:38:45][plugin_manager.py:41] - Plugin Finish_v1.0 registered, path=./plugins\finish
+[INFO][2024-10-31 15:38:45][plugin_manager.py:41] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
+[INFO][2024-10-31 15:38:45][plugin_manager.py:41] - Plugin Hello_v0.1 registered, path=./plugins\hello
+[INFO][2024-10-31 15:38:45][plugin_manager.py:41] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
+[INFO][2024-10-31 15:38:45][plugin_manager.py:41] - Plugin linkai_v0.1.0 registered, path=./plugins\linkai
+[INFO][2024-10-31 15:38:45][plugin_manager.py:41] - Plugin Role_v1.0 registered, path=./plugins\role
+[WARNING][2024-10-31 15:38:45][plugin_manager.py:113] - Failed to import plugin tool: No module named 'chatgpt_tool_hub'
+[ERROR][2024-10-31 15:38:45][plugin_manager.py:182] - Plugin tool not found, but found in plugins.json
+[INFO][2024-10-31 15:38:45][godcmd.py:194] - [Godcmd] 因未设置口令，本次的临时口令为7863。
+[INFO][2024-10-31 15:38:45][godcmd.py:210] - [Godcmd] inited
+[INFO][2024-10-31 15:38:45][keyword.py:40] - [keyword] {}
+[INFO][2024-10-31 15:38:45][keyword.py:42] - [keyword] inited.
+[INFO][2024-10-31 15:38:45][linkai.py:35] - [LinkAI] inited, config={'group_app_map': {'测试群名1': 'default', '测试群名2': 'Kv2fXJcH'}, 'midjourney': {'enabled': False, 'auto_translate': True, 'img_proxy': True, 'max_tasks': 3, 'max_tasks_per_user': 1, 'use_image_create_prefix': True}, 'summary': {'enabled': False, 'group_enabled': True, 'max_file_size': 5000, 'type': ['FILE', 'SHARING']}}
+[INFO][2024-10-31 15:38:45][role.py:69] - [Role] inited
+[INFO][2024-10-31 15:38:45][dungeon.py:56] - [Dungeon] inited
+[INFO][2024-10-31 15:38:45][hello.py:38] - [Hello] inited
+[INFO][2024-10-31 15:38:45][finish.py:23] - [Finish] inited
+[INFO][2024-10-31 15:39:04][wechat_channel.py:134] - Wechat login success, user_id: @99938e2feb237b6f07d60c3d4ff1cb3fec030da6f4147293429cddfd9c4f282a, nickname: Quixon_w
+[INFO][2024-10-31 15:39:10][bridge.py:70] - create bot MyModel for chat
+[INFO][2024-10-31 15:39:10][MyModel_Bot.py:36] - [MyModel] query=你好
+[WARNING][2024-10-31 15:39:10][MyModel_session.py:11] - [MyModel] `system_prompt` can not be empty
+[INFO][2024-10-31 15:39:10][MyModel_Bot.py:104] - 向 http://127.0.0.1:6006/v1/chat/completions 发送请求，数据: {'json': {'messages': [{'role': 'system', 'content': '你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。'}, {'role': 'user', 'content': '你好'}], 'max_tokens': 1500}}
+[ERROR][2024-10-31 15:39:10][MyModel_Bot.py:115] - 请求错误: 422 Client Error: Unprocessable Entity for url: http://127.0.0.1:6006/v1/chat/completions
+[INFO][2024-10-31 15:39:11][wechat_channel.py:220] - [WX] sendMsg=Reply(type=ERROR, content=[ERROR]
+无法获取回复), receiver=@d6f5d0ffa218d2d258091467907792366bad64161f044ac17085c3cf1570d30c
+[INFO][2024-10-31 15:39:17][MyModel_Bot.py:36] - [MyModel] query=你好
+[INFO][2024-10-31 15:39:17][MyModel_Bot.py:104] - 向 http://127.0.0.1:6006/v1/chat/completions 发送请求，数据: {'json': {'messages': [{'role': 'system', 'content': '你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。'}, {'role': 'user', 'content': '你好'}, {'role': 'user', 'content': '你好'}], 'max_tokens': 1500}}
+[ERROR][2024-10-31 15:39:17][MyModel_Bot.py:115] - 请求错误: 422 Client Error: Unprocessable Entity for url: http://127.0.0.1:6006/v1/chat/completions
+[INFO][2024-10-31 15:39:17][wechat_channel.py:220] - [WX] sendMsg=Reply(type=ERROR, content=[ERROR]
+无法获取回复), receiver=@d6f5d0ffa218d2d258091467907792366bad64161f044ac17085c3cf1570d30c
+[INFO][2024-10-31 15:40:47][app.py:20] - signal 2 received, exiting...
+[INFO][2024-10-31 15:40:47][config.py:236] - [Config] User datas saved.
+[INFO][2024-10-31 15:40:49][config.py:301] - [INIT] load config: {'channel_type': 'wx', 'model': 'MyModel', 'zhipu_ai_api_key': '123*****123', 'zhipu_ai_api_base': 'http://127.0.0.1:6006/v1/chat/completions', 'text_to_image': '', 'voice_to_text': '', 'text_to_voice': '', 'proxy': '', 'hot_reload': False, 'single_chat_prefix': ['', 'bot', '@bot'], 'single_chat_reply_prefix': '[bot] ', 'group_chat_prefix': ['@bot'], 'group_name_white_list': ['ChatGPT测试群', 'ChatGPT测试群2'], 'image_create_prefix': ['画'], 'speech_recognition': True, 'group_speech_recognition': False, 'voice_reply_voice': False, 'conversation_max_tokens': 2500, 'expires_in_seconds': 3600, 'character_desc': '你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。', 'temperature': 0.7, 'subscribe_msg': '感谢您的关注！\n这里是AI智能助手，可以自由对话。\n支持语音对话。\n支持图片输入。\n支持图片输出，画字开头的消息将按要求创作图片。\n支持tool、角色扮演和文字冒险等丰富的插件。\n输入{trigger_prefix}#help 查看详细指令。', 'use_linkai': False, 'linkai_api_key': '*****', 'linkai_app_code': ''}
+[INFO][2024-10-31 15:40:49][config.py:225] - [Config] User datas loaded.
+[INFO][2024-10-31 15:40:50][plugin_manager.py:50] - Loading plugins config...
+[INFO][2024-10-31 15:40:50][plugin_manager.py:88] - Scaning plugins ...
+[INFO][2024-10-31 15:40:50][plugin_manager.py:41] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
+[INFO][2024-10-31 15:40:50][plugin_manager.py:41] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
+[INFO][2024-10-31 15:40:50][plugin_manager.py:41] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
+[INFO][2024-10-31 15:40:50][plugin_manager.py:41] - Plugin Finish_v1.0 registered, path=./plugins\finish
+[INFO][2024-10-31 15:40:50][plugin_manager.py:41] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
+[INFO][2024-10-31 15:40:50][plugin_manager.py:41] - Plugin Hello_v0.1 registered, path=./plugins\hello
+[INFO][2024-10-31 15:40:50][plugin_manager.py:41] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
+[INFO][2024-10-31 15:40:50][plugin_manager.py:41] - Plugin linkai_v0.1.0 registered, path=./plugins\linkai
+[INFO][2024-10-31 15:40:50][plugin_manager.py:41] - Plugin Role_v1.0 registered, path=./plugins\role
+[WARNING][2024-10-31 15:40:50][plugin_manager.py:113] - Failed to import plugin tool: No module named 'chatgpt_tool_hub'
+[ERROR][2024-10-31 15:40:50][plugin_manager.py:182] - Plugin tool not found, but found in plugins.json
+[INFO][2024-10-31 15:40:50][godcmd.py:194] - [Godcmd] 因未设置口令，本次的临时口令为3689。
+[INFO][2024-10-31 15:40:50][godcmd.py:210] - [Godcmd] inited
+[INFO][2024-10-31 15:40:50][keyword.py:40] - [keyword] {}
+[INFO][2024-10-31 15:40:50][keyword.py:42] - [keyword] inited.
+[INFO][2024-10-31 15:40:50][linkai.py:35] - [LinkAI] inited, config={'group_app_map': {'测试群名1': 'default', '测试群名2': 'Kv2fXJcH'}, 'midjourney': {'enabled': False, 'auto_translate': True, 'img_proxy': True, 'max_tasks': 3, 'max_tasks_per_user': 1, 'use_image_create_prefix': True}, 'summary': {'enabled': False, 'group_enabled': True, 'max_file_size': 5000, 'type': ['FILE', 'SHARING']}}
+[INFO][2024-10-31 15:40:50][role.py:69] - [Role] inited
+[INFO][2024-10-31 15:40:50][dungeon.py:56] - [Dungeon] inited
+[INFO][2024-10-31 15:40:50][hello.py:38] - [Hello] inited
+[INFO][2024-10-31 15:40:50][finish.py:23] - [Finish] inited
+[INFO][2024-10-31 15:41:07][wechat_channel.py:134] - Wechat login success, user_id: @7c3970cd2876b011909424f874c7e480f52706e64050d29cd239630e2617e1cf, nickname: Quixon_w
+[INFO][2024-10-31 15:41:10][bridge.py:70] - create bot MyModel for chat
+[INFO][2024-10-31 15:41:10][MyModel_Bot.py:36] - [MyModel] query=那个
+[WARNING][2024-10-31 15:41:10][MyModel_session.py:11] - [MyModel] `system_prompt` can not be empty
+[INFO][2024-10-31 15:41:10][MyModel_Bot.py:104] - 向 http://127.0.0.1:6006/v1/chat/completions 发送请求，数据: {'json': {'messages': [{'role': 'system', 'content': '你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。'}, {'role': 'user', 'content': '那个'}], 'temperature': 0.7, 'top_p': 0.8, 'max_tokens': 1500}}
+[ERROR][2024-10-31 15:41:11][MyModel_Bot.py:115] - 请求错误: 422 Client Error: Unprocessable Entity for url: http://127.0.0.1:6006/v1/chat/completions
+[INFO][2024-10-31 15:41:11][wechat_channel.py:220] - [WX] sendMsg=Reply(type=ERROR, content=[ERROR]
+无法获取回复), receiver=@5139670ea834cf19e2523b78b2524a72cd933ccf3d1ef840433bcc69b6407b06
+[INFO][2024-10-31 15:41:26][app.py:20] - signal 2 received, exiting...
+[INFO][2024-10-31 15:41:26][config.py:236] - [Config] User datas saved.
+[INFO][2024-10-31 15:41:27][app.py:20] - signal 2 received, exiting...
+[INFO][2024-10-31 15:41:27][config.py:236] - [Config] User datas saved.
+[INFO][2024-10-31 15:41:29][config.py:301] - [INIT] load config: {'channel_type': 'wx', 'model': 'MyModel', 'zhipu_ai_api_key': '123*****123', 'zhipu_ai_api_base': 'http://127.0.0.1:6006/v1/chat/completions', 'text_to_image': '', 'voice_to_text': '', 'text_to_voice': '', 'proxy': '', 'hot_reload': False, 'single_chat_prefix': ['', 'bot', '@bot'], 'single_chat_reply_prefix': '[bot] ', 'group_chat_prefix': ['@bot'], 'group_name_white_list': ['ChatGPT测试群', 'ChatGPT测试群2'], 'image_create_prefix': ['画'], 'speech_recognition': True, 'group_speech_recognition': False, 'voice_reply_voice': False, 'conversation_max_tokens': 2500, 'expires_in_seconds': 3600, 'character_desc': '你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。', 'temperature': 0.7, 'subscribe_msg': '感谢您的关注！\n这里是AI智能助手，可以自由对话。\n支持语音对话。\n支持图片输入。\n支持图片输出，画字开头的消息将按要求创作图片。\n支持tool、角色扮演和文字冒险等丰富的插件。\n输入{trigger_prefix}#help 查看详细指令。', 'use_linkai': False, 'linkai_api_key': '*****', 'linkai_app_code': ''}
+[INFO][2024-10-31 15:41:29][config.py:225] - [Config] User datas loaded.
+[INFO][2024-10-31 15:41:30][plugin_manager.py:50] - Loading plugins config...
+[INFO][2024-10-31 15:41:30][plugin_manager.py:88] - Scaning plugins ...
+[INFO][2024-10-31 15:41:30][plugin_manager.py:41] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
+[INFO][2024-10-31 15:41:30][plugin_manager.py:41] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
+[INFO][2024-10-31 15:41:30][plugin_manager.py:41] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
+[INFO][2024-10-31 15:41:30][plugin_manager.py:41] - Plugin Finish_v1.0 registered, path=./plugins\finish
+[INFO][2024-10-31 15:41:30][plugin_manager.py:41] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
+[INFO][2024-10-31 15:41:30][plugin_manager.py:41] - Plugin Hello_v0.1 registered, path=./plugins\hello
+[INFO][2024-10-31 15:41:30][plugin_manager.py:41] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
+[INFO][2024-10-31 15:41:30][plugin_manager.py:41] - Plugin linkai_v0.1.0 registered, path=./plugins\linkai
+[INFO][2024-10-31 15:41:30][plugin_manager.py:41] - Plugin Role_v1.0 registered, path=./plugins\role
+[WARNING][2024-10-31 15:41:30][plugin_manager.py:113] - Failed to import plugin tool: No module named 'chatgpt_tool_hub'
+[ERROR][2024-10-31 15:41:30][plugin_manager.py:182] - Plugin tool not found, but found in plugins.json
+[INFO][2024-10-31 15:41:30][godcmd.py:194] - [Godcmd] 因未设置口令，本次的临时口令为5394。
+[INFO][2024-10-31 15:41:30][godcmd.py:210] - [Godcmd] inited
+[INFO][2024-10-31 15:41:30][keyword.py:40] - [keyword] {}
+[INFO][2024-10-31 15:41:30][keyword.py:42] - [keyword] inited.
+[INFO][2024-10-31 15:41:30][linkai.py:35] - [LinkAI] inited, config={'group_app_map': {'测试群名1': 'default', '测试群名2': 'Kv2fXJcH'}, 'midjourney': {'enabled': False, 'auto_translate': True, 'img_proxy': True, 'max_tasks': 3, 'max_tasks_per_user': 1, 'use_image_create_prefix': True}, 'summary': {'enabled': False, 'group_enabled': True, 'max_file_size': 5000, 'type': ['FILE', 'SHARING']}}
+[INFO][2024-10-31 15:41:30][role.py:69] - [Role] inited
+[INFO][2024-10-31 15:41:30][dungeon.py:56] - [Dungeon] inited
+[INFO][2024-10-31 15:41:30][hello.py:38] - [Hello] inited
+[INFO][2024-10-31 15:41:30][finish.py:23] - [Finish] inited
+[INFO][2024-10-31 15:41:47][wechat_channel.py:134] - Wechat login success, user_id: @e45d4a3ddacf76f7732658c0c1d4b1c24ece02feae1da1cb1f7d28be16f10c58, nickname: Quixon_w
+[INFO][2024-10-31 15:41:51][bridge.py:70] - create bot MyModel for chat
+[INFO][2024-10-31 15:41:51][MyModel_Bot.py:36] - [MyModel] query=sss
+[WARNING][2024-10-31 15:41:51][MyModel_session.py:11] - [MyModel] `system_prompt` can not be empty
+[INFO][2024-10-31 15:41:51][MyModel_Bot.py:104] - 向 http://127.0.0.1:6006/v1/chat/completions 发送请求，数据: {'json': {'messages': [{'role': 'system', 'content': '你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。'}, {'role': 'user', 'content': 'sss'}], 'temperature': 0.7, 'top_p': 0.8, 'max_tokens': 1500}}
+[ERROR][2024-10-31 15:41:51][MyModel_Bot.py:115] - 请求错误: 422 Client Error: Unprocessable Entity for url: http://127.0.0.1:6006/v1/chat/completions
+[INFO][2024-10-31 15:41:51][wechat_channel.py:220] - [WX] sendMsg=Reply(type=ERROR, content=[ERROR]
+无法获取回复), receiver=@99f6466180b4401abe29c66e5b77268cefe94b0c7c7de37368d78a5d58be1b6b
+[INFO][2024-10-31 15:42:22][app.py:20] - signal 2 received, exiting...
+[INFO][2024-10-31 15:42:22][config.py:236] - [Config] User datas saved.
+[INFO][2024-10-31 15:42:24][app.py:20] - signal 2 received, exiting...
+[INFO][2024-10-31 15:42:24][config.py:236] - [Config] User datas saved.
+[INFO][2024-10-31 15:42:27][config.py:301] - [INIT] load config: {'channel_type': 'wx', 'model': 'MyModel', 'zhipu_ai_api_key': '123*****123', 'zhipu_ai_api_base': 'http://127.0.0.1:6006/v1/chat/completions', 'text_to_image': '', 'voice_to_text': '', 'text_to_voice': '', 'proxy': '', 'hot_reload': False, 'single_chat_prefix': ['', 'bot', '@bot'], 'single_chat_reply_prefix': '[bot] ', 'group_chat_prefix': ['@bot'], 'group_name_white_list': ['ChatGPT测试群', 'ChatGPT测试群2'], 'image_create_prefix': ['画'], 'speech_recognition': True, 'group_speech_recognition': False, 'voice_reply_voice': False, 'conversation_max_tokens': 2500, 'expires_in_seconds': 3600, 'character_desc': '你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。', 'temperature': 0.7, 'subscribe_msg': '感谢您的关注！\n这里是AI智能助手，可以自由对话。\n支持语音对话。\n支持图片输入。\n支持图片输出，画字开头的消息将按要求创作图片。\n支持tool、角色扮演和文字冒险等丰富的插件。\n输入{trigger_prefix}#help 查看详细指令。', 'use_linkai': False, 'linkai_api_key': '*****', 'linkai_app_code': ''}
+[INFO][2024-10-31 15:42:27][config.py:225] - [Config] User datas loaded.
+[INFO][2024-10-31 15:42:28][plugin_manager.py:50] - Loading plugins config...
+[INFO][2024-10-31 15:42:28][plugin_manager.py:88] - Scaning plugins ...
+[INFO][2024-10-31 15:42:28][plugin_manager.py:41] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
+[INFO][2024-10-31 15:42:28][plugin_manager.py:41] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
+[INFO][2024-10-31 15:42:28][plugin_manager.py:41] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
+[INFO][2024-10-31 15:42:28][plugin_manager.py:41] - Plugin Finish_v1.0 registered, path=./plugins\finish
+[INFO][2024-10-31 15:42:28][plugin_manager.py:41] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
+[INFO][2024-10-31 15:42:28][plugin_manager.py:41] - Plugin Hello_v0.1 registered, path=./plugins\hello
+[INFO][2024-10-31 15:42:28][plugin_manager.py:41] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
+[INFO][2024-10-31 15:42:28][plugin_manager.py:41] - Plugin linkai_v0.1.0 registered, path=./plugins\linkai
+[INFO][2024-10-31 15:42:28][plugin_manager.py:41] - Plugin Role_v1.0 registered, path=./plugins\role
+[WARNING][2024-10-31 15:42:28][plugin_manager.py:113] - Failed to import plugin tool: No module named 'chatgpt_tool_hub'
+[ERROR][2024-10-31 15:42:28][plugin_manager.py:182] - Plugin tool not found, but found in plugins.json
+[INFO][2024-10-31 15:42:28][godcmd.py:194] - [Godcmd] 因未设置口令，本次的临时口令为1830。
+[INFO][2024-10-31 15:42:28][godcmd.py:210] - [Godcmd] inited
+[INFO][2024-10-31 15:42:28][keyword.py:40] - [keyword] {}
+[INFO][2024-10-31 15:42:28][keyword.py:42] - [keyword] inited.
+[INFO][2024-10-31 15:42:28][linkai.py:35] - [LinkAI] inited, config={'group_app_map': {'测试群名1': 'default', '测试群名2': 'Kv2fXJcH'}, 'midjourney': {'enabled': False, 'auto_translate': True, 'img_proxy': True, 'max_tasks': 3, 'max_tasks_per_user': 1, 'use_image_create_prefix': True}, 'summary': {'enabled': False, 'group_enabled': True, 'max_file_size': 5000, 'type': ['FILE', 'SHARING']}}
+[INFO][2024-10-31 15:42:28][role.py:69] - [Role] inited
+[INFO][2024-10-31 15:42:28][dungeon.py:56] - [Dungeon] inited
+[INFO][2024-10-31 15:42:28][hello.py:38] - [Hello] inited
+[INFO][2024-10-31 15:42:28][finish.py:23] - [Finish] inited
+[INFO][2024-10-31 15:42:53][wechat_channel.py:134] - Wechat login success, user_id: @a6b14c9960c3f0bde6eb0e0464b923b3c93dc0b93855cb63403b46751f2e375a, nickname: Quixon_w
+[INFO][2024-10-31 15:43:00][bridge.py:70] - create bot MyModel for chat
+[INFO][2024-10-31 15:43:00][MyModel_Bot.py:36] - [MyModel] query=www
+[WARNING][2024-10-31 15:43:00][MyModel_session.py:11] - [MyModel] `system_prompt` can not be empty
+[INFO][2024-10-31 15:43:00][MyModel_Bot.py:105] - 向 http://127.0.0.1:6006/v1/chat/completions 发送请求，数据: {'json': {'messages': [{'role': 'system', 'content': '你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。'}, {'role': 'user', 'content': 'www'}], 'temperature': 0.7, 'top_p': 0.8, 'max_tokens': 1500, 'model': 'MyModel'}}
+[INFO][2024-10-31 15:43:02][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 不好意思，我的知识库中没有相关的内容，没有办法回答。), receiver=@a55f4f5cd33c0f1970cc2f21c4ec34bc0e32e1a6aff988cefc67ef7985d71139
+[INFO][2024-10-31 15:43:22][MyModel_Bot.py:36] - [MyModel] query=小王子
+[INFO][2024-10-31 15:43:22][MyModel_Bot.py:105] - 向 http://127.0.0.1:6006/v1/chat/completions 发送请求，数据: {'json': {'messages': [{'role': 'system', 'content': '你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。'}, {'role': 'user', 'content': 'www'}, {'role': 'assistant', 'content': '不好意思，我的知识库中没有相关的内容，没有办法回答。'}, {'role': 'user', 'content': '小王子'}], 'temperature': 0.7, 'top_p': 0.8, 'max_tokens': 1500, 'model': 'MyModel'}}
+[INFO][2024-10-31 15:43:24][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 你好，有什么我可以帮助你的吗？), receiver=@a55f4f5cd33c0f1970cc2f21c4ec34bc0e32e1a6aff988cefc67ef7985d71139
+[INFO][2024-10-31 15:43:42][MyModel_Bot.py:36] - [MyModel] query=小王子
+[INFO][2024-10-31 15:43:42][MyModel_Bot.py:105] - 向 http://127.0.0.1:6006/v1/chat/completions 发送请求，数据: {'json': {'messages': [{'role': 'system', 'content': '你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。'}, {'role': 'user', 'content': 'www'}, {'role': 'assistant', 'content': '不好意思，我的知识库中没有相关的内容，没有办法回答。'}, {'role': 'user', 'content': '小王子'}, {'role': 'assistant', 'content': '你好，有什么我可以帮助你的吗？'}, {'role': 'user', 'content': '小王子'}], 'temperature': 0.7, 'top_p': 0.8, 'max_tokens': 1500, 'model': 'MyModel'}}
+[INFO][2024-10-31 15:43:43][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 你好，有什么我可以帮助你的吗？), receiver=@a55f4f5cd33c0f1970cc2f21c4ec34bc0e32e1a6aff988cefc67ef7985d71139
+[INFO][2024-10-31 15:43:52][MyModel_Bot.py:36] - [MyModel] query=小王子讲了什么
+[INFO][2024-10-31 15:43:52][MyModel_Bot.py:105] - 向 http://127.0.0.1:6006/v1/chat/completions 发送请求，数据: {'json': {'messages': [{'role': 'system', 'content': '你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。'}, {'role': 'user', 'content': 'www'}, {'role': 'assistant', 'content': '不好意思，我的知识库中没有相关的内容，没有办法回答。'}, {'role': 'user', 'content': '小王子'}, {'role': 'assistant', 'content': '你好，有什么我可以帮助你的吗？'}, {'role': 'user', 'content': '小王子'}, {'role': 'assistant', 'content': '你好，有什么我可以帮助你的吗？'}, {'role': 'user', 'content': '小王子讲了什么'}], 'temperature': 0.7, 'top_p': 0.8, 'max_tokens': 1500, 'model': 'MyModel'}}
+[INFO][2024-10-31 15:43:56][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 小王子是一个来自另一个星球的神秘人物，他在故事中遇到了许多不同的角色，其中一个最重要的角色就是一个自负的国王。当小王子出现时，国王非常骄傲，认为小王子是他的臣民，他命令小王子向他靠近，并观察他。小王子因为长途跋涉而困倦，打起了哈欠，这个行为在国王看来是不礼貌的，于是国王命令小王子打哈欠。小王子在这个场景中感到非常尴尬和紧张，因为国王的权威和威严对他来说非常重要。
+
+此外，小王子还遇到了其他的角色，如一个地理学家和一个爱虚荣的人，他们都有自己独特的特点和想法。通过这些角色，小王子逐渐了解到人类世界的复杂性和多样性，他也逐渐理解了自己星球上的问题，并在最后离开了自己的星球。), receiver=@a55f4f5cd33c0f1970cc2f21c4ec34bc0e32e1a6aff988cefc67ef7985d71139
+[INFO][2024-10-31 15:44:10][MyModel_Bot.py:36] - [MyModel] query=小王子的主要内容
+[INFO][2024-10-31 15:44:10][MyModel_Bot.py:105] - 向 http://127.0.0.1:6006/v1/chat/completions 发送请求，数据: {'json': {'messages': [{'role': 'system', 'content': '你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。'}, {'role': 'user', 'content': 'www'}, {'role': 'assistant', 'content': '不好意思，我的知识库中没有相关的内容，没有办法回答。'}, {'role': 'user', 'content': '小王子'}, {'role': 'assistant', 'content': '你好，有什么我可以帮助你的吗？'}, {'role': 'user', 'content': '小王子'}, {'role': 'assistant', 'content': '你好，有什么我可以帮助你的吗？'}, {'role': 'user', 'content': '小王子讲了什么'}, {'role': 'assistant', 'content': '小王子是一个来自另一个星球的神秘人物，他在故事中遇到了许多不同的角色，其中一个最重要的角色就是一个自负的国王。当小王子出现时，国王非常骄傲，认为小王子是他的臣民，他命令小王子向他靠近，并观察他。小王子因为长途跋涉而困倦，打起了哈欠，这个行为在国王看来是不礼貌的，于是国王命令小王子打哈欠。小王子在这个场景中感到非常尴尬和紧张，因为国王的权威和威严对他来说非常重要。\n\n此外，小王子还遇到了其他的角色，如一个地理学家和一个爱虚荣的人，他们都有自己独特的特点和想法。通过这些角色，小王子逐渐了解到人类世界的复杂性和多样性，他也逐渐理解了自己星球上的问题，并在最后离开了自己的星球。'}, {'role': 'user', 'content': '小王子的主要内容'}], 'temperature': 0.7, 'top_p': 0.8, 'max_tokens': 1500, 'model': 'MyModel'}}
+[INFO][2024-10-31 15:44:14][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 小王子在故事中遇到了各种不同的人，每个角色都有自己的特点和看法。例如，第一个星球上的国王自负并注重威严，他要求小王子在他面前做出一些表现出尊重的行为。而小王子则与其他角色产生了有趣的互动，如与自负的国王斗智斗勇，与爱虚荣的人探讨虚荣心的本质等。这些情节展示了小王子的机智、勇敢和独特视角，也传达了一些关于人性、社会和价值观的思考。), receiver=@a55f4f5cd33c0f1970cc2f21c4ec34bc0e32e1a6aff988cefc67ef7985d71139
+[INFO][2024-10-31 15:44:29][MyModel_Bot.py:36] - [MyModel] query=小王子都遇到了哪些人，请你全都列举出来
+[INFO][2024-10-31 15:44:29][MyModel_Bot.py:105] - 向 http://127.0.0.1:6006/v1/chat/completions 发送请求，数据: {'json': {'messages': [{'role': 'system', 'content': '你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。'}, {'role': 'user', 'content': 'www'}, {'role': 'assistant', 'content': '不好意思，我的知识库中没有相关的内容，没有办法回答。'}, {'role': 'user', 'content': '小王子'}, {'role': 'assistant', 'content': '你好，有什么我可以帮助你的吗？'}, {'role': 'user', 'content': '小王子'}, {'role': 'assistant', 'content': '你好，有什么我可以帮助你的吗？'}, {'role': 'user', 'content': '小王子讲了什么'}, {'role': 'assistant', 'content': '小王子是一个来自另一个星球的神秘人物，他在故事中遇到了许多不同的角色，其中一个最重要的角色就是一个自负的国王。当小王子出现时，国王非常骄傲，认为小王子是他的臣民，他命令小王子向他靠近，并观察他。小王子因为长途跋涉而困倦，打起了哈欠，这个行为在国王看来是不礼貌的，于是国王命令小王子打哈欠。小王子在这个场景中感到非常尴尬和紧张，因为国王的权威和威严对他来说非常重要。\n\n此外，小王子还遇到了其他的角色，如一个地理学家和一个爱虚荣的人，他们都有自己独特的特点和想法。通过这些角色，小王子逐渐了解到人类世界的复杂性和多样性，他也逐渐理解了自己星球上的问题，并在最后离开了自己的星球。'}, {'role': 'user', 'content': '小王子的主要内容'}, {'role': 'assistant', 'content': '小王子在故事中遇到了各种不同的人，每个角色都有自己的特点和看法。例如，第一个星球上的国王自负并注重威严，他要求小王子在他面前做出一些表现出尊重的行为。而小王子则与其他角色产生了有趣的互动，如与自负的国王斗智斗勇，与爱虚荣的人探讨虚荣心的本质等。这些情节展示了小王子的机智、勇敢和独特视角，也传达了一些关于人性、社会和价值观的思考。'}, {'role': 'user', 'content': '小王子都遇到了哪些人，请你全都列举出来'}], 'temperature': 0.7, 'top_p': 0.8, 'max_tokens': 1500, 'model': 'MyModel'}}
+[INFO][2024-10-31 15:44:33][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 小王子在故事中遇到了许多不同的人，其中一位是自负的国王。当小王子出现在国王的星球上时，国王非常骄傲，认为小王子是他的臣民。国王要求小王子靠近他，好好看看他。小王子因为长途跋涉而疲倦，打起了哈欠，这被国王视为不礼貌，于是国王命令小王子打哈欠。小王子因为害怕拂逆国王的威严而紧张，但最终还是按照国王的要求打了哈欠。), receiver=@a55f4f5cd33c0f1970cc2f21c4ec34bc0e32e1a6aff988cefc67ef7985d71139
+[INFO][2024-10-31 15:44:46][app.py:20] - signal 2 received, exiting...
+[INFO][2024-10-31 15:44:46][config.py:236] - [Config] User datas saved.
+[INFO][2024-10-31 15:44:48][app.py:20] - signal 2 received, exiting...
+[INFO][2024-10-31 15:44:48][config.py:236] - [Config] User datas saved.
+[INFO][2024-10-31 15:55:09][config.py:301] - [INIT] load config: {'channel_type': 'wx', 'model': 'MyModel', 'zhipu_ai_api_key': '123*****123', 'zhipu_ai_api_base': 'http://127.0.0.1:6006/v1/chat/completions', 'text_to_image': '', 'voice_to_text': '', 'text_to_voice': '', 'proxy': '', 'hot_reload': False, 'single_chat_prefix': ['', 'bot', '@bot'], 'single_chat_reply_prefix': '[bot] ', 'group_chat_prefix': ['@bot'], 'group_name_white_list': ['ChatGPT测试群', 'ChatGPT测试群2'], 'image_create_prefix': ['画'], 'speech_recognition': True, 'group_speech_recognition': False, 'voice_reply_voice': False, 'conversation_max_tokens': 2500, 'expires_in_seconds': 3600, 'character_desc': '你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。', 'temperature': 0.7, 'subscribe_msg': '感谢您的关注！\n这里是AI智能助手，可以自由对话。\n支持语音对话。\n支持图片输入。\n支持图片输出，画字开头的消息将按要求创作图片。\n支持tool、角色扮演和文字冒险等丰富的插件。\n输入{trigger_prefix}#help 查看详细指令。', 'use_linkai': False, 'linkai_api_key': '*****', 'linkai_app_code': ''}
+[INFO][2024-10-31 15:55:09][config.py:225] - [Config] User datas loaded.
+[INFO][2024-10-31 15:55:10][plugin_manager.py:50] - Loading plugins config...
+[INFO][2024-10-31 15:55:10][plugin_manager.py:88] - Scaning plugins ...
+[INFO][2024-10-31 15:55:10][plugin_manager.py:41] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
+[INFO][2024-10-31 15:55:10][plugin_manager.py:41] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
+[INFO][2024-10-31 15:55:10][plugin_manager.py:41] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
+[INFO][2024-10-31 15:55:10][plugin_manager.py:41] - Plugin Finish_v1.0 registered, path=./plugins\finish
+[INFO][2024-10-31 15:55:10][plugin_manager.py:41] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
+[INFO][2024-10-31 15:55:10][plugin_manager.py:41] - Plugin Hello_v0.1 registered, path=./plugins\hello
+[INFO][2024-10-31 15:55:10][plugin_manager.py:41] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
+[INFO][2024-10-31 15:55:10][plugin_manager.py:41] - Plugin linkai_v0.1.0 registered, path=./plugins\linkai
+[INFO][2024-10-31 15:55:10][plugin_manager.py:41] - Plugin Role_v1.0 registered, path=./plugins\role
+[WARNING][2024-10-31 15:55:10][plugin_manager.py:113] - Failed to import plugin tool: No module named 'chatgpt_tool_hub'
+[ERROR][2024-10-31 15:55:10][plugin_manager.py:182] - Plugin tool not found, but found in plugins.json
+[INFO][2024-10-31 15:55:10][godcmd.py:194] - [Godcmd] 因未设置口令，本次的临时口令为3154。
+[INFO][2024-10-31 15:55:10][godcmd.py:210] - [Godcmd] inited
+[INFO][2024-10-31 15:55:10][keyword.py:40] - [keyword] {}
+[INFO][2024-10-31 15:55:10][keyword.py:42] - [keyword] inited.
+[INFO][2024-10-31 15:55:10][linkai.py:35] - [LinkAI] inited, config={'group_app_map': {'测试群名1': 'default', '测试群名2': 'Kv2fXJcH'}, 'midjourney': {'enabled': False, 'auto_translate': True, 'img_proxy': True, 'max_tasks': 3, 'max_tasks_per_user': 1, 'use_image_create_prefix': True}, 'summary': {'enabled': False, 'group_enabled': True, 'max_file_size': 5000, 'type': ['FILE', 'SHARING']}}
+[INFO][2024-10-31 15:55:10][role.py:69] - [Role] inited
+[INFO][2024-10-31 15:55:10][dungeon.py:56] - [Dungeon] inited
+[INFO][2024-10-31 15:55:10][hello.py:38] - [Hello] inited
+[INFO][2024-10-31 15:55:10][finish.py:23] - [Finish] inited
+[INFO][2024-10-31 15:58:04][wechat_channel.py:134] - Wechat login success, user_id: @a87f05b8436eaa903a7487a8a3011ad5f3e81804df197072d7906fccd08a7ae3, nickname: Quixon_w
+[INFO][2024-10-31 15:58:16][bridge.py:70] - create bot MyModel for chat
+[INFO][2024-10-31 15:58:16][MyModel_Bot.py:36] - [MyModel] query=你好
+[WARNING][2024-10-31 15:58:16][MyModel_session.py:11] - [MyModel] `system_prompt` can not be empty
+[INFO][2024-10-31 15:58:16][MyModel_Bot.py:105] - 向 http://127.0.0.1:6006/v1/chat/completions 发送请求，数据: {'json': {'messages': [{'role': 'system', 'content': '你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。'}, {'role': 'user', 'content': '你好'}], 'temperature': 0.7, 'top_p': 0.8, 'max_tokens': 1500, 'model': 'MyModel'}}
+[INFO][2024-10-31 15:58:18][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 你好！有什么可以帮助您的吗？), receiver=@87f19005225fe1c8378e91f2097647b81c0ef000e08e0ad6de85da5c594f23fa
+[INFO][2024-10-31 15:58:22][MyModel_Bot.py:36] - [MyModel] query=你是谁
+[INFO][2024-10-31 15:58:22][MyModel_Bot.py:105] - 向 http://127.0.0.1:6006/v1/chat/completions 发送请求，数据: {'json': {'messages': [{'role': 'system', 'content': '你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。'}, {'role': 'user', 'content': '你好'}, {'role': 'assistant', 'content': '你好！有什么可以帮助您的吗？'}, {'role': 'user', 'content': '你是谁'}], 'temperature': 0.7, 'top_p': 0.8, 'max_tokens': 1500, 'model': 'MyModel'}}
+[INFO][2024-10-31 15:58:23][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 我是一个名为 ChatGLM3-6B 的人工智能助手，是基于清华大学 KEG 实验室和智谱 AI 公司于 2023 年共同训练的语言模型开发的。我的任务是针对用户的问题和要求提供适当的答复和支持。), receiver=@87f19005225fe1c8378e91f2097647b81c0ef000e08e0ad6de85da5c594f23fa
+[INFO][2024-10-31 15:58:31][MyModel_Bot.py:36] - [MyModel] query=鲁迅是谁
+[INFO][2024-10-31 15:58:31][MyModel_Bot.py:105] - 向 http://127.0.0.1:6006/v1/chat/completions 发送请求，数据: {'json': {'messages': [{'role': 'system', 'content': '你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。'}, {'role': 'user', 'content': '你好'}, {'role': 'assistant', 'content': '你好！有什么可以帮助您的吗？'}, {'role': 'user', 'content': '你是谁'}, {'role': 'assistant', 'content': '我是一个名为 ChatGLM3-6B 的人工智能助手，是基于清华大学 KEG 实验室和智谱 AI 公司于 2023 年共同训练的语言模型开发的。我的任务是针对用户的问题和要求提供适当的答复和支持。'}, {'role': 'user', 'content': '鲁迅是谁'}], 'temperature': 0.7, 'top_p': 0.8, 'max_tokens': 1500, 'model': 'MyModel'}}
+[INFO][2024-10-31 15:58:35][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 鲁迅（1881年9月25日－1936年10月19日），原名周树人，字豫山，后改名海默，浙江绍兴人，中国现代文学的奠基人之一，被誉为“文学巨匠”。他是一位杰出的作家、思想家、文学评论家、翻译家、艺术评论家和社会活动家。
+
+鲁迅的作品具有深刻的社会批判意味，他对封建社会的残余、愚昧和不公进行了无情的批判和讽刺。他的作品语言精炼、真切，具有很强的现实主义色彩。
+
+鲁迅的代表作有《狂人日记》、《阿Q正传》、《药》、《孔乙己》、《白光》等。这些作品在中国文学史上占有重要地位，对后世产生了深远的影响。), receiver=@87f19005225fe1c8378e91f2097647b81c0ef000e08e0ad6de85da5c594f23fa
+[INFO][2024-10-31 15:58:54][MyModel_Bot.py:36] - [MyModel] query=查询：小王子在路途中按照顺序一共遇到了哪几个人
+[INFO][2024-10-31 15:58:54][MyModel_Bot.py:105] - 向 http://127.0.0.1:6006/v1/chat/completions 发送请求，数据: {'json': {'messages': [{'role': 'system', 'content': '你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。'}, {'role': 'user', 'content': '你好'}, {'role': 'assistant', 'content': '你好！有什么可以帮助您的吗？'}, {'role': 'user', 'content': '你是谁'}, {'role': 'assistant', 'content': '我是一个名为 ChatGLM3-6B 的人工智能助手，是基于清华大学 KEG 实验室和智谱 AI 公司于 2023 年共同训练的语言模型开发的。我的任务是针对用户的问题和要求提供适当的答复和支持。'}, {'role': 'user', 'content': '鲁迅是谁'}, {'role': 'assistant', 'content': '鲁迅（1881年9月25日－1936年10月19日），原名周树人，字豫山，后改名海默，浙江绍兴人，中国现代文学的奠基人之一，被誉为“文学巨匠”。他是一位杰出的作家、思想家、文学评论家、翻译家、艺术评论家和社会活动家。\n\n鲁迅的作品具有深刻的社会批判意味，他对封建社会的残余、愚昧和不公进行了无情的批判和讽刺。他的作品语言精炼、真切，具有很强的现实主义色彩。\n\n鲁迅的代表作有《狂人日记》、《阿Q正传》、《药》、《孔乙己》、《白光》等。这些作品在中国文学史上占有重要地位，对后世产生了深远的影响。'}, {'role': 'user', 'content': '查询：小王子在路途中按照顺序一共遇到了哪几个人'}], 'temperature': 0.7, 'top_p': 0.8, 'max_tokens': 1500, 'model': 'MyModel'}}
+[INFO][2024-10-31 15:58:58][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 在小王子旅行的过程中，他依次遇到了一些国王、蛇和其他生物。其中，让他印象深刻的是那些国王。他遇见的第一位国王要求小王子在他面前打哈欠，以展示自己的权威。第二位国王则对小王子说：“啊，来了一个臣民。”并让小王子靠近自己。第三位国王也要求小王子打哈欠，并表示从未见过有人在他的面前打哈欠。在这些国王中，小王子感受到了他们的威严和 demand for respect。), receiver=@87f19005225fe1c8378e91f2097647b81c0ef000e08e0ad6de85da5c594f23fa
+[INFO][2024-10-31 16:10:48][MyModel_Bot.py:36] - [MyModel] query=查询：空洞骑士最难完成的成就
+[INFO][2024-10-31 16:10:48][MyModel_Bot.py:105] - 向 http://127.0.0.1:6006/v1/chat/completions 发送请求，数据: {'json': {'messages': [{'role': 'system', 'content': '你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。'}, {'role': 'user', 'content': '你好'}, {'role': 'assistant', 'content': '你好！有什么可以帮助您的吗？'}, {'role': 'user', 'content': '你是谁'}, {'role': 'assistant', 'content': '我是一个名为 ChatGLM3-6B 的人工智能助手，是基于清华大学 KEG 实验室和智谱 AI 公司于 2023 年共同训练的语言模型开发的。我的任务是针对用户的问题和要求提供适当的答复和支持。'}, {'role': 'user', 'content': '鲁迅是谁'}, {'role': 'assistant', 'content': '鲁迅（1881年9月25日－1936年10月19日），原名周树人，字豫山，后改名海默，浙江绍兴人，中国现代文学的奠基人之一，被誉为“文学巨匠”。他是一位杰出的作家、思想家、文学评论家、翻译家、艺术评论家和社会活动家。\n\n鲁迅的作品具有深刻的社会批判意味，他对封建社会的残余、愚昧和不公进行了无情的批判和讽刺。他的作品语言精炼、真切，具有很强的现实主义色彩。\n\n鲁迅的代表作有《狂人日记》、《阿Q正传》、《药》、《孔乙己》、《白光》等。这些作品在中国文学史上占有重要地位，对后世产生了深远的影响。'}, {'role': 'user', 'content': '查询：小王子在路途中按照顺序一共遇到了哪几个人'}, {'role': 'assistant', 'content': '在小王子旅行的过程中，他依次遇到了一些国王、蛇和其他生物。其中，让他印象深刻的是那些国王。他遇见的第一位国王要求小王子在他面前打哈欠，以展示自己的权威。第二位国王则对小王子说：“啊，来了一个臣民。”并让小王子靠近自己。第三位国王也要求小王子打哈欠，并表示从未见过有人在他的面前打哈欠。在这些国王中，小王子感受到了他们的威严和 demand for respect。'}, {'role': 'user', 'content': '查询：空洞骑士最难完成的成就'}], 'temperature': 0.7, 'top_p': 0.8, 'max_tokens': 1500, 'model': 'MyModel'}}
+[INFO][2024-10-31 16:10:50][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 很抱歉，我无法找到有关空洞骑士最难完成的成就是什么的信息。根据您提供的参考信息，它们似乎是关于其他游戏的成就。如果您能提供更多关于您所询问游戏的信息，我将尽力为您提供更准确的答案。), receiver=@87f19005225fe1c8378e91f2097647b81c0ef000e08e0ad6de85da5c594f23fa
+[INFO][2024-10-31 16:11:07][MyModel_Bot.py:36] - [MyModel] query=查询：空洞骑士成就
+[INFO][2024-10-31 16:11:07][MyModel_Bot.py:105] - 向 http://127.0.0.1:6006/v1/chat/completions 发送请求，数据: {'json': {'messages': [{'role': 'system', 'content': '你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。'}, {'role': 'user', 'content': '你好'}, {'role': 'assistant', 'content': '你好！有什么可以帮助您的吗？'}, {'role': 'user', 'content': '你是谁'}, {'role': 'assistant', 'content': '我是一个名为 ChatGLM3-6B 的人工智能助手，是基于清华大学 KEG 实验室和智谱 AI 公司于 2023 年共同训练的语言模型开发的。我的任务是针对用户的问题和要求提供适当的答复和支持。'}, {'role': 'user', 'content': '鲁迅是谁'}, {'role': 'assistant', 'content': '鲁迅（1881年9月25日－1936年10月19日），原名周树人，字豫山，后改名海默，浙江绍兴人，中国现代文学的奠基人之一，被誉为“文学巨匠”。他是一位杰出的作家、思想家、文学评论家、翻译家、艺术评论家和社会活动家。\n\n鲁迅的作品具有深刻的社会批判意味，他对封建社会的残余、愚昧和不公进行了无情的批判和讽刺。他的作品语言精炼、真切，具有很强的现实主义色彩。\n\n鲁迅的代表作有《狂人日记》、《阿Q正传》、《药》、《孔乙己》、《白光》等。这些作品在中国文学史上占有重要地位，对后世产生了深远的影响。'}, {'role': 'user', 'content': '查询：小王子在路途中按照顺序一共遇到了哪几个人'}, {'role': 'assistant', 'content': '在小王子旅行的过程中，他依次遇到了一些国王、蛇和其他生物。其中，让他印象深刻的是那些国王。他遇见的第一位国王要求小王子在他面前打哈欠，以展示自己的权威。第二位国王则对小王子说：“啊，来了一个臣民。”并让小王子靠近自己。第三位国王也要求小王子打哈欠，并表示从未见过有人在他的面前打哈欠。在这些国王中，小王子感受到了他们的威严和 demand for respect。'}, {'role': 'user', 'content': '查询：空洞骑士最难完成的成就'}, {'role': 'assistant', 'content': '很抱歉，我无法找到有关空洞骑士最难完成的成就是什么的信息。根据您提供的参考信息，它们似乎是关于其他游戏的成就。如果您能提供更多关于您所询问游戏的信息，我将尽力为您提供更准确的答案。'}, {'role': 'user', 'content': '查询：空洞骑士成就'}], 'temperature': 0.7, 'top_p': 0.8, 'max_tokens': 1500, 'model': 'MyModel'}}
+[INFO][2024-10-31 16:11:09][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 根据您提供的信息，空洞骑士中最难完成的成就是“打败空洞骑士”。这个成就需要在打完三个守梦人之后，前往黑卵巢穴进行最终boss战才能解锁。祝您在游戏中取得成功！), receiver=@87f19005225fe1c8378e91f2097647b81c0ef000e08e0ad6de85da5c594f23fa
+[INFO][2024-10-31 16:11:24][MyModel_Bot.py:36] - [MyModel] query=查询：小王子爱玫瑰花吗
+[INFO][2024-10-31 16:11:24][MyModel_Bot.py:105] - 向 http://127.0.0.1:6006/v1/chat/completions 发送请求，数据: {'json': {'messages': [{'role': 'system', 'content': '你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。'}, {'role': 'user', 'content': '你好'}, {'role': 'assistant', 'content': '你好！有什么可以帮助您的吗？'}, {'role': 'user', 'content': '你是谁'}, {'role': 'assistant', 'content': '我是一个名为 ChatGLM3-6B 的人工智能助手，是基于清华大学 KEG 实验室和智谱 AI 公司于 2023 年共同训练的语言模型开发的。我的任务是针对用户的问题和要求提供适当的答复和支持。'}, {'role': 'user', 'content': '鲁迅是谁'}, {'role': 'assistant', 'content': '鲁迅（1881年9月25日－1936年10月19日），原名周树人，字豫山，后改名海默，浙江绍兴人，中国现代文学的奠基人之一，被誉为“文学巨匠”。他是一位杰出的作家、思想家、文学评论家、翻译家、艺术评论家和社会活动家。\n\n鲁迅的作品具有深刻的社会批判意味，他对封建社会的残余、愚昧和不公进行了无情的批判和讽刺。他的作品语言精炼、真切，具有很强的现实主义色彩。\n\n鲁迅的代表作有《狂人日记》、《阿Q正传》、《药》、《孔乙己》、《白光》等。这些作品在中国文学史上占有重要地位，对后世产生了深远的影响。'}, {'role': 'user', 'content': '查询：小王子在路途中按照顺序一共遇到了哪几个人'}, {'role': 'assistant', 'content': '在小王子旅行的过程中，他依次遇到了一些国王、蛇和其他生物。其中，让他印象深刻的是那些国王。他遇见的第一位国王要求小王子在他面前打哈欠，以展示自己的权威。第二位国王则对小王子说：“啊，来了一个臣民。”并让小王子靠近自己。第三位国王也要求小王子打哈欠，并表示从未见过有人在他的面前打哈欠。在这些国王中，小王子感受到了他们的威严和 demand for respect。'}, {'role': 'user', 'content': '查询：空洞骑士最难完成的成就'}, {'role': 'assistant', 'content': '很抱歉，我无法找到有关空洞骑士最难完成的成就是什么的信息。根据您提供的参考信息，它们似乎是关于其他游戏的成就。如果您能提供更多关于您所询问游戏的信息，我将尽力为您提供更准确的答案。'}, {'role': 'user', 'content': '查询：空洞骑士成就'}, {'role': 'assistant', 'content': '根据您提供的信息，空洞骑士中最难完成的成就是“打败空洞骑士”。这个成就需要在打完三个守梦人之后，前往黑卵巢穴进行最终boss战才能解锁。祝您在游戏中取得成功！'}, {'role': 'user', 'content': '查询：小王子爱玫瑰花吗'}], 'temperature': 0.7, 'top_p': 0.8, 'max_tokens': 1500, 'model': 'MyModel'}}
+[INFO][2024-10-31 16:11:27][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 小王子确实爱他的玫瑰花。他在路途中遇到的各种遭遇和体验都使他更加珍惜他的玫瑰花。尽管玫瑰花在花园里十分常见，但小王子视其为宇宙中独一无二的存在。他关心玫瑰花的感受，愿意为她付出一切，包括照顾她、保护她免受寒冷和危险的动物侵害。他对玫瑰花的爱使他在面对困境时坚定信念，勇往直前。), receiver=@87f19005225fe1c8378e91f2097647b81c0ef000e08e0ad6de85da5c594f23fa
+[INFO][2024-10-31 16:11:46][MyModel_Bot.py:36] - [MyModel] query=查询：罗生门讲了一个什么故事
+[INFO][2024-10-31 16:11:46][MyModel_Bot.py:105] - 向 http://127.0.0.1:6006/v1/chat/completions 发送请求，数据: {'json': {'messages': [{'role': 'system', 'content': '你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。'}, {'role': 'user', 'content': '你好'}, {'role': 'assistant', 'content': '你好！有什么可以帮助您的吗？'}, {'role': 'user', 'content': '你是谁'}, {'role': 'assistant', 'content': '我是一个名为 ChatGLM3-6B 的人工智能助手，是基于清华大学 KEG 实验室和智谱 AI 公司于 2023 年共同训练的语言模型开发的。我的任务是针对用户的问题和要求提供适当的答复和支持。'}, {'role': 'user', 'content': '鲁迅是谁'}, {'role': 'assistant', 'content': '鲁迅（1881年9月25日－1936年10月19日），原名周树人，字豫山，后改名海默，浙江绍兴人，中国现代文学的奠基人之一，被誉为“文学巨匠”。他是一位杰出的作家、思想家、文学评论家、翻译家、艺术评论家和社会活动家。\n\n鲁迅的作品具有深刻的社会批判意味，他对封建社会的残余、愚昧和不公进行了无情的批判和讽刺。他的作品语言精炼、真切，具有很强的现实主义色彩。\n\n鲁迅的代表作有《狂人日记》、《阿Q正传》、《药》、《孔乙己》、《白光》等。这些作品在中国文学史上占有重要地位，对后世产生了深远的影响。'}, {'role': 'user', 'content': '查询：小王子在路途中按照顺序一共遇到了哪几个人'}, {'role': 'assistant', 'content': '在小王子旅行的过程中，他依次遇到了一些国王、蛇和其他生物。其中，让他印象深刻的是那些国王。他遇见的第一位国王要求小王子在他面前打哈欠，以展示自己的权威。第二位国王则对小王子说：“啊，来了一个臣民。”并让小王子靠近自己。第三位国王也要求小王子打哈欠，并表示从未见过有人在他的面前打哈欠。在这些国王中，小王子感受到了他们的威严和 demand for respect。'}, {'role': 'user', 'content': '查询：空洞骑士最难完成的成就'}, {'role': 'assistant', 'content': '很抱歉，我无法找到有关空洞骑士最难完成的成就是什么的信息。根据您提供的参考信息，它们似乎是关于其他游戏的成就。如果您能提供更多关于您所询问游戏的信息，我将尽力为您提供更准确的答案。'}, {'role': 'user', 'content': '查询：空洞骑士成就'}, {'role': 'assistant', 'content': '根据您提供的信息，空洞骑士中最难完成的成就是“打败空洞骑士”。这个成就需要在打完三个守梦人之后，前往黑卵巢穴进行最终boss战才能解锁。祝您在游戏中取得成功！'}, {'role': 'user', 'content': '查询：小王子爱玫瑰花吗'}, {'role': 'assistant', 'content': '小王子确实爱他的玫瑰花。他在路途中遇到的各种遭遇和体验都使他更加珍惜他的玫瑰花。尽管玫瑰花在花园里十分常见，但小王子视其为宇宙中独一无二的存在。他关心玫瑰花的感受，愿意为她付出一切，包括照顾她、保护她免受寒冷和危险的动物侵害。他对玫瑰花的爱使他在面对困境时坚定信念，勇往直前。'}, {'role': 'user', 'content': '查询：罗生门讲了一个什么故事'}], 'temperature': 0.7, 'top_p': 0.8, 'max_tokens': 1500, 'model': 'MyModel'}}
+[INFO][2024-10-31 16:11:53][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 马琴听着市兵卫的故事，心中有些矛盾。一方面，他欣赏市兵卫的才华和独特的讲述方式；另一方面，他觉得市兵卫在讲述故事时过于自信和自大，让人感到不舒服。尽管如此，马琴还是被故事中的细节和情感所吸引，不能完全抗拒。
+
+市兵卫看到马琴感兴趣的样子，心中暗自高兴。他知道马琴是个有才华的人，对他的作品肯定会有很好的评价。于是，他进一步请教马琴意见，希望马琴能把这次郎大夫的人物写进《金瓶梅》中。
+
+然而，马琴并不想答应市兵卫的要求。他刚刚受到市兵卫的欺骗，心情还没有平复。而且，他觉得这次事件让他对市兵卫失去了信任，不想再把他引入自己的作品之中。于是，马琴婉转地拒绝了他的请求，表示自己目前还不想把故事写进《金瓶梅》中。
+
+市兵卫虽然有些失落，但他也能理解马琴的心情。毕竟，一个优秀的艺术家应该有自己的坚持和风格，不能为了让别人满意而牺牲自己的原则。于是，市兵卫尊重马琴的选择，两人告别后，马琴继续他的创作之旅，而市兵卫则返回他的文学世界，继续用文字讲述那些令人 fascinated 的故事。), receiver=@87f19005225fe1c8378e91f2097647b81c0ef000e08e0ad6de85da5c594f23fa
+[INFO][2024-10-31 16:12:04][MyModel_Bot.py:36] - [MyModel] query=罗生门什么意思
+[INFO][2024-10-31 16:12:04][MyModel_Bot.py:105] - 向 http://127.0.0.1:6006/v1/chat/completions 发送请求，数据: {'json': {'messages': [{'role': 'system', 'content': '你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。'}, {'role': 'user', 'content': '你好'}, {'role': 'assistant', 'content': '你好！有什么可以帮助您的吗？'}, {'role': 'user', 'content': '你是谁'}, {'role': 'assistant', 'content': '我是一个名为 ChatGLM3-6B 的人工智能助手，是基于清华大学 KEG 实验室和智谱 AI 公司于 2023 年共同训练的语言模型开发的。我的任务是针对用户的问题和要求提供适当的答复和支持。'}, {'role': 'user', 'content': '鲁迅是谁'}, {'role': 'assistant', 'content': '鲁迅（1881年9月25日－1936年10月19日），原名周树人，字豫山，后改名海默，浙江绍兴人，中国现代文学的奠基人之一，被誉为“文学巨匠”。他是一位杰出的作家、思想家、文学评论家、翻译家、艺术评论家和社会活动家。\n\n鲁迅的作品具有深刻的社会批判意味，他对封建社会的残余、愚昧和不公进行了无情的批判和讽刺。他的作品语言精炼、真切，具有很强的现实主义色彩。\n\n鲁迅的代表作有《狂人日记》、《阿Q正传》、《药》、《孔乙己》、《白光》等。这些作品在中国文学史上占有重要地位，对后世产生了深远的影响。'}, {'role': 'user', 'content': '查询：小王子在路途中按照顺序一共遇到了哪几个人'}, {'role': 'assistant', 'content': '在小王子旅行的过程中，他依次遇到了一些国王、蛇和其他生物。其中，让他印象深刻的是那些国王。他遇见的第一位国王要求小王子在他面前打哈欠，以展示自己的权威。第二位国王则对小王子说：“啊，来了一个臣民。”并让小王子靠近自己。第三位国王也要求小王子打哈欠，并表示从未见过有人在他的面前打哈欠。在这些国王中，小王子感受到了他们的威严和 demand for respect。'}, {'role': 'user', 'content': '查询：空洞骑士最难完成的成就'}, {'role': 'assistant', 'content': '很抱歉，我无法找到有关空洞骑士最难完成的成就是什么的信息。根据您提供的参考信息，它们似乎是关于其他游戏的成就。如果您能提供更多关于您所询问游戏的信息，我将尽力为您提供更准确的答案。'}, {'role': 'user', 'content': '查询：空洞骑士成就'}, {'role': 'assistant', 'content': '根据您提供的信息，空洞骑士中最难完成的成就是“打败空洞骑士”。这个成就需要在打完三个守梦人之后，前往黑卵巢穴进行最终boss战才能解锁。祝您在游戏中取得成功！'}, {'role': 'user', 'content': '查询：小王子爱玫瑰花吗'}, {'role': 'assistant', 'content': '小王子确实爱他的玫瑰花。他在路途中遇到的各种遭遇和体验都使他更加珍惜他的玫瑰花。尽管玫瑰花在花园里十分常见，但小王子视其为宇宙中独一无二的存在。他关心玫瑰花的感受，愿意为她付出一切，包括照顾她、保护她免受寒冷和危险的动物侵害。他对玫瑰花的爱使他在面对困境时坚定信念，勇往直前。'}, {'role': 'user', 'content': '查询：罗生门讲了一个什么故事'}, {'role': 'assistant', 'content': '马琴听着市兵卫的故事，心中有些矛盾。一方面，他欣赏市兵卫的才华和独特的讲述方式；另一方面，他觉得市兵卫在讲述故事时过于自信和自大，让人感到不舒服。尽管如此，马琴还是被故事中的细节和情感所吸引，不能完全抗拒。\n\n市兵卫看到马琴感兴趣的样子，心中暗自高兴。他知道马琴是个有才华的人，对他的作品肯定会有很好的评价。于是，他进一步请教马琴意见，希望马琴能把这次郎大夫的人物写进《金瓶梅》中。\n\n然而，马琴并不想答应市兵卫的要求。他刚刚受到市兵卫的欺骗，心情还没有平复。而且，他觉得这次事件让他对市兵卫失去了信任，不想再把他引入自己的作品之中。于是，马琴婉转地拒绝了他的请求，表示自己目前还不想把故事写进《金瓶梅》中。\n\n市兵卫虽然有些失落，但他也能理解马琴的心情。毕竟，一个优秀的艺术家应该有自己的坚持和风格，不能为了让别人满意而牺牲自己的原则。于是，市兵卫尊重马琴的选择，两人告别后，马琴继续他的创作之旅，而市兵卫则返回他的文学世界，继续用文字讲述那些令人 fascinated 的故事。'}, {'role': 'user', 'content': '罗生门什么意思'}], 'temperature': 0.7, 'top_p': 0.8, 'max_tokens': 1500, 'model': 'MyModel'}}
+[INFO][2024-10-31 16:12:06][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] "罗生门"这个词没有特定的含义，可能是您听错了或者记错了。"罗生门"应该是日本小说家川端康成的作品《罗生门》的中文译名。这部小说讲述了主人公野崎良 multitasking 能力和人际关系的温馨故事。), receiver=@87f19005225fe1c8378e91f2097647b81c0ef000e08e0ad6de85da5c594f23fa
+[INFO][2024-10-31 16:12:27][MyModel_Bot.py:36] - [MyModel] query=介绍一下罗生门这个故事
+[INFO][2024-10-31 16:12:27][MyModel_Bot.py:105] - 向 http://127.0.0.1:6006/v1/chat/completions 发送请求，数据: {'json': {'messages': [{'role': 'system', 'content': '你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。'}, {'role': 'user', 'content': '你好'}, {'role': 'assistant', 'content': '你好！有什么可以帮助您的吗？'}, {'role': 'user', 'content': '你是谁'}, {'role': 'assistant', 'content': '我是一个名为 ChatGLM3-6B 的人工智能助手，是基于清华大学 KEG 实验室和智谱 AI 公司于 2023 年共同训练的语言模型开发的。我的任务是针对用户的问题和要求提供适当的答复和支持。'}, {'role': 'user', 'content': '鲁迅是谁'}, {'role': 'assistant', 'content': '鲁迅（1881年9月25日－1936年10月19日），原名周树人，字豫山，后改名海默，浙江绍兴人，中国现代文学的奠基人之一，被誉为“文学巨匠”。他是一位杰出的作家、思想家、文学评论家、翻译家、艺术评论家和社会活动家。\n\n鲁迅的作品具有深刻的社会批判意味，他对封建社会的残余、愚昧和不公进行了无情的批判和讽刺。他的作品语言精炼、真切，具有很强的现实主义色彩。\n\n鲁迅的代表作有《狂人日记》、《阿Q正传》、《药》、《孔乙己》、《白光》等。这些作品在中国文学史上占有重要地位，对后世产生了深远的影响。'}, {'role': 'user', 'content': '查询：小王子在路途中按照顺序一共遇到了哪几个人'}, {'role': 'assistant', 'content': '在小王子旅行的过程中，他依次遇到了一些国王、蛇和其他生物。其中，让他印象深刻的是那些国王。他遇见的第一位国王要求小王子在他面前打哈欠，以展示自己的权威。第二位国王则对小王子说：“啊，来了一个臣民。”并让小王子靠近自己。第三位国王也要求小王子打哈欠，并表示从未见过有人在他的面前打哈欠。在这些国王中，小王子感受到了他们的威严和 demand for respect。'}, {'role': 'user', 'content': '查询：空洞骑士最难完成的成就'}, {'role': 'assistant', 'content': '很抱歉，我无法找到有关空洞骑士最难完成的成就是什么的信息。根据您提供的参考信息，它们似乎是关于其他游戏的成就。如果您能提供更多关于您所询问游戏的信息，我将尽力为您提供更准确的答案。'}, {'role': 'user', 'content': '查询：空洞骑士成就'}, {'role': 'assistant', 'content': '根据您提供的信息，空洞骑士中最难完成的成就是“打败空洞骑士”。这个成就需要在打完三个守梦人之后，前往黑卵巢穴进行最终boss战才能解锁。祝您在游戏中取得成功！'}, {'role': 'user', 'content': '查询：小王子爱玫瑰花吗'}, {'role': 'assistant', 'content': '小王子确实爱他的玫瑰花。他在路途中遇到的各种遭遇和体验都使他更加珍惜他的玫瑰花。尽管玫瑰花在花园里十分常见，但小王子视其为宇宙中独一无二的存在。他关心玫瑰花的感受，愿意为她付出一切，包括照顾她、保护她免受寒冷和危险的动物侵害。他对玫瑰花的爱使他在面对困境时坚定信念，勇往直前。'}, {'role': 'user', 'content': '查询：罗生门讲了一个什么故事'}, {'role': 'assistant', 'content': '马琴听着市兵卫的故事，心中有些矛盾。一方面，他欣赏市兵卫的才华和独特的讲述方式；另一方面，他觉得市兵卫在讲述故事时过于自信和自大，让人感到不舒服。尽管如此，马琴还是被故事中的细节和情感所吸引，不能完全抗拒。\n\n市兵卫看到马琴感兴趣的样子，心中暗自高兴。他知道马琴是个有才华的人，对他的作品肯定会有很好的评价。于是，他进一步请教马琴意见，希望马琴能把这次郎大夫的人物写进《金瓶梅》中。\n\n然而，马琴并不想答应市兵卫的要求。他刚刚受到市兵卫的欺骗，心情还没有平复。而且，他觉得这次事件让他对市兵卫失去了信任，不想再把他引入自己的作品之中。于是，马琴婉转地拒绝了他的请求，表示自己目前还不想把故事写进《金瓶梅》中。\n\n市兵卫虽然有些失落，但他也能理解马琴的心情。毕竟，一个优秀的艺术家应该有自己的坚持和风格，不能为了让别人满意而牺牲自己的原则。于是，市兵卫尊重马琴的选择，两人告别后，马琴继续他的创作之旅，而市兵卫则返回他的文学世界，继续用文字讲述那些令人 fascinated 的故事。'}, {'role': 'user', 'content': '罗生门什么意思'}, {'role': 'assistant', 'content': '"罗生门"这个词没有特定的含义，可能是您听错了或者记错了。"罗生门"应该是日本小说家川端康成的作品《罗生门》的中文译名。这部小说讲述了主人公野崎良 multitasking 能力和人际关系的温馨故事。'}, {'role': 'user', 'content': '介绍一下罗生门这个故事'}], 'temperature': 0.7, 'top_p': 0.8, 'max_tokens': 1500, 'model': 'MyModel'}}
+[INFO][2024-10-31 16:12:32][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 《罗生门》是日本著名作家川端康成的一部长篇小说，首次出版于1947年。该故事以罗生门为背景，通过主人公野崎良的视角，描绘了一种 Multitasking 能力以及这种能力给他的人际关系带来的影响。
+
+野崎良是一个拥有强大 Multitasking 能力的年轻人，他可以在同一时间处理许多事情，从而在生活和工作中获得更好的效果。然而，随着小说的深入，我们发现野崎良的 Multitasking 能力不仅对他的工作产生了积极影响，也对他的个人生活产生了深远的影响。
+
+小说通过野崎良与不同人物的交往，展现了 Multitasking 对人际关系的影响，探讨了人类在面对复杂问题时如何应对和生存。同时，小说也反映了战后日本社会的一些现象，具有很高的历史价值和现实意义。), receiver=@87f19005225fe1c8378e91f2097647b81c0ef000e08e0ad6de85da5c594f23fa
+[INFO][2024-10-31 16:15:14][wechat_channel.py:220] - [WX] sendMsg=Reply(type=INFO, content=[INFO]
+通用指令
+#help : 回复此帮助
+#help 插件名: 回复指定插件的详细帮助
+#model : 查看和设置全局模型
+#reset : 重置会话
+
+可用插件
+linkai:用于集成 LinkAI 提供的知识库、Midjourney绘画、文档总结、联网搜索等能力。
+角色扮演:让机器人扮演不同的角色。
+文字冒险:可以和机器人一起玩文字冒险游戏。), receiver=@87f19005225fe1c8378e91f2097647b81c0ef000e08e0ad6de85da5c594f23fa
+[INFO][2024-10-31 16:15:26][wechat_channel.py:220] - [WX] sendMsg=Reply(type=INFO, content=[INFO]
+会话已重置), receiver=@87f19005225fe1c8378e91f2097647b81c0ef000e08e0ad6de85da5c594f23fa
+[INFO][2024-10-31 16:15:39][MyModel_Bot.py:36] - [MyModel] query=罗生门
+[WARNING][2024-10-31 16:15:39][MyModel_session.py:11] - [MyModel] `system_prompt` can not be empty
+[INFO][2024-10-31 16:15:39][MyModel_Bot.py:105] - 向 http://127.0.0.1:6006/v1/chat/completions 发送请求，数据: {'json': {'messages': [{'role': 'system', 'content': '你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。'}, {'role': 'user', 'content': '罗生门'}], 'temperature': 0.7, 'top_p': 0.8, 'max_tokens': 1500, 'model': 'MyModel'}}
+[INFO][2024-10-31 16:15:43][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] "罗生门" is a Chinese phrase that translates to "The Path of the Dragon" in English. It is often used to refer to a hypothetical path or journey that leads to success, prosperity, and happiness. The phrase is often associated with the idea of following one's dreams and pursuing their goals with determination and perseverance. In Chinese culture, it is also believed that the path to success is often filled with challenges and obstacles, but those who are determined and persistent will ultimately be rewarded for their efforts.), receiver=@87f19005225fe1c8378e91f2097647b81c0ef000e08e0ad6de85da5c594f23fa
+[INFO][2024-10-31 16:16:01][MyModel_Bot.py:36] - [MyModel] query=查询：转专业到软件学院有哪些要求
+[INFO][2024-10-31 16:16:01][MyModel_Bot.py:105] - 向 http://127.0.0.1:6006/v1/chat/completions 发送请求，数据: {'json': {'messages': [{'role': 'system', 'content': '你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。'}, {'role': 'user', 'content': '罗生门'}, {'role': 'assistant', 'content': '"罗生门" is a Chinese phrase that translates to "The Path of the Dragon" in English. It is often used to refer to a hypothetical path or journey that leads to success, prosperity, and happiness. The phrase is often associated with the idea of following one\'s dreams and pursuing their goals with determination and perseverance. In Chinese culture, it is also believed that the path to success is often filled with challenges and obstacles, but those who are determined and persistent will ultimately be rewarded for their efforts.'}, {'role': 'user', 'content': '查询：转专业到软件学院有哪些要求'}], 'temperature': 0.7, 'top_p': 0.8, 'max_tokens': 1500, 'model': 'MyModel'}}
+[INFO][2024-10-31 16:16:06][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 您好，根据您的问题，我需要更多上下文信息来提供准确的答案。以下是我从提供的信息中提取的一些关键点：
+
+1. 学校必须严格遵循招生时的办学类型和学习形式，颁发学历证书和学位证书。
+2. 学校需要执行高等教育学历证书电子注册管理制度，并将毕（结）业证书信息报告给所在地省级教育行政部门注册，并备案。
+3. 对完成本专业学业同时辅修其他专业并达到辅修要求的学生，学校会发放辅修专业证书。
+4. 学校不能发放违规入学的学历证书和学位证书，发现违规入学的学生，学校的做法是？
+5. 如果毕业、结业、肄业证书或学位证书遗失或损坏，学生可以申请，学校在核实后需出具相应的证明书，证明书与原证书具有同等效力。
+6. 学校需要维护校园正常秩序，保障学生的正常学习和生活，并建立和完善学生参与民主管理的组织形式。
+
+由于您的问题没有具体提及，所以我无法给出针对性的回答。如果您能提供更详细的问题描述，我将很高兴为您提供帮助。), receiver=@87f19005225fe1c8378e91f2097647b81c0ef000e08e0ad6de85da5c594f23fa
+[INFO][2024-10-31 16:16:21][MyModel_Bot.py:36] - [MyModel] query=查询：转专业
+[INFO][2024-10-31 16:16:21][MyModel_Bot.py:105] - 向 http://127.0.0.1:6006/v1/chat/completions 发送请求，数据: {'json': {'messages': [{'role': 'system', 'content': '你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。'}, {'role': 'user', 'content': '罗生门'}, {'role': 'assistant', 'content': '"罗生门" is a Chinese phrase that translates to "The Path of the Dragon" in English. It is often used to refer to a hypothetical path or journey that leads to success, prosperity, and happiness. The phrase is often associated with the idea of following one\'s dreams and pursuing their goals with determination and perseverance. In Chinese culture, it is also believed that the path to success is often filled with challenges and obstacles, but those who are determined and persistent will ultimately be rewarded for their efforts.'}, {'role': 'user', 'content': '查询：转专业到软件学院有哪些要求'}, {'role': 'assistant', 'content': '您好，根据您的问题，我需要更多上下文信息来提供准确的答案。以下是我从提供的信息中提取的一些关键点：\n\n1. 学校必须严格遵循招生时的办学类型和学习形式，颁发学历证书和学位证书。\n2. 学校需要执行高等教育学历证书电子注册管理制度，并将毕（结）业证书信息报告给所在地省级教育行政部门注册，并备案。\n3. 对完成本专业学业同时辅修其他专业并达到辅修要求的学生，学校会发放辅修专业证书。\n4. 学校不能发放违规入学的学历证书和学位证书，发现违规入学的学生，学校的做法是？\n5. 如果毕业、结业、肄业证书或学位证书遗失或损坏，学生可以申请，学校在核实后需出具相应的证明书，证明书与原证书具有同等效力。\n6. 学校需要维护校园正常秩序，保障学生的正常学习和生活，并建立和完善学生参与民主管理的组织形式。\n\n由于您的问题没有具体提及，所以我无法给出针对性的回答。如果您能提供更详细的问题描述，我将很高兴为您提供帮助。'}, {'role': 'user', 'content': '查询：转专业'}], 'temperature': 0.7, 'top_p': 0.8, 'max_tokens': 1500, 'model': 'MyModel'}}
+[INFO][2024-10-31 16:16:24][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 根据您提供的信息，转专业需要满足以下几个条件：
+
+1. 努力学习，完成规定学业；
+2. 按规定缴纳学费及有关费用，履行获得贷学金及助学金的相应义务；
+3. 遵守学生行为规范，尊敬师长，养成良好的思想品德和行为习惯；
+4. 法律、法规规定的其他义务。
+
+如果学生想要转专业，应当遵循学校的相关规定，办理相关的转专业手续。在转专业过程中，学生需要了解学校的转专业政策，以及可能需要进行的课程学习、考试等。同时，学生还需要考虑到自身兴趣和发展方向，确保转专业后能够更好地实现自己的职业规划。), receiver=@87f19005225fe1c8378e91f2097647b81c0ef000e08e0ad6de85da5c594f23fa
+[INFO][2024-10-31 17:00:57][app.py:20] - signal 2 received, exiting...
+[INFO][2024-10-31 17:00:57][config.py:236] - [Config] User datas saved.
