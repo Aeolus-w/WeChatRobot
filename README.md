@@ -29,6 +29,8 @@ WechatRobot， ChatGLM3-6B， langchain，RAG
 
 增加一个指令列表
 
+研究一下哪些文件是可以删除的，只保留自己的模型文件和一点有用的部分
+
 
 10/30 凌晨：
 
