@@ -221,7 +221,7 @@ class WechatChannel(ChatChannel):
         elif reply.type == ReplyType.VOICE:
             itchat.send_file(reply.content, toUserName=receiver)
             logger.info("[WX] sendFile={}, receiver={}".format(reply.content, receiver))
-        elif reply.type == ReplyType.IMAGE_URL:  # 从网络下载图片
+        elif reply.type == ReplyType.IMAGE_URL:
             img_url = reply.content
             logger.debug(f"[WX] start download image, img_url={img_url}")
             pic_res = requests.get(img_url, stream=True)

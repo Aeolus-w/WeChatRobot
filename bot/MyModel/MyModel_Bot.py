@@ -54,13 +54,14 @@ class MyModelBot(Bot):
             return Reply(ReplyType.ERROR, "文件信息缺失，无法上传")
 
         file_path = context["file"]["path"]
-        logger.info(f"准备上传文件，路径: {file_path}")
+        session_id = context["session_id"]
+        logger.info(f"准备上传文件，路径: {file_path}, 会话ID: {session_id}")
 
         try:
             # 检查文件是否存在
             with open(file_path, 'rb') as file:
                 logger.info("找到文件，开始上传...")
-                upload_response = self.upload_file(file)
+                upload_response = self.upload_file(file, session_id)
                 if upload_response:
                     logger.info("文件上传成功。")
                     return Reply(ReplyType.INFO, "文件已经上传至知识库，您可以向我提问。")
@@ -74,13 +75,14 @@ class MyModelBot(Bot):
             logger.error(f"上传过程中发生错误: {e}")
             return Reply(ReplyType.ERROR, "上传过程中发生错误。")
 
-    def upload_file(self, file):
+    def upload_file(self, file, session_id):
         """
-        上传文件到知识库 API
+        上传文件到知识库 API，并附带会话ID
         """
         files = {'file': file}
+        data = {'session_id': session_id}
         try:
-            response = self._post_request(self.api_endpoints["upload"], files=files)
+            response = self._post_request(self.api_endpoints["upload"], files=files, data=data)
             if response:
                 return response  # 如果上传成功，返回响应
             else:
