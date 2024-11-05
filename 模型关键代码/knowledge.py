@@ -4,8 +4,8 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.schema import Document
 import os
-import fitz 
-import docx 
+import fitz  # PyMuPDF 用于处理 PDF 文件
+import docx  # python-docx 用于处理 DOCX 文件
 
 # 加载 DOCX 文件
 def load_docx(file_path):
@@ -55,13 +55,18 @@ def create_vector_db(documents):
     vectordb = Chroma.from_documents(
         documents=split_docs,
         embedding=embeddings,
-        persist_directory='/root/autodl-tmp/knowledge_db' 
+        persist_directory='/root/autodl-tmp/knowledge_db'  # 持久化数据库的路径
     )
     
     return vectordb
 
+def update_knowledge_db():
+    dir_path = '/root/autodl-tmp/base_knowledge'  #文档目录
+    docs = load_documents(dir_path)
+    vector_db = create_vector_db(docs)
+
 # 主程序
 if __name__ == "__main__":
-    dir_path = '/root/autodl-tmp/base_knowledge' 
+    dir_path = '/root/autodl-tmp/base_knowledge'  #文档目录
     docs = load_documents(dir_path)
     vector_db = create_vector_db(docs)

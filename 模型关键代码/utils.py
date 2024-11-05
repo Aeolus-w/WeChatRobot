@@ -7,6 +7,9 @@ from transformers.generation.logits_process import LogitsProcessor
 from typing import Union, Tuple
 from langchain_community.vectorstores import Chroma
 from langchain_community.embeddings import HuggingFaceEmbeddings
+import re
+import requests
+from bs4 import BeautifulSoup
 
 
 class InvalidScoreLogitsProcessor(LogitsProcessor):
@@ -56,8 +59,33 @@ vectordb = Chroma(
     embedding_function=embeddings
 )
 
-similarity_threshold = 13  # 相似性阈值
-irrelevance_threshold = 16 # 无关性阈值
+similarity_threshold = 13  # 设定相似性阈值
+irrelevance_threshold = 16 # 设定无关性阈值
+
+def extract_content_from_url(url: str) -> str:
+    try:
+        # 发送请求获取网页内容
+        response = requests.get(url)
+        response.raise_for_status()  # 如果请求失败则抛出异常
+        
+        # 使用BeautifulSoup解析网页内容
+        soup = BeautifulSoup(response.content, 'html.parser')
+        
+        # 去掉不必要的脚本和样式内容
+        for script in soup(["script", "style"]):
+            script.extract()  # 清除脚本和样式
+        
+        # 获取纯文本内容
+        text = soup.get_text(separator=' ', strip=True)
+        
+        # 简单地压缩空白字符（多个空格替换为一个空格）
+        text = ' '.join(text.split())
+        
+        # 返回简化后的网页内容
+        return text[:1000]  # 假设我们只提取前1000个字符用于总结
+    except Exception as e:
+        print(f"无法从 {url} 提取内容，错误信息: {str(e)}")
+        return "无法提取该网页的内容"
 
 @torch.inference_mode()
 def generate_stream_chatglm3(model: PreTrainedModel, tokenizer: PreTrainedTokenizer, params: dict):
@@ -71,34 +99,109 @@ def generate_stream_chatglm3(model: PreTrainedModel, tokenizer: PreTrainedTokeni
     messages = process_chatglm_messages(messages, tools=tools)
     query, role = messages[-1]["content"], messages[-1]["role"]
 
-    # 1. 从文本向量库中查找最接近的4个结果
-    search_results_with_scores = vectordb.similarity_search_with_score(query, k=4)
-    
-    # 提取前4个结果及其相似性分数
-    retrieved_contents = [result.page_content for result, _ in search_results_with_scores]
-    relevance_scores = [score for _, score in search_results_with_scores]
-    
-    print(f"找到的相关信息及其相似度为: {relevance_scores}")
-    
-    # 假设有一个判断信息是否足够的逻辑，这里简单以相似度阈值判断
-    if all(score <= similarity_threshold for score in relevance_scores):
-        # 信息足够，生成基于这些信息的回复
-        combined_knowledge = "\n".join([f"相关信息{idx + 1}: {content}" for idx, content in enumerate(retrieved_contents)])
-        combined_input = f"用户提问: {query}\n{combined_knowledge}\n请根据以上信息生成一个自然的回答。"
+    # 判断消息是否以“查询：”开头
+    if query.startswith("查询："):
+        # 提取查询关键词
+        search_query = query[3:].strip()  # 去掉前缀"查询："
         
-        inputs = tokenizer.build_chat_input(combined_input, history=messages[:-1], role=role)
+        # 从知识库中查找最相关的4个结果
+        search_results_with_scores = vectordb.similarity_search_with_score(search_query, k=4)
+        retrieved_contents = [result.page_content for result, _ in search_results_with_scores]
+        
+        # 判断是否有足够的相关信息
+        if retrieved_contents:
+            # 将前4个相关内容汇总
+            combined_knowledge = "\n".join([f"相关信息{idx + 1}: {content}" for idx, content in enumerate(retrieved_contents)])
+            combined_input = f"用户提问: {search_query}\n{combined_knowledge}\n请根据以上信息生成一个自然的回答。"
+
+            # 构建输入
+            inputs = tokenizer.build_chat_input(combined_input, history=messages[:-1], role=role)
+            inputs = inputs.to(model.device)
+            input_echo_len = len(inputs["input_ids"][0])
+
+            if input_echo_len >= model.config.seq_length:
+                print(f"Input length larger than {model.config.seq_length}")
+
+            eos_token_id = [
+                tokenizer.eos_token_id,
+                tokenizer.get_command("<|user|>"),
+                tokenizer.get_command("<|observation|>")
+            ]
+
+            gen_kwargs = {
+                "max_new_tokens": max_new_tokens,
+                "do_sample": True if temperature > 1e-5 else False,
+                "top_p": top_p,
+                "repetition_penalty": repetition_penalty,
+                "logits_processor": [InvalidScoreLogitsProcessor()],
+            }
+            if temperature > 1e-5:
+                gen_kwargs["temperature"] = temperature
+
+            total_len = 0
+            for total_ids in model.stream_generate(**inputs, eos_token_id=eos_token_id, **gen_kwargs):
+                total_ids = total_ids.tolist()[0]
+                total_len = len(total_ids)
+                if echo:
+                    output_ids = total_ids[:-1]
+                else:
+                    output_ids = total_ids[input_echo_len:-1]
+
+                response = tokenizer.decode(output_ids)
+                if response and response[-1] != "�":
+                    response, stop_found = apply_stopping_strings(response, ["<|observation|>"])
+
+                    yield {
+                        "text": response,
+                        "usage": {
+                            "prompt_tokens": input_echo_len,
+                            "completion_tokens": total_len - input_echo_len,
+                            "total_tokens": total_len,
+                        },
+                        "finish_reason": "function_call" if stop_found else None,
+                    }
+
+                    if stop_found:
+                        break
+
+            ret = {
+                "text": response,
+                "usage": {
+                    "prompt_tokens": input_echo_len,
+                    "completion_tokens": total_len - input_echo_len,
+                    "total_tokens": total_len,
+                },
+                "finish_reason": "stop",
+            }
+            yield ret
+
+        else:
+            # 没有找到相关内容时的回复
+            yield {
+                "text": "对不起，我没有办法回答，我的知识库中没有相关的内容。",
+                "usage": {
+                    "prompt_tokens": len(query),
+                    "completion_tokens": 0,
+                    "total_tokens": len(query),
+                },
+                "finish_reason": "stop",
+            }
+
+    else:
+        # 如果消息不以“查询：”开头，则直接使用模型生成回复
+        inputs = tokenizer.build_chat_input(query, history=messages[:-1], role=role)
         inputs = inputs.to(model.device)
         input_echo_len = len(inputs["input_ids"][0])
 
         if input_echo_len >= model.config.seq_length:
             print(f"Input length larger than {model.config.seq_length}")
-        
+
         eos_token_id = [
             tokenizer.eos_token_id,
             tokenizer.get_command("<|user|>"),
             tokenizer.get_command("<|observation|>")
         ]
-    
+
         gen_kwargs = {
             "max_new_tokens": max_new_tokens,
             "do_sample": True if temperature > 1e-5 else False,
@@ -108,7 +211,7 @@ def generate_stream_chatglm3(model: PreTrainedModel, tokenizer: PreTrainedTokeni
         }
         if temperature > 1e-5:
             gen_kwargs["temperature"] = temperature
-    
+
         total_len = 0
         for total_ids in model.stream_generate(**inputs, eos_token_id=eos_token_id, **gen_kwargs):
             total_ids = total_ids.tolist()[0]
@@ -117,11 +220,11 @@ def generate_stream_chatglm3(model: PreTrainedModel, tokenizer: PreTrainedTokeni
                 output_ids = total_ids[:-1]
             else:
                 output_ids = total_ids[input_echo_len:-1]
-    
+
             response = tokenizer.decode(output_ids)
             if response and response[-1] != "�":
                 response, stop_found = apply_stopping_strings(response, ["<|observation|>"])
-    
+
                 yield {
                     "text": response,
                     "usage": {
@@ -131,10 +234,10 @@ def generate_stream_chatglm3(model: PreTrainedModel, tokenizer: PreTrainedTokeni
                     },
                     "finish_reason": "function_call" if stop_found else None,
                 }
-    
+
                 if stop_found:
                     break
-    
+
         ret = {
             "text": response,
             "usage": {
@@ -146,33 +249,6 @@ def generate_stream_chatglm3(model: PreTrainedModel, tokenizer: PreTrainedTokeni
         }
         yield ret
 
-    elif all(score >= irrelevance_threshold for score in relevance_scores):
-        # 完全无关
-        response_prefix = f"不好意思，我目前的知识还没有办法解决这个问题，如果您有相关的资料可以一并发给我。"
-        yield {
-            "text": response_prefix,
-            "usage": {
-                "prompt_tokens": len(query),
-                "completion_tokens": 0,
-                "total_tokens": len(query),
-            },
-            "finish_reason": "stop",
-        }
-    else:
-        # 信息不足够，按序号返回检索到的信息，并告知用户
-        numbered_info = "\n".join([f"资料{idx + 1}: {content}" for idx, content in enumerate(retrieved_contents)])
-        response_prefix = f"不好意思，我不确定能否完全回答这个问题，以下是我找到的一些资料：\n{numbered_info}"
-        
-        yield {
-            "text": response_prefix,
-            "usage": {
-                "prompt_tokens": len(query),
-                "completion_tokens": 0,
-                "total_tokens": len(query),
-            },
-            "finish_reason": "stop",
-        }
-    
     gc.collect()
     torch.cuda.empty_cache()
 
