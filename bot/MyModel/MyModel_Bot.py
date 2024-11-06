@@ -1,4 +1,5 @@
 import requests
+import os
 from bot.bot import Bot
 from bot.MyModel.MyModel_session import MyModelSession
 from bot.session_manager import SessionManager
@@ -64,6 +65,12 @@ class MyModelBot(Bot):
                 upload_response = self.upload_file(file, session_id)
                 if upload_response:
                     logger.info("文件上传成功。")
+                    # 删除本地临时文件
+                    try:
+                        os.remove(file_path)
+                        logger.info(f"本地临时文件已删除：{file_path}")
+                    except Exception as e:
+                        logger.warning(f"删除本地临时文件失败：{file_path}，错误：{e}")
                     return Reply(ReplyType.INFO, "文件已经上传至知识库，您可以向我提问。")
                 else:
                     logger.error("文件上传失败，未返回有效响应。")

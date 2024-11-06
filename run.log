@@ -1875,3 +1875,98 @@ linkai:用于集成 LinkAI 提供的知识库、Midjourney绘画、文档总结�
 [INFO][2024-11-06 00:12:36][MyModel_Bot.py:66] - 文件上传成功。
 [INFO][2024-11-06 00:12:36][wechat_channel.py:220] - [WX] sendMsg=Reply(type=INFO, content=[INFO]
 文件已经上传至知识库，您可以向我提问。), receiver=@@09bf34a6335dc89efaa41fa52420b4570212a643c85a15cff1957c2b903c546c
+[INFO][2024-11-06 08:46:00][config.py:301] - [INIT] load config: {'channel_type': 'wx', 'model': 'MyModel', 'zhipu_ai_api_key': '123*****123', 'zhipu_ai_api_base': 'http://127.0.0.1:6006/v1/chat/completions', 'text_to_image': '', 'voice_to_text': '', 'text_to_voice': '', 'proxy': '', 'hot_reload': False, 'single_chat_prefix': ['', 'bot', '@bot'], 'single_chat_reply_prefix': '[bot] ', 'group_chat_prefix': ['@bot'], 'group_name_white_list': ['ChatGPT测试群', 'ChatGPT测试群2'], 'image_create_prefix': ['画'], 'speech_recognition': True, 'group_speech_recognition': False, 'voice_reply_voice': False, 'conversation_max_tokens': 2500, 'expires_in_seconds': 3600, 'character_desc': '你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。', 'temperature': 0.7, 'subscribe_msg': '感谢您的关注！\n这里是AI智能助手，可以自由对话。\n支持语音对话。\n支持图片输入。\n支持图片输出，画字开头的消息将按要求创作图片。\n支持tool、角色扮演和文字冒险等丰富的插件。\n输入{trigger_prefix}#help 查看详细指令。', 'use_linkai': False, 'linkai_api_key': '*****', 'linkai_app_code': ''}
+[INFO][2024-11-06 08:46:00][config.py:225] - [Config] User datas loaded.
+[INFO][2024-11-06 08:46:01][plugin_manager.py:50] - Loading plugins config...
+[INFO][2024-11-06 08:46:01][plugin_manager.py:88] - Scaning plugins ...
+[INFO][2024-11-06 08:46:01][plugin_manager.py:41] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
+[INFO][2024-11-06 08:46:01][plugin_manager.py:41] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
+[INFO][2024-11-06 08:46:01][plugin_manager.py:41] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
+[INFO][2024-11-06 08:46:01][plugin_manager.py:41] - Plugin Finish_v1.0 registered, path=./plugins\finish
+[INFO][2024-11-06 08:46:01][plugin_manager.py:41] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
+[INFO][2024-11-06 08:46:01][plugin_manager.py:41] - Plugin Hello_v0.1 registered, path=./plugins\hello
+[INFO][2024-11-06 08:46:01][plugin_manager.py:41] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
+[INFO][2024-11-06 08:46:01][plugin_manager.py:41] - Plugin linkai_v0.1.0 registered, path=./plugins\linkai
+[INFO][2024-11-06 08:46:01][plugin_manager.py:41] - Plugin Role_v1.0 registered, path=./plugins\role
+[WARNING][2024-11-06 08:46:01][plugin_manager.py:113] - Failed to import plugin tool: No module named 'chatgpt_tool_hub'
+[ERROR][2024-11-06 08:46:01][plugin_manager.py:182] - Plugin tool not found, but found in plugins.json
+[INFO][2024-11-06 08:46:01][godcmd.py:194] - [Godcmd] 因未设置口令，本次的临时口令为1743。
+[INFO][2024-11-06 08:46:01][godcmd.py:210] - [Godcmd] inited
+[INFO][2024-11-06 08:46:01][keyword.py:40] - [keyword] {}
+[INFO][2024-11-06 08:46:01][keyword.py:42] - [keyword] inited.
+[INFO][2024-11-06 08:46:01][linkai.py:35] - [LinkAI] inited, config={'group_app_map': {'测试群名1': 'default', '测试群名2': 'Kv2fXJcH'}, 'midjourney': {'enabled': False, 'auto_translate': True, 'img_proxy': True, 'max_tasks': 3, 'max_tasks_per_user': 1, 'use_image_create_prefix': True}, 'summary': {'enabled': False, 'group_enabled': True, 'max_file_size': 5000, 'type': ['FILE', 'SHARING']}}
+[INFO][2024-11-06 08:46:01][role.py:69] - [Role] inited
+[INFO][2024-11-06 08:46:01][dungeon.py:56] - [Dungeon] inited
+[INFO][2024-11-06 08:46:01][hello.py:38] - [Hello] inited
+[INFO][2024-11-06 08:46:01][finish.py:23] - [Finish] inited
+[INFO][2024-11-06 08:47:49][wechat_channel.py:134] - Wechat login success, user_id: @186f8cb9aa03a4a5526d16f67fb12b961935121492fddbfe24f9a1b19e8d4aa0, nickname: Quixon_w
+[INFO][2024-11-06 08:48:14][bridge.py:70] - create bot MyModel for chat
+[INFO][2024-11-06 08:48:14][MyModel_Bot.py:36] - [MyModel] query=[INFO]
+文件已经上传至知识库，您可以向我提问。
+[WARNING][2024-11-06 08:48:14][MyModel_session.py:11] - [MyModel] `system_prompt` can not be empty
+[INFO][2024-11-06 08:48:14][MyModel_Bot.py:107] - 向 http://127.0.0.1:6006/v1/chat/completions 发送请求，数据: {'json': {'messages': [{'role': 'system', 'content': '你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。'}, {'role': 'user', 'content': '[INFO]\n文件已经上传至知识库，您可以向我提问。'}], 'temperature': 0.7, 'top_p': 0.8, 'max_tokens': 1500, 'model': 'MyModel'}}
+[INFO][2024-11-06 08:48:16][wechat_channel.py:217] - [WX] sendMsg=Reply(type=TEXT, content=[bot] 您好！有什么我可以帮助您的吗？), receiver=@c5ef42f127c77cd91680b89eec7c6de3f09d924bd30ec573db6d079ec99723ec
+[INFO][2024-11-06 08:48:24][MyModel_Bot.py:58] - 准备上传文件，路径: tmp/大学生创新训练计划管理系统【学生操作手册】.pdf, 会话ID: @c5ef42f127c77cd91680b89eec7c6de3f09d924bd30ec573db6d079ec99723ec
+[INFO][2024-11-06 08:48:24][MyModel_Bot.py:63] - 找到文件，开始上传...
+[INFO][2024-11-06 08:48:24][MyModel_Bot.py:107] - 向 http://127.0.0.1:6006/v1/upload 发送请求，数据: {'files': {'file': <_io.BufferedReader name='tmp/大学生创新训练计划管理系统【学生操作手册】.pdf'>}, 'data': {'session_id': '@c5ef42f127c77cd91680b89eec7c6de3f09d924bd30ec573db6d079ec99723ec'}}
+[INFO][2024-11-06 08:48:26][MyModel_Bot.py:66] - 文件上传成功。
+[INFO][2024-11-06 08:48:26][wechat_channel.py:220] - [WX] sendMsg=Reply(type=INFO, content=[INFO]
+文件已经上传至知识库，您可以向我提问。), receiver=@c5ef42f127c77cd91680b89eec7c6de3f09d924bd30ec573db6d079ec99723ec
+[INFO][2024-11-06 08:49:03][MyModel_Bot.py:58] - 准备上传文件，路径: tmp/杂糅版(4).docx, 会话ID: @e9b99ef05e908dc02ae06bbf26cde92853195e210d0de6c54d8e13fce392c59a
+[INFO][2024-11-06 08:49:03][MyModel_Bot.py:63] - 找到文件，开始上传...
+[INFO][2024-11-06 08:49:03][MyModel_Bot.py:107] - 向 http://127.0.0.1:6006/v1/upload 发送请求，数据: {'files': {'file': <_io.BufferedReader name='tmp/杂糅版(4).docx'>}, 'data': {'session_id': '@e9b99ef05e908dc02ae06bbf26cde92853195e210d0de6c54d8e13fce392c59a'}}
+[INFO][2024-11-06 08:49:04][MyModel_Bot.py:58] - 准备上传文件，路径: tmp/杂糅版.docx, 会话ID: @c5ef42f127c77cd91680b89eec7c6de3f09d924bd30ec573db6d079ec99723ec
+[INFO][2024-11-06 08:49:04][MyModel_Bot.py:63] - 找到文件，开始上传...
+[INFO][2024-11-06 08:49:04][MyModel_Bot.py:107] - 向 http://127.0.0.1:6006/v1/upload 发送请求，数据: {'files': {'file': <_io.BufferedReader name='tmp/杂糅版.docx'>}, 'data': {'session_id': '@c5ef42f127c77cd91680b89eec7c6de3f09d924bd30ec573db6d079ec99723ec'}}
+[INFO][2024-11-06 08:49:05][MyModel_Bot.py:66] - 文件上传成功。
+[INFO][2024-11-06 08:49:05][wechat_channel.py:220] - [WX] sendMsg=Reply(type=INFO, content=[INFO]
+文件已经上传至知识库，您可以向我提问。), receiver=@e9b99ef05e908dc02ae06bbf26cde92853195e210d0de6c54d8e13fce392c59a
+[INFO][2024-11-06 08:49:06][MyModel_Bot.py:66] - 文件上传成功。
+[INFO][2024-11-06 08:49:06][wechat_channel.py:220] - [WX] sendMsg=Reply(type=INFO, content=[INFO]
+文件已经上传至知识库，您可以向我提问。), receiver=@c5ef42f127c77cd91680b89eec7c6de3f09d924bd30ec573db6d079ec99723ec
+[INFO][2024-11-06 08:53:27][app.py:20] - signal 2 received, exiting...
+[INFO][2024-11-06 08:53:27][config.py:236] - [Config] User datas saved.
+[INFO][2024-11-06 08:53:29][app.py:20] - signal 2 received, exiting...
+[INFO][2024-11-06 08:53:29][config.py:236] - [Config] User datas saved.
+[INFO][2024-11-06 09:00:19][config.py:301] - [INIT] load config: {'channel_type': 'wx', 'model': 'MyModel', 'zhipu_ai_api_key': '123*****123', 'zhipu_ai_api_base': 'http://127.0.0.1:6006/v1/chat/completions', 'text_to_image': '', 'voice_to_text': '', 'text_to_voice': '', 'proxy': '', 'hot_reload': False, 'single_chat_prefix': ['', 'bot', '@bot'], 'single_chat_reply_prefix': '[bot] ', 'group_chat_prefix': ['@bot'], 'group_name_white_list': ['ChatGPT测试群', 'ChatGPT测试群2'], 'image_create_prefix': ['画'], 'speech_recognition': True, 'group_speech_recognition': False, 'voice_reply_voice': False, 'conversation_max_tokens': 2500, 'expires_in_seconds': 3600, 'character_desc': '你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。', 'temperature': 0.7, 'subscribe_msg': '感谢您的关注！\n这里是AI智能助手，可以自由对话。\n支持语音对话。\n支持图片输入。\n支持图片输出，画字开头的消息将按要求创作图片。\n支持tool、角色扮演和文字冒险等丰富的插件。\n输入{trigger_prefix}#help 查看详细指令。', 'use_linkai': False, 'linkai_api_key': '*****', 'linkai_app_code': ''}
+[INFO][2024-11-06 09:00:19][config.py:225] - [Config] User datas loaded.
+[INFO][2024-11-06 09:00:20][plugin_manager.py:50] - Loading plugins config...
+[INFO][2024-11-06 09:00:20][plugin_manager.py:88] - Scaning plugins ...
+[INFO][2024-11-06 09:00:20][plugin_manager.py:41] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
+[INFO][2024-11-06 09:00:20][plugin_manager.py:41] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
+[INFO][2024-11-06 09:00:20][plugin_manager.py:41] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
+[INFO][2024-11-06 09:00:20][plugin_manager.py:41] - Plugin Finish_v1.0 registered, path=./plugins\finish
+[INFO][2024-11-06 09:00:20][plugin_manager.py:41] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
+[INFO][2024-11-06 09:00:20][plugin_manager.py:41] - Plugin Hello_v0.1 registered, path=./plugins\hello
+[INFO][2024-11-06 09:00:20][plugin_manager.py:41] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
+[INFO][2024-11-06 09:00:20][plugin_manager.py:41] - Plugin linkai_v0.1.0 registered, path=./plugins\linkai
+[INFO][2024-11-06 09:00:20][plugin_manager.py:41] - Plugin Role_v1.0 registered, path=./plugins\role
+[WARNING][2024-11-06 09:00:20][plugin_manager.py:113] - Failed to import plugin tool: No module named 'chatgpt_tool_hub'
+[ERROR][2024-11-06 09:00:20][plugin_manager.py:182] - Plugin tool not found, but found in plugins.json
+[INFO][2024-11-06 09:00:20][godcmd.py:194] - [Godcmd] 因未设置口令，本次的临时口令为8671。
+[INFO][2024-11-06 09:00:20][godcmd.py:210] - [Godcmd] inited
+[INFO][2024-11-06 09:00:20][keyword.py:40] - [keyword] {}
+[INFO][2024-11-06 09:00:20][keyword.py:42] - [keyword] inited.
+[INFO][2024-11-06 09:00:20][linkai.py:35] - [LinkAI] inited, config={'group_app_map': {'测试群名1': 'default', '测试群名2': 'Kv2fXJcH'}, 'midjourney': {'enabled': False, 'auto_translate': True, 'img_proxy': True, 'max_tasks': 3, 'max_tasks_per_user': 1, 'use_image_create_prefix': True}, 'summary': {'enabled': False, 'group_enabled': True, 'max_file_size': 5000, 'type': ['FILE', 'SHARING']}}
+[INFO][2024-11-06 09:00:20][role.py:69] - [Role] inited
+[INFO][2024-11-06 09:00:20][dungeon.py:56] - [Dungeon] inited
+[INFO][2024-11-06 09:00:20][hello.py:38] - [Hello] inited
+[INFO][2024-11-06 09:00:20][finish.py:23] - [Finish] inited
+[INFO][2024-11-06 09:00:51][wechat_channel.py:134] - Wechat login success, user_id: @7983778ea38ce25eaf4d711317cf6f1e3243dfcc369bad07c8f976cfb479cf9c, nickname: Quixon_w
+[INFO][2024-11-06 09:01:26][bridge.py:70] - create bot MyModel for chat
+[INFO][2024-11-06 09:01:26][MyModel_Bot.py:58] - 准备上传文件，路径: tmp/杂糅版.docx, 会话ID: @2ed9774c79df9926ea2d6250636f26899f929d7a5944642f5e325baca3a53522
+[INFO][2024-11-06 09:01:26][MyModel_Bot.py:63] - 找到文件，开始上传...
+[INFO][2024-11-06 09:01:26][MyModel_Bot.py:107] - 向 http://127.0.0.1:6006/v1/upload 发送请求，数据: {'files': {'file': <_io.BufferedReader name='tmp/杂糅版.docx'>}, 'data': {'session_id': '@2ed9774c79df9926ea2d6250636f26899f929d7a5944642f5e325baca3a53522'}}
+[INFO][2024-11-06 09:01:28][MyModel_Bot.py:66] - 文件上传成功。
+[INFO][2024-11-06 09:01:28][wechat_channel.py:220] - [WX] sendMsg=Reply(type=INFO, content=[INFO]
+文件已经上传至知识库，您可以向我提问。), receiver=@2ed9774c79df9926ea2d6250636f26899f929d7a5944642f5e325baca3a53522
+[INFO][2024-11-06 09:01:46][MyModel_Bot.py:58] - 准备上传文件，路径: tmp/大学生创新训练计划管理系统【学生操作手册】.pdf, 会话ID: @2ed9774c79df9926ea2d6250636f26899f929d7a5944642f5e325baca3a53522
+[INFO][2024-11-06 09:01:46][MyModel_Bot.py:63] - 找到文件，开始上传...
+[INFO][2024-11-06 09:01:46][MyModel_Bot.py:107] - 向 http://127.0.0.1:6006/v1/upload 发送请求，数据: {'files': {'file': <_io.BufferedReader name='tmp/大学生创新训练计划管理系统【学生操作手册】.pdf'>}, 'data': {'session_id': '@2ed9774c79df9926ea2d6250636f26899f929d7a5944642f5e325baca3a53522'}}
+[INFO][2024-11-06 09:01:48][MyModel_Bot.py:66] - 文件上传成功。
+[INFO][2024-11-06 09:01:48][wechat_channel.py:220] - [WX] sendMsg=Reply(type=INFO, content=[INFO]
+文件已经上传至知识库，您可以向我提问。), receiver=@2ed9774c79df9926ea2d6250636f26899f929d7a5944642f5e325baca3a53522
+[INFO][2024-11-06 09:06:01][app.py:20] - signal 2 received, exiting...
+[INFO][2024-11-06 09:06:01][config.py:236] - [Config] User datas saved.
+[INFO][2024-11-06 09:06:02][app.py:20] - signal 2 received, exiting...
+[INFO][2024-11-06 09:06:02][config.py:236] - [Config] User datas saved.
