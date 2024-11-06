@@ -32,6 +32,7 @@ def process_response(output: str, use_tool: bool = False) -> Union[str, dict]:
         else:
             if use_tool:
                 content = "\n".join(content.split("\n")[1:-1])
+
                 def tool_call(**kwargs):
                     return kwargs
 
@@ -47,45 +48,49 @@ def process_response(output: str, use_tool: bool = False) -> Union[str, dict]:
                 }
     return content
 
+
 # 定义 Embeddings
-embeddings = HuggingFaceEmbeddings(model_name="/root/autodl-tmp/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
+embeddings = HuggingFaceEmbeddings(
+    model_name="/root/autodl-tmp/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
 
 # 向量数据库持久化路径
 persist_directory = '/root/autodl-tmp/knowledge_db'
 
 # 加载向量数据库
 vectordb = Chroma(
-    persist_directory=persist_directory, 
+    persist_directory=persist_directory,
     embedding_function=embeddings
 )
 
 similarity_threshold = 13  # 设定相似性阈值
-irrelevance_threshold = 16 # 设定无关性阈值
+irrelevance_threshold = 16  # 设定无关性阈值
+
 
 def extract_content_from_url(url: str) -> str:
     try:
         # 发送请求获取网页内容
         response = requests.get(url)
         response.raise_for_status()  # 如果请求失败则抛出异常
-        
+
         # 使用BeautifulSoup解析网页内容
         soup = BeautifulSoup(response.content, 'html.parser')
-        
+
         # 去掉不必要的脚本和样式内容
         for script in soup(["script", "style"]):
             script.extract()  # 清除脚本和样式
-        
+
         # 获取纯文本内容
         text = soup.get_text(separator=' ', strip=True)
-        
+
         # 简单地压缩空白字符（多个空格替换为一个空格）
         text = ' '.join(text.split())
-        
+
         # 返回简化后的网页内容
         return text[:1000]  # 假设我们只提取前1000个字符用于总结
     except Exception as e:
         print(f"无法从 {url} 提取内容，错误信息: {str(e)}")
         return "无法提取该网页的内容"
+
 
 @torch.inference_mode()
 def generate_stream_chatglm3(model: PreTrainedModel, tokenizer: PreTrainedTokenizer, params: dict):
@@ -103,15 +108,16 @@ def generate_stream_chatglm3(model: PreTrainedModel, tokenizer: PreTrainedTokeni
     if query.startswith("查询："):
         # 提取查询关键词
         search_query = query[3:].strip()  # 去掉前缀"查询："
-        
+
         # 从知识库中查找最相关的4个结果
         search_results_with_scores = vectordb.similarity_search_with_score(search_query, k=4)
         retrieved_contents = [result.page_content for result, _ in search_results_with_scores]
-        
+
         # 判断是否有足够的相关信息
         if retrieved_contents:
             # 将前4个相关内容汇总
-            combined_knowledge = "\n".join([f"相关信息{idx + 1}: {content}" for idx, content in enumerate(retrieved_contents)])
+            combined_knowledge = "\n".join(
+                [f"相关信息{idx + 1}: {content}" for idx, content in enumerate(retrieved_contents)])
             combined_input = f"用户提问: {search_query}\n{combined_knowledge}\n请根据以上信息生成一个自然的回答。"
 
             # 构建输入

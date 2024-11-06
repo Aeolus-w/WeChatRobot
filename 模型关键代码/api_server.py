@@ -4,7 +4,7 @@ import tiktoken
 import torch
 import uvicorn
 
-from fastapi import FastAPI, HTTPException, Response, File, UploadFile
+from fastapi import FastAPI, HTTPException, Response, File, UploadFile, Form
 from fastapi.middleware.cors import CORSMiddleware
 
 from contextlib import asynccontextmanager
@@ -197,17 +197,20 @@ async def list_models():
     )
 
 
-# 添加新的路由处理文件上传
 @app.post("/v1/upload")
-async def upload_file(file: UploadFile = File(...)):
+async def upload_file(file: UploadFile = File(...), session_id: str = Form(...)):
     try:
-        # 指定保存文件的路径
-        file_location = f"../../autodl-tmp/base_knowledge/{file.filename}"
-        # 保存文件
+        # 构造会话文件夹路径
+        session_folder = f"../../autodl-tmp/base_knowledge/{session_id}"
+        os.makedirs(session_folder, exist_ok=True)
+
+        # 保存文件至会话文件夹中
+        file_location = f"{session_folder}/{file.filename}"
         with open(file_location, "wb") as f:
             f.write(await file.read())
-        update_knowledge_db()
-        return {"message": "文件已经加载进知识库"}
+
+        update_knowledge_db(session_id)
+        return {"message": "文件已经存储进知识库"}
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"文件上传失败: {str(e)}")
 
@@ -502,7 +505,7 @@ async def parse_output_text(model_id: str, value: str):
     yield '[DONE]'
 
 
-def contains_custom_function(value: str) -> bool:  
+def contains_custom_function(value: str) -> bool:
     """
     Determine whether 'function_call' according to a special function prefix.
 
