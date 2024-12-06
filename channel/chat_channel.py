@@ -249,6 +249,7 @@ class ChatChannel(Channel):
             )
             reply = e_context["reply"]
             desire_rtype = context.get("desire_rtype")
+            
             if not e_context.is_pass() and reply and reply.type:
                 if reply.type in self.NOT_SUPPORT_REPLYTYPE:
                     logger.error("[chat_channel]reply type not support: " + str(reply.type))
@@ -257,26 +258,43 @@ class ChatChannel(Channel):
 
                 if reply.type == ReplyType.TEXT:
                     reply_text = reply.content
+                    
+                    # 如果reply.content是字典，转换为字符串
+                    if isinstance(reply_text, dict):
+                        reply_text = str(reply_text)
+
                     if desire_rtype == ReplyType.VOICE and ReplyType.VOICE not in self.NOT_SUPPORT_REPLYTYPE:
                         reply = super().build_text_to_voice(reply.content)
                         return self._decorate_reply(context, reply)
+
+                    # 处理群聊消息
                     if context.get("isgroup", False):
                         if not context.get("no_need_at", False):
                             reply_text = "@" + context["msg"].actual_user_nickname + "\n" + reply_text.strip()
                         reply_text = conf().get("group_chat_reply_prefix", "") + reply_text + conf().get("group_chat_reply_suffix", "")
                     else:
+                        # 处理单聊消息
                         reply_text = conf().get("single_chat_reply_prefix", "") + reply_text + conf().get("single_chat_reply_suffix", "")
+
                     reply.content = reply_text
+
                 elif reply.type == ReplyType.ERROR or reply.type == ReplyType.INFO:
                     reply.content = "[" + str(reply.type) + "]\n" + reply.content
-                elif reply.type == ReplyType.IMAGE_URL or reply.type == ReplyType.VOICE or reply.type == ReplyType.IMAGE or reply.type == ReplyType.FILE or reply.type == ReplyType.VIDEO or reply.type == ReplyType.VIDEO_URL:
+
+                # 对于媒体消息（图片、语音等），无需修改
+                elif reply.type in [
+                    ReplyType.IMAGE_URL, ReplyType.VOICE, ReplyType.IMAGE, ReplyType.FILE, ReplyType.VIDEO, ReplyType.VIDEO_URL
+                ]:
                     pass
                 else:
                     logger.error("[chat_channel] unknown reply type: {}".format(reply.type))
                     return
+                
             if desire_rtype and desire_rtype != reply.type and reply.type not in [ReplyType.ERROR, ReplyType.INFO]:
                 logger.warning("[chat_channel] desire_rtype: {}, but reply type: {}".format(context.get("desire_rtype"), reply.type))
-            return reply
+
+        return reply
+
 
     def _send_reply(self, context: Context, reply: Reply):
         if reply and reply.type:

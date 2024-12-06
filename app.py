@@ -81,7 +81,9 @@ def run():
 
 
 if __name__ == "__main__":
-    #create_ssh_tunnel("connect.cqa1.seetacloud.com",28696,"root","Hemcuc1kuD7/","127.0.0.1",6006,6006)
-    #create_ssh_tunnel("connect.cqa1.seetacloud.com",33388,"root","Hemcuc1kuD7/","127.0.0.1",6006,6006)
-    create_ssh_tunnel("connect.cqa1.seetacloud.com",28218,"root","Hemcuc1kuD7/","127.0.0.1",6006,6006)
+    # create_ssh_tunnel("connect.cqa1.seetacloud.com",28696,"root","Hemcuc1kuD7/","127.0.0.1",6006,6006)
+    # create_ssh_tunnel("connect.cqa1.seetacloud.com",33388,"root","Hemcuc1kuD7/","127.0.0.1",6006,6006)
+    # create_ssh_tunnel("connect.cqa1.seetacloud.com",28218,"root","Hemcuc1kuD7/","127.0.0.1",6006,6006)
+    # create_ssh_tunnel("connect.cqa1.seetacloud.com",41295,"root","Hemcuc1kuD7/","127.0.0.1",8000,8000)
+    create_ssh_tunnel("connect.cqa1.seetacloud.com",53038,"root","Hemcuc1kuD7/","127.0.0.1",8000,8000)
     run()
